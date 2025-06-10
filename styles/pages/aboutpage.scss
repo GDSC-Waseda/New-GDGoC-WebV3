@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "myFont";
+  src: url("/fonts/prodsanReg.ttf");
+}
+
+.about-page {
+  font-family: "myFont", sans-serif;
+
+  .headerCard {
+    border: 0;
+    margin: 0 60px;
+    height: 814px;
+    border-radius: 0;
+    min-height: 200px;
+    background-color: #f2f2f2;
+    justify-content: center;
+
+    @media (min-width: 790px) {
+      height: 700px;
+    }
+
+    &__headerTitle {
+      text-align: center;
+    }
+
+    &__title {
+      text-align: center;
+      font-size: max(4vw, 66px);
+      font-weight: 700;
+    }
+
+    &__container {
+      width: 100%;
+      padding: 10px;
+    }
+
+    &__contents {
+      padding-top: 10px;
+      text-align: center;
+      font-size: max(1.5vw, 15px);
+      color: #404040;
+    }
+
+    &__button {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background: #000000;
+      width: 197px;
+      height: 59px;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .textCard__section {
+    align-items: left;
+    text-align: left;
+    margin: 50px 55px;
+
+    &__title {
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+
+    &__content {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  }
+
+  .current-lead-section {
+    margin: 60px 0;
+    padding: 0 75px;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .lead-card {
+      display: flex;
+      align-items: center;
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      .lead-image {
+        flex-shrink: 0;
+        margin-right: 30px;
+
+        img {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .lead-info {
+        .lead-name {
+          font-size: 2rem;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        .lead-graduation,
+        .lead-major,
+        .lead-school {
+          font-size: 1.2rem;
+          margin-bottom: 5px;
+        }
+
+        .lead-links {
+          margin-top: 15px;
+
+          a {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: #333;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #0077b5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .previous-leads-section {
+    margin: 60px 0;
+    padding: 0 75px;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .previous-leads-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 30px;
+    }
+
+    .previous-lead-card {
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .previous-lead-image {
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .previous-lead-info {
+        .previous-lead-name {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        .previous-lead-graduation,
+        .previous-lead-major,
+        .previous-lead-school {
+          font-size: 1rem;
+          margin-bottom: 5px;
+        }
+
+        .previous-lead-links {
+          margin-top: 15px;
+          text-align: center;
+
+          a {
+            font-size: 1.2rem;
+            color: #333;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #0077b5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .current-lead-section,
+    .previous-leads-section {
+      padding: 0 20px;
+    }
+
+    .current-lead-section {
+      .lead-card {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .lead-image {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

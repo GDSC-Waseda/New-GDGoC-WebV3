@@ -1,0 +1,135 @@
+/* TO-DO: Make font sizes reactive to media screen size*/
+
+.media-card {
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 5px #c4c4c4;
+  height: 40vh;
+  width: 40vh;
+  margin: 20px;
+
+  &__image-container {
+    height: 50%; // 50% of the media card's height
+    width: 100%;
+    overflow: hidden; // This ensures the image doesn't exceed this container
+    position: relative; // Needed for Next.js Image component with layout="fill"
+  }
+
+  &__image-container img {
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .none {
+    background-color: #c4c4c4;
+  }
+
+  &__image {
+    border-radius: 20px 20px 0px 0px;
+    position: absolute; // Position the image absolutely within the container
+    top: 0;
+    left: 0;
+    width: 100%; // Fill the container
+    height: 100%; // Fill the container
+  }
+
+  &__collapse {
+    float: right;
+  }
+  &__collapse-container {
+    padding: 5px;
+  }
+
+  &__detail-container {
+    margin-top: 4px;
+    padding: 5px 10px;
+    transition: width 600ms ease-out, height 600ms ease-out;
+    overflow: hidden;
+  }
+
+  &__title {
+    // @media screen and (min-width: 768px) {
+    //   font-size: 20px;
+    //   margin: 5px 0;
+    // }
+
+    padding: 15px 5px 0 2%;
+    font-weight: bold;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__other {
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__image.m {
+    max-width: 20vh;
+  }
+
+  &__image.l {
+    max-width: 25vh;
+  }
+
+  &__image.s,
+  .media-card.s {
+    max-width: 25vh;
+    min-width: 170px;
+  }
+
+  &__image.m,
+  .media-card.m {
+    max-width: 305vh;
+    min-width: 335px;
+    max-height: 180px;
+  }
+
+  &__image.l,
+  .media-card.l {
+    max-width: 35vh;
+    min-width: 250px;
+  }
+
+  &__tags {
+    font-size: 8px;
+    display: inline-flex;
+    margin-bottom: 5px;
+    margin-left: 3px;
+  }
+
+  &__tag {
+    // @media screen and (min-width: 768px) {
+    //   font-size: 15px;
+    //   margin: 3px;
+    // }
+    padding: 2px 5px;
+    margin-right: 5px;
+    border: 0.5px solid;
+    border-radius: 50px;
+    font-weight: lighter;
+    color: gray;
+  }
+  &__date {
+    font-size: 11px;
+    // @media screen and (min-width: 768px) {
+    //   font-size: 15px;
+    //   margin-bottom: 8px;
+    // }
+    margin-left: 2%;
+    margin-bottom: 6px;
+  }
+  &__details {
+    font-size: 11px;
+    // @media screen and (min-width: 768px) {
+    //   font-size: 15px;
+    // }
+    margin-left: 2%;
+    margin-bottom: 10px;
+    max-height: 6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,87 @@
+.image-icon {
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+
+  &__image-container {
+    text-align: -webkit-center;
+  }
+
+  &__image {
+    border: 5px solid;
+    border-radius: 100%;
+    background-color: #c4c4c4;
+  }
+
+  //this assumes size m
+  &__swap-container {
+    height: 20vh;
+    width: 20vh;
+    display: inline-block;
+    position: relative;
+  }
+
+  &__swap-button {
+    border-radius: 50%;
+    position: absolute;
+    height: 5.5vh;
+    width: 5.5vh;
+    border-color: transparent;
+    background-color: transparent;
+    transform: translate(-5vh, 1vh);
+    z-index: 100;
+    padding: 0;
+  }
+
+  &__swap {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__detail-container {
+    margin-top: 4px;
+  }
+
+  &__title {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__other {
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  &__image.s {
+    height: 15vh;
+    width: 15vh;
+  }
+
+  &__image.m {
+    height: 20vh;
+    width: 20vh;
+  }
+
+  &__image.l {
+    height: 25vh;
+    width: 25vh;
+  }
+}
+
+.red {
+  color: #e94336;
+}
+
+.blue {
+  color: #4283f3;
+}
+
+.green {
+  color: #00a150;
+}
+
+.yellow {
+  color: #fabb08;
+}

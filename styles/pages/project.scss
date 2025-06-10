@@ -1,0 +1,17 @@
+.header-padding {
+  padding-bottom: 75px; // Adjust the value to your liking
+}
+
+.members-title {
+  text-align: center;
+  font-size: 30px;
+  padding: 40px 0;
+  font-family: "myFont";
+}
+
+.team-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 5px;
+}

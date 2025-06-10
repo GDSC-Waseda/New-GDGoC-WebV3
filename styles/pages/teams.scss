@@ -1,0 +1,136 @@
+@font-face {
+  font-family: myFont;
+  src: url("/fonts/prodsanB.ttf");
+}
+
+.team-leaders-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.team-leaders-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-leader {
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-swap-container {
+    height: 220px;
+    width: 220px;
+    display: inline-block;
+    position: relative;
+  }
+
+  &-swap-button {
+    border-radius: 50%;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-color: transparent;
+    background-color: transparent;
+    transform: translate(50px, -210px);
+    z-index: 100;
+    padding: 0;
+  }
+
+  &-swap {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    border: 5px solid;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      border-color: darken(#fff, 10%);
+    }
+
+    &.green:hover {
+      border-color: darken(green, 10%);
+    }
+
+    &.blue:hover {
+      border-color: darken(blue, 10%);
+    }
+
+    &.yellow:hover {
+      border-color: darken(yellow, 10%);
+    }
+
+    &.red:hover {
+      border-color: darken(red, 10%);
+    }
+  }
+
+  &-name {
+    font-weight: bold;
+    color: black;
+    padding-top: 10px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #4285f4;
+    }
+  }
+
+  &-link {
+    color: #4285f4;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: darken(#4285f4, 10%);
+    }
+  }
+
+  &-linkedin {
+    color: #ccc;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #4285f4;
+    }
+  }
+}
+
+.bold-text {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 15px;
+}

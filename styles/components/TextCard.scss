@@ -1,0 +1,28 @@
+@font-face {
+  font-family: myFont;
+  src: url("/fonts/prodsanReg.ttf");
+}
+
+.textCard {
+  &__section {
+    padding: 0 20px;
+    margin: 60px 200px;
+    font-family: "myFont", sans-serif;
+
+    &__title {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: normal;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    &__content {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #000;
+      text-align: left;
+    }
+  }
+}
