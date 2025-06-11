@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import { HeaderCard, YearBar } from "components/Cards/index";
+import { HeaderCard, CategoryBar } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -203,10 +203,10 @@ export const TeamsPage: NextPage = () => {
         </a>
       </div>
 
-      <YearBar
-        years={Object.keys(teamLeadersByYear)}
-        selectedYear={selectedYear}
-        onYearChange={handleYearChange}
+      <CategoryBar
+        categories={Object.keys(teamLeadersByYear)}
+        selectedCategory={selectedYear}
+        onCategoryChange={handleYearChange}
       />
       <div className="team-leaders-wrapper">
         <div className="team-leaders-container">
