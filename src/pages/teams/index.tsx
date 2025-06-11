@@ -42,7 +42,7 @@ export const TeamsPage: NextPage = () => {
     linkedInUrl?: string;
   }> = [
     {
-      team: t("teams:project"),
+      team: "Project",
       image: "project_lead.jpg",
       image2: null,
       multiple: false,
@@ -51,7 +51,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:backend"),
+      team: "Backend",
       image: "backend_lead.jpg",
       image2: null,
       multiple: false,
@@ -60,7 +60,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:frontend"),
+      team: "Frontend",
       image: "frontend_lead.jpg",
       image2: null,
       multiple: false,
@@ -69,7 +69,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:education"),
+      team: "Education",
       image: "education_lead1.jpg",
       image2: "education_lead2.jpg",
       multiple: true,
@@ -78,7 +78,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:agile"),
+      team: "Agile",
       image: "agile_lead.jpg",
       image2: null,
       multiple: false,
@@ -87,7 +87,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:outreach"),
+      team: "Outreach",
       image: "outreach_lead.jpg",
       image2: null,
       multiple: false,
@@ -96,7 +96,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:marketing"),
+      team: "Marketing",
       image: "marketing_lead.jpg",
       image2: null,
       multiple: false,
@@ -105,7 +105,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      team: t("teams:finance"),
+      team: "Finance",
       image: "finance_lead.jpg",
       image2: null,
       multiple: false,
@@ -136,6 +136,7 @@ export const TeamsPage: NextPage = () => {
   };
 
   const [selectedYear, setSelectedYear] = useState("GDSC 23/24");
+  const [selectedTeam, setSelectedTeam] = useState("Project");
 
   const teamLeadersByYear: Record<
     string,
@@ -187,6 +188,15 @@ export const TeamsPage: NextPage = () => {
   };
   const filteredTeamLeaders = teamLeadersByYear[selectedYear] || [];
 
+  const teams: string[] = Array.from(
+    new Set(Object.values(teamLeadersByYear).flat().map(member => member.team))
+  );
+
+  const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
+  teams.forEach((team) => {
+    teamRefs[team] = React.createRef<HTMLDivElement>();
+  });
+
   return (
     <div className="team-page">
       <CommonMeta
@@ -210,10 +220,18 @@ export const TeamsPage: NextPage = () => {
         selectedYear={selectedYear}
         onYearChange={handleYearChange}
       />
+      <CategoryBar
+        categories={teams}
+        selectedCategory={selectedTeam}
+        onCategoryChange={(team) => {
+          setSelectedTeam(team);
+          teamRefs[team]?.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }}
+      />
       <div className="team-leaders-wrapper">
         <div className="team-leaders-container">
           {filteredTeamLeaders.map((teamCard, index) => (
-            <div key={index} className="team-leader">
+            <div key={index} ref={teamRefs[teamCard.team]} className="team-leader">
               {teamCard.multiple === true ? (
                 <div className="team-leader-swap-container">
                   <a

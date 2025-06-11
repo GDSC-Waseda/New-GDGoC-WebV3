@@ -11,8 +11,9 @@
 }
 
 .team-leaders-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 30px;
   transition: transform 0.5s ease-in-out;
