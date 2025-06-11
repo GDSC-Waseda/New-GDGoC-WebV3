@@ -31,7 +31,8 @@ export const TeamsPage: NextPage = () => {
   };
 
   const teamLeaders: Array<{
-    name: string;
+    team: string;
+    name?: string | null;
     image: string;
     image2: string | null;
     multiple: boolean;
@@ -41,7 +42,7 @@ export const TeamsPage: NextPage = () => {
     linkedInUrl?: string;
   }> = [
     {
-      name: t("teams:project"),
+      team: t("teams:project"),
       image: "project_lead.jpg",
       image2: null,
       multiple: false,
@@ -50,7 +51,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:backend"),
+      team: t("teams:backend"),
       image: "backend_lead.jpg",
       image2: null,
       multiple: false,
@@ -59,7 +60,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:frontend"),
+      team: t("teams:frontend"),
       image: "frontend_lead.jpg",
       image2: null,
       multiple: false,
@@ -68,7 +69,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:education"),
+      team: t("teams:education"),
       image: "education_lead1.jpg",
       image2: "education_lead2.jpg",
       multiple: true,
@@ -77,7 +78,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:agile"),
+      team: t("teams:agile"),
       image: "agile_lead.jpg",
       image2: null,
       multiple: false,
@@ -86,7 +87,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:outreach"),
+      team: t("teams:outreach"),
       image: "outreach_lead.jpg",
       image2: null,
       multiple: false,
@@ -95,7 +96,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:marketing"),
+      team: t("teams:marketing"),
       image: "marketing_lead.jpg",
       image2: null,
       multiple: false,
@@ -104,7 +105,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:finance"),
+      team: t("teams:finance"),
       image: "finance_lead.jpg",
       image2: null,
       multiple: false,
@@ -139,7 +140,8 @@ export const TeamsPage: NextPage = () => {
   const teamLeadersByYear: Record<
     string,
     Array<{
-      name: string;
+      team: string;
+      name?: string | null;
       image: string;
       image2?: string | null;
       multiple?: boolean;
@@ -247,7 +249,7 @@ export const TeamsPage: NextPage = () => {
                   />
                 </a>
               )}
-              <div className="team-leader-name">{teamCard.name}</div>
+              <div className="team-leader-name">{teamCard.team}</div>
               {teamCard.showLearnMore === true ? (
                 <a
                   className="team-leader-link"
