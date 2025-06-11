@@ -31,6 +31,12 @@ export type CategoryBarProps = {
   onCategoryChange: (cateogry: string) => void;
 };
 
+export type YearBoxProps = {
+  years: string[];
+  selectedYear: string;
+  onYearChange: (year: string) => void;
+};
+
 export interface MembersCardProps {
   teamName: string;
   leader: MemberType;
