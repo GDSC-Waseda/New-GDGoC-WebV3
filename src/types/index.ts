@@ -25,10 +25,16 @@ export interface CarouselCardProps {
   link: string;
 }
 
-export type YearBarProps = {
+export type YearMenuProps = {
   years: string[];
   selectedYear: string;
   onYearChange: (year: string) => void;
+};
+
+export type MonthMenuProps = {
+  months: string[];
+  selectedMonth: string;
+  onMonthChange: (month: string) => void;
 };
 
 export interface MembersCardProps {
