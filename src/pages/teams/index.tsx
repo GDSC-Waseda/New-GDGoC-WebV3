@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import { HeaderCard, YearBar } from "components/Cards/index";
+import { HeaderCard, YearMenu } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -161,27 +161,27 @@ export const TeamsPage: NextPage = () => {
   }, [selectedYear]);
 
   const handleYearChange = (year: string) => {
-    const container = document.querySelector(".team-leaders-container");
-    const width = (container as HTMLElement)?.offsetWidth || 0;
-    const years = Object.keys(teamLeadersByYear);
-    const currentIndex = years.indexOf(selectedYear);
-    const newIndex = years.indexOf(year);
-    const direction = newIndex > currentIndex ? 1 : -1;
+    // const years = Object.keys(teamLeadersByYear);
+    // const container = document.querySelector(".team-leaders-container");
+    // const currentIndex = years.indexOf(selectedYear);
+    // const newIndex = years.indexOf(year);
+    // const width = (container as HTMLElement)?.offsetWidth || 0;
+    // const direction = newIndex > currentIndex ? 1 : -1;
 
-    if (container instanceof HTMLElement) {
-      container.style.transform = `translateX(${direction * -width}px)`;
+    // if (container instanceof HTMLElement) {
+    //   container.style.transform = `translateX(${direction * -width}px)`;
 
-      setTimeout(() => {
+      // setTimeout(() => {
         setSelectedYear(year);
-        container.style.transition = "none";
-        container.style.transform = `translateX(${direction * width}px)`;
+      //   container.style.transition = "none";
+      //   container.style.transform = `translateX(${direction * width}px)`;
 
-        setTimeout(() => {
-          container.style.transition = "transform 0.5s ease-in-out";
-          container.style.transform = "translateX(0)";
-        });
-      }, 500);
-    }
+      //   setTimeout(() => {
+      //     container.style.transition = "transform 0.5s ease-in-out";
+      //     container.style.transform = "translateX(0)";
+      //   });
+      // }, 500);
+    // }
   };
   const filteredTeamLeaders = teamLeadersByYear[selectedYear] || [];
 
@@ -203,7 +203,7 @@ export const TeamsPage: NextPage = () => {
         </a>
       </div>
 
-      <YearBar
+      <YearMenu
         years={Object.keys(teamLeadersByYear)}
         selectedYear={selectedYear}
         onYearChange={handleYearChange}
