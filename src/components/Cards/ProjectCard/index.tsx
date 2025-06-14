@@ -51,8 +51,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </ul>
           </div>
         )}
-        <Link href={repoUrl}>
-          <a className="githubLink">View on GitHub</a>
+        <Link href={repoUrl} className="githubLink">
+          View on GitHub
         </Link>
       </div>
     </div>

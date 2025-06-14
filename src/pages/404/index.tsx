@@ -33,7 +33,7 @@ export const ErrorPage: NextPage<{ text?: string }> = ({ text }) => {
           Go back
         </Button>
         <br />
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <Button className="error__button-home">Go back to Home</Button>
         </Link>
       </div>

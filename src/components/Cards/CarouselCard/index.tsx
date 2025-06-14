@@ -29,7 +29,7 @@ export const CarouselCard: React.FC<{
     <div className={`carousel-card ${isOld} ${activeClass}`}>
       {isActive ? (
         <Link href={props.link}>
-          <a>{cardContent}</a>
+          {cardContent}
         </Link>
       ) : (
         cardContent
