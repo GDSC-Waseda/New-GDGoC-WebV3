@@ -1,7 +1,8 @@
 {
   "GDSC 22/23": [
     {
-      "name": "Project - Takumi",
+      "team": "Project",
+      "name": "Takumi",
       "image": "project_lead22.png",
       "image2": null,
       "multiple": false,
@@ -9,7 +10,8 @@
       "linkedInUrl": "https://www.linkedin.com/in/takumi-otsuka/"
     },
     {
-      "name": "Backend - Alvin",
+      "team": "Backend",
+      "name": "Alvin",
       "image": "backend_lead22.jpg",
       "image2": null,
       "multiple": false,
@@ -17,7 +19,8 @@
       "linkedInUrl": "https://www.linkedin.com/"
     },
     {
-      "name": "Frontend - Addo",
+      "team": "Frontend",
+      "name": "Addo",
       "image": "frontend_lead22.jpg",
       "image2": null,
       "multiple": false,
@@ -25,7 +28,8 @@
       "linkedInUrl": "https://www.linkedin.com/in/addobari/"
     },
     {
-      "name": "Education - Jeremy",
+      "team": "Education",
+      "name": "Jeremy",
       "image": "education_lead22.jpg",
       "image2": null,
       "multiple": false,
@@ -33,15 +37,8 @@
       "linkedInUrl": "https://www.linkedin.com/in/jeremy-siburian/"
     },
     {
-      "name": "Operations - Cedric",
-      "image": "operations_lead22.jpg",
-      "image2": null,
-      "multiple": false,
-      "color": "green",
-      "linkedInUrl": "https://www.linkedin.com/in/cedric-purwanto-b5b62721a/"
-    },
-    {
-      "name": "Marketing - Tina",
+      "team": "Marketing",
+      "name": "Tina",
       "image": "marketing_lead22.png",
       "image2": null,
       "multiple": false,
@@ -49,29 +46,42 @@
       "linkedInUrl": "https://www.linkedin.com/in/tzuting001030/"
     },
     {
-      "name": "Finance - Mona",
+      "team": "Finance",
+      "name": "Mona",
       "image": "finance_lead22.jpg",
       "image2": null,
       "multiple": false,
-      "color": "yellow",
+      "color": "green",
       "linkedInUrl": "https://www.linkedin.com/in/monamatsuda/"
+    },
+    {
+      "team": "Operations",
+      "name": "Cedric",
+      "image": "operations_lead22.jpg",
+      "image2": null,
+      "multiple": false,
+      "color": "yellow",
+      "linkedInUrl": "https://www.linkedin.com/in/cedric-purwanto-b5b62721a/"
     }
   ],
   "GDSC 21/22": [
     {
-      "name": "Project - David",
+      "team": "Project",
+      "name": "David",
       "image": "project_lead21.jpg",
       "color": "green",
       "linkedInUrl": "https://www.linkedin.com/in/xinze-wang-89bb38101/"
     },
     {
-      "name": "Backend - Jake",
+      "team": "Backend",
+      "name": "Jake",
       "image": "backend_lead21.jpg",
       "color": "blue",
       "linkedInUrl": "https://www.linkedin.com/in/jake-underland-720126201/"
     },
     {
-      "name": "Frontend - Kaede",
+      "team": "Frontend",
+      "name": "Kaede",
       "image": "frontend_lead21.jpg",
       "image2": null,
       "multiple": false,
@@ -79,14 +89,16 @@
       "linkedInUrl": "https://www.linkedin.com/in/kd-kaede/"
     },
     {
-      "name": "Education - Advaith",
+      "team": "Education",
+      "name": "Advaith",
       "image": "education_lead21.jpg",
       "multiple": false,
       "color": "blue",
       "linkedInUrl": "https://www.linkedin.com/in/advaith/"
     },
     {
-      "name": "Outreach - Touko",
+      "team": "Outreach",
+      "name": "Touko",
       "image": "outreach_lead21.jpg",
       "image2": null,
       "multiple": false,
@@ -94,7 +106,8 @@
       "linkedInUrl": ""
     },
     {
-      "name": "Outreach - Gen",
+      "team": "Outreach",
+      "name": "Gen",
       "image": "operations_lead21.jpg",
       "image2": null,
       "multiple": false,
@@ -102,7 +115,8 @@
       "linkedInUrl": ""
     },
     {
-      "name": "Marketing - Yeonjoo",
+      "team": "Marketing",
+      "name": "Yeonjoo",
       "image": "marketing_lead21.jpg",
       "image2": null,
       "multiple": false,
@@ -110,7 +124,8 @@
       "linkedInUrl": "https://www.linkedin.com/in/yeonjoo-yve-kim/"
     },
     {
-      "name": "Finance - Emi",
+      "team": "Finance",
+      "name": "Emi",
       "image": "finance_lead21.jpg",
       "image2": null,
       "multiple": false,

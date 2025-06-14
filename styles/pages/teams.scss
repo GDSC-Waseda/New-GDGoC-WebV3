@@ -3,6 +3,13 @@
   src: url("/fonts/prodsanB.ttf");
 }
 
+.team-filter {
+  position: sticky;
+  top: 64px;
+  background-color: white;
+  z-index: 10;
+}
+
 .team-leaders-wrapper {
   max-width: 1400px;
   margin: 0 auto;
@@ -11,8 +18,9 @@
 }
 
 .team-leaders-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 30px;
   transition: transform 0.5s ease-in-out;

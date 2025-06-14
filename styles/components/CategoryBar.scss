@@ -1,0 +1,78 @@
+.category-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  cursor: pointer;
+
+  .category-item {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    color: black;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #555;
+      transform: translateY(-2px);
+    }
+
+    &.selected {
+      color: #000;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: black;
+        transition: width 0.3s ease;
+        width: 0;
+      }
+    }
+
+    &.selected:after {
+      width: 100%;
+    }
+  }
+
+  select {
+    padding: 5px 10px;
+    padding-right: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background: white
+      url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>')
+      no-repeat right 10px center;
+    background-size: 24px;
+    appearance: none;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: black;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: black;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    option {
+      color: black;
+      background: white;
+      font-weight: normal;
+    }
+  }
+}

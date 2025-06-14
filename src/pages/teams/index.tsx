@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState, useMemo } from "react";
-import { HeaderCard, YearBar } from "components/Cards/index";
+import { HeaderCard, CategoryBar, YearBox } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -32,7 +32,8 @@ export const TeamsPage: NextPage = () => {
   };
 
   const teamLeaders: Array<{
-    name: string;
+    team: string;
+    name?: string | null;
     image: string;
     image2: string | null;
     multiple: boolean;
@@ -43,7 +44,7 @@ export const TeamsPage: NextPage = () => {
   }> = useMemo(
     () => [
       {
-        name: "Project",
+        team: "Project",
         image: "project_lead.jpg",
         image2: null,
         multiple: false,
@@ -52,7 +53,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Backend",
+        team: "Backend",
         image: "backend_lead.jpg",
         image2: null,
         multiple: false,
@@ -61,7 +62,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Frontend",
+        team: "Frontend",
         image: "frontend_lead.jpg",
         image2: null,
         multiple: false,
@@ -70,7 +71,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Education",
+        team: "Education",
         image: "education_lead1.jpg",
         image2: "education_lead2.jpg",
         multiple: true,
@@ -79,7 +80,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Agile",
+        team: "Agile",
         image: "agile_lead.jpg",
         image2: null,
         multiple: false,
@@ -88,7 +89,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Outreach",
+        team: "Outreach",
         image: "outreach_lead.jpg",
         image2: null,
         multiple: false,
@@ -97,7 +98,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Marketing",
+        team: "Marketing",
         image: "marketing_lead.jpg",
         image2: null,
         multiple: false,
@@ -106,7 +107,7 @@ export const TeamsPage: NextPage = () => {
         showLearnMore: true,
       },
       {
-        name: "Finance",
+        team: "Finance",
         image: "finance_lead.jpg",
         image2: null,
         multiple: false,
@@ -139,11 +140,13 @@ export const TeamsPage: NextPage = () => {
   };
 
   const [selectedYear, setSelectedYear] = useState("GDSC 23/24");
+  const [selectedTeam, setSelectedTeam] = useState("Project");
 
   const teamLeadersByYear: Record<
     string,
     Array<{
-      name: string;
+      team: string;
+      name?: string | null;
       image: string;
       image2?: string | null;
       multiple?: boolean;
@@ -192,6 +195,19 @@ export const TeamsPage: NextPage = () => {
   };
   const filteredTeamLeaders = teamLeadersByYear[selectedYear] || [];
 
+  const teams: string[] = Array.from(
+    new Set(
+      Object.values(teamLeadersByYear)
+        .flat()
+        .map((member) => member.team)
+    )
+  );
+
+  const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
+  teams.forEach((team) => {
+    teamRefs[team] = React.createRef<HTMLDivElement>();
+  });
+
   return (
     <div className="team-page">
       <CommonMeta
@@ -203,22 +219,33 @@ export const TeamsPage: NextPage = () => {
       />
       <HeaderCard props={card} />
 
-      <div className="bold-text">
-        <a>
-          {t("teams:team_second_mes")}
-          <br></br>
-        </a>
+      <div className="team-filter">
+        <YearBox
+          years={Object.keys(teamLeadersByYear)}
+          selectedYear={selectedYear}
+          onYearChange={handleYearChange}
+        />
+        <CategoryBar
+          categories={teams}
+          selectedCategory={selectedTeam}
+          onCategoryChange={(team) => {
+            setSelectedTeam(team);
+            teamRefs[team]?.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }}
+        />
       </div>
 
-      <YearBar
-        years={Object.keys(teamLeadersByYear)}
-        selectedYear={selectedYear}
-        onYearChange={handleYearChange}
-      />
       <div className="team-leaders-wrapper">
         <div className="team-leaders-container">
           {filteredTeamLeaders.map((teamCard, index) => (
-            <div key={index} className="team-leader">
+            <div
+              key={index}
+              ref={teamRefs[teamCard.team]}
+              className="team-leader"
+            >
               {teamCard.multiple === true ? (
                 <div className="team-leader-swap-container">
                   <a
@@ -260,7 +287,7 @@ export const TeamsPage: NextPage = () => {
                   />
                 </a>
               )}
-              <div className="team-leader-name">{teamCard.name}</div>
+              <div className="team-leader-name">{teamCard.team}</div>
               {teamCard.showLearnMore === true ? (
                 <a
                   className="team-leader-link"
