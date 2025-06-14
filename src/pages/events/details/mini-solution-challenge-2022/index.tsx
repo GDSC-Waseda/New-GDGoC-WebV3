@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import Image from "next/image";
 
 const ArticlePage: NextPage = () => {
   const article = {
@@ -37,17 +38,17 @@ const ArticlePage: NextPage = () => {
       <h1 className="article__title">{article.title}</h1>
       <div className="article__author">
         <div className="article__author-image-left">
-          <img src="/tempImg/leads/backend_lead.jpg" alt="author_image" />
+          <Image src="/tempImg/leads/backend_lead.jpg" alt="author_image" />
         </div>
         <div className="article__author-image">
-          <img src="/tempImg/leads/project_lead.jpg" alt="author_image" />
+          <Image src="/tempImg/leads/project_lead.jpg" alt="author_image" />
         </div>
         <div className="article__author-text">
           <p className="article__author-names">
             {article.author}・
-            <a className="article__author-info" href="/404">
+            <Link className="article__author-info" href="/404">
               View
-            </a>
+            </Link>
           </p>
           <p className="article__length">
             {article.length} min read ・ {article.date}
@@ -59,7 +60,13 @@ const ArticlePage: NextPage = () => {
 
       <div>
         {/*Figure this out (image directory)*/}
-        <img className="article__image" src="/tempImg/events/mini-221.png" />
+        <Image
+          className="article__image"
+          src="/tempImg/events/mini-221.png"
+          alt=""
+          width={974.58}
+          height={514.36}
+        />
         {/*https://developers.google.com/community/images/gdsc-solution-challenge/solutionchallenge-homepage.png*/}
         {/*{`..../assets/img/events/${article.image}`}*/}
       </div>
@@ -80,6 +87,7 @@ const ArticlePage: NextPage = () => {
             className="article__link"
             target="_blank"
             href="https://sdgs.un.org/goals"
+            rel="noreferrer"
           >
             {" "}
             United Nations Sustainable Development Goals
@@ -132,10 +140,20 @@ const ArticlePage: NextPage = () => {
         <br />
         <div className="article__two-image-container">
           <div className="article__two-image">
-            <img src="/tempImg/events/mini-222.png" />
+            <Image
+              src="/tempImg/events/mini-222.png"
+              alt=""
+              width={460.95}
+              height={460.95}
+            />
           </div>
           <div className="article__two-image">
-            <img src="/tempImg/events/mini-223.png" />
+            <Image
+              src="/tempImg/events/mini-223.png"
+              alt=""
+              width={460.95}
+              height={460.95}
+            />
           </div>
         </div>
         <p>
@@ -169,9 +187,12 @@ const ArticlePage: NextPage = () => {
             onClick={handleClick}
             className="article__return-button"
           >
-            <img
+            <Image
               className="article__arrow-img"
               src="/tempImg/events/up-arrow.png"
+              alt=""
+              width={50}
+              height={50}
             />
           </Button>
         </div>

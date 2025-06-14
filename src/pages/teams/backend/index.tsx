@@ -62,7 +62,8 @@ export const BackendTeam: NextPage<BackendTeamProps> = ({
 
   const imageCardProps: ImageCardProps = {
     title: "Gunjan Srivastava",
-    content: "Hello everyone! I’m Gunjan, a third year student at Waseda University studying Computer Science and Communications Engineering. In my team, I hope to drive development through implementation of creative solutions (and a little bit of ChatGPT). Together, let's push boundaries and unlock new possibilities, one step at a time!",
+    content:
+      "Hello everyone! I’m Gunjan, a third year student at Waseda University studying Computer Science and Communications Engineering. In my team, I hope to drive development through implementation of creative solutions (and a little bit of ChatGPT). Together, let's push boundaries and unlock new possibilities, one step at a time!",
     image: "/tempImg/leads/backend_lead.jpg",
     imagePosition: "left",
   };
