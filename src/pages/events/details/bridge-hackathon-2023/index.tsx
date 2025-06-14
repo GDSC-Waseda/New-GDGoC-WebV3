@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import Image from "next/image";
 
 const ArticlePage: NextPage = () => {
   const article = {
@@ -36,10 +37,10 @@ const ArticlePage: NextPage = () => {
       <h1 className="article__title">{article.title}</h1>
       <div className="article__author">
         <div className="article__author-image-left">
-          <img src="/tempImg/leads/backend_lead.jpg" alt="author_image" />
+          <Image src="/tempImg/leads/backend_lead.jpg" alt="author_image" />
         </div>
         <div className="article__author-image">
-          <img src="/tempImg/leads/finance_lead.jpg" alt="author_image" />
+          <Image src="/tempImg/leads/finance_lead.jpg" alt="author_image" />
         </div>
         <div className="article__author-text">
           <p className="article__author-names">
@@ -57,9 +58,10 @@ const ArticlePage: NextPage = () => {
       <hr />
 
       <div>
-        <img
+        <Image
           className="article__image"
           src="/tempImg/events/bridgehack-1.png"
+          alt=""
         />
       </div>
 
@@ -175,7 +177,7 @@ const ArticlePage: NextPage = () => {
         <br />
 
         <div className="article__image-container">
-          <img src="/tempImg/events/bridgehack-2.png" />
+          <Image src="/tempImg/events/bridgehack-2.png" alt=""/>
         </div>
         <p>
           We would like to extend our thanks to our sponsors for the event,
@@ -203,9 +205,10 @@ const ArticlePage: NextPage = () => {
             onClick={handleClick}
             className="article__return-button"
           >
-            <img
+            <Image
               className="article__arrow-img"
               src="/tempImg/events/up-arrow.png"
+              alt=""
             />
           </Button>
         </div>
