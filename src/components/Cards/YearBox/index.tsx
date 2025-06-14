@@ -6,7 +6,6 @@ export const YearBox: React.FC<YearBoxProps> = ({
   selectedYear,
   onYearChange,
 }) => {
-
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onYearChange(event.target.value);
   };
@@ -15,11 +14,11 @@ export const YearBox: React.FC<YearBoxProps> = ({
     <div className="year-box">
       {
         <select value={selectedYear} onChange={handleChange}>
-            {years.map((year) => (
+          {years.map((year) => (
             <option key={year} value={year}>
-                {year}
+              {year}
             </option>
-            ))}
+          ))}
         </select>
       }
     </div>

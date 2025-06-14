@@ -6,20 +6,19 @@ export const CategoryBar: React.FC<CategoryBarProps> = ({
   selectedCategory,
   onCategoryChange,
 }) => {
-
   return (
     <div className="category-bar">
-      {
-        categories.map((category) => (
-          <div
-            key={category}
-            className={`category-item ${category === selectedCategory ? "selected" : ""}`}
-            onClick={() => onCategoryChange(category)}
-          >
-            {category}
-          </div>
-        ))
-      }
+      {categories.map((category) => (
+        <div
+          key={category}
+          className={`category-item ${
+            category === selectedCategory ? "selected" : ""
+          }`}
+          onClick={() => onCategoryChange(category)}
+        >
+          {category}
+        </div>
+      ))}
     </div>
   );
 };

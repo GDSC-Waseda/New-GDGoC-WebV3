@@ -196,7 +196,11 @@ export const TeamsPage: NextPage = () => {
   const filteredTeamLeaders = teamLeadersByYear[selectedYear] || [];
 
   const teams: string[] = Array.from(
-    new Set(Object.values(teamLeadersByYear).flat().map(member => member.team))
+    new Set(
+      Object.values(teamLeadersByYear)
+        .flat()
+        .map((member) => member.team)
+    )
   );
 
   const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
@@ -226,7 +230,10 @@ export const TeamsPage: NextPage = () => {
           selectedCategory={selectedTeam}
           onCategoryChange={(team) => {
             setSelectedTeam(team);
-            teamRefs[team]?.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+            teamRefs[team]?.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
           }}
         />
       </div>
@@ -234,7 +241,11 @@ export const TeamsPage: NextPage = () => {
       <div className="team-leaders-wrapper">
         <div className="team-leaders-container">
           {filteredTeamLeaders.map((teamCard, index) => (
-            <div key={index} ref={teamRefs[teamCard.team]} className="team-leader">
+            <div
+              key={index}
+              ref={teamRefs[teamCard.team]}
+              className="team-leader"
+            >
               {teamCard.multiple === true ? (
                 <div className="team-leader-swap-container">
                   <a
