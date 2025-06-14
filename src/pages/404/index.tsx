@@ -26,7 +26,7 @@ export const ErrorPage: NextPage<{ text?: string }> = ({ text }) => {
     <div className="error">
       <div className="error__container">
         <h1 className="error__title">
-          We're sorry. This page is under development.
+          We&apos;re sorry. This page is under development.
         </h1>
         <h2 className="error__detail">{text && message(text)}</h2>
         <Button className="error__button-back" onClick={goBack}>

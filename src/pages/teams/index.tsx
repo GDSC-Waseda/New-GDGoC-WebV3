@@ -8,6 +8,7 @@ import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { useTranslation } from "next-i18next";
 import exteams from "./exteams.json";
 import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -218,9 +219,11 @@ export const TeamsPage: NextPage = () => {
                     className="team-leader-link"
                     href={`/teams/${teamCard.link}`}
                   >
-                    <img
+                    <Image
                       className={`team-leader-image ${teamCard.color}`}
                       src={`/tempImg/leads/${teamLeaderImages[index]}`}
+                      width={220}
+                      height={220}
                       alt="team leader"
                     />
                   </a>
@@ -228,9 +231,11 @@ export const TeamsPage: NextPage = () => {
                     className="team-leader-swap-button"
                     onClick={() => handleSwapClick(index)}
                   >
-                    <img
+                    <Image
                       className="team-leader-swap"
                       src={`/tempImg/arrows-${teamCard.color}.png`}
+                      width={220}
+                      height={220}
                       alt="arrows"
                     />
                   </button>
@@ -240,9 +245,11 @@ export const TeamsPage: NextPage = () => {
                   className="team-leader-link"
                   href={`/teams/${teamCard.link}`}
                 >
-                  <img
+                  <Image
                     className={`team-leader-image ${teamCard.color}`}
                     src={`/tempImg/leads/${teamLeaderImages[index]}`}
+                    width={220}
+                    height={220}
                     alt="team leader"
                   />
                 </a>

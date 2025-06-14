@@ -46,9 +46,9 @@ const ArticlePage: NextPage = () => {
         <div className="article__author-text">
           <p className="article__author-names">
             {article.author}・
-            <a className="article__author-info" href="/404">
+            <Link className="article__author-info" href="/404">
               View
-            </a>
+            </Link>
           </p>
           <p className="article__length">
             {article.length} min read ・ {article.date}
@@ -60,7 +60,13 @@ const ArticlePage: NextPage = () => {
 
       <div>
         {/*Figure this out (image directory)*/}
-        <Image className="article__image" src="/tempImg/events/mini-221.png" alt=""/>
+        <Image 
+          className="article__image" 
+          src="/tempImg/events/mini-221.png" 
+          alt=""
+          width={974.58}
+          height={514.36}
+        />
         {/*https://developers.google.com/community/images/gdsc-solution-challenge/solutionchallenge-homepage.png*/}
         {/*{`..../assets/img/events/${article.image}`}*/}
       </div>
@@ -133,10 +139,20 @@ const ArticlePage: NextPage = () => {
         <br />
         <div className="article__two-image-container">
           <div className="article__two-image">
-            <Image src="/tempImg/events/mini-222.png" alt=""/>
+            <Image 
+              src="/tempImg/events/mini-222.png" 
+              alt=""
+              width={460.95}
+              height={460.95}
+              />
           </div>
           <div className="article__two-image">
-            <Image src="/tempImg/events/mini-223.png" alt=""/>
+            <Image 
+              src="/tempImg/events/mini-223.png" 
+              alt=""
+              width={460.95}
+              height={460.95}
+            />
           </div>
         </div>
         <p>
@@ -174,6 +190,8 @@ const ArticlePage: NextPage = () => {
               className="article__arrow-img"
               src="/tempImg/events/up-arrow.png"
               alt=""
+              width={50}
+              height={50}
             />
           </Button>
         </div>
