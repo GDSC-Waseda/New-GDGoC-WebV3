@@ -124,7 +124,7 @@ const ArticlePage: NextPage = () => {
           Kaneda) targeted SDG 12 (Responsible Consumption and Production) to
           ensure responsible consumption and production pattern by making sure
           that foreigners living in Japan can live responsibly and sort out
-          trashes in their daily lives according to each city's rules.
+          trashes in their daily lives according to each city&apos;s rules.
         </p>
 
         {/* Team OPLAND */}

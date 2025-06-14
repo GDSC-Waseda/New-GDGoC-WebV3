@@ -87,6 +87,7 @@ const ArticlePage: NextPage = () => {
             className="article__link"
             target="_blank"
             href="https://sdgs.un.org/goals"
+            rel="noreferrer"
           >
             {" "}
             United Nations Sustainable Development Goals

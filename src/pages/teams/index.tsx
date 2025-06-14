@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { HeaderCard, YearBar } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps } from "~/types";
@@ -40,9 +40,9 @@ export const TeamsPage: NextPage = () => {
     color: string;
     showLearnMore?: boolean;
     linkedInUrl?: string;
-  }> = [
+  }> = useMemo(() =>[
     {
-      name: t("teams:project"),
+      name: "Project",
       image: "project_lead.jpg",
       image2: null,
       multiple: false,
@@ -51,7 +51,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:backend"),
+      name: "Backend",
       image: "backend_lead.jpg",
       image2: null,
       multiple: false,
@@ -60,7 +60,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:frontend"),
+      name: "Frontend",
       image: "frontend_lead.jpg",
       image2: null,
       multiple: false,
@@ -69,7 +69,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:education"),
+      name: "Education",
       image: "education_lead1.jpg",
       image2: "education_lead2.jpg",
       multiple: true,
@@ -78,7 +78,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:agile"),
+      name: "Agile",
       image: "agile_lead.jpg",
       image2: null,
       multiple: false,
@@ -87,7 +87,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:outreach"),
+      name: "Outreach",
       image: "outreach_lead.jpg",
       image2: null,
       multiple: false,
@@ -96,7 +96,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:marketing"),
+      name: "Marketing",
       image: "marketing_lead.jpg",
       image2: null,
       multiple: false,
@@ -105,7 +105,7 @@ export const TeamsPage: NextPage = () => {
       showLearnMore: true,
     },
     {
-      name: t("teams:finance"),
+      name: "Finance",
       image: "finance_lead.jpg",
       image2: null,
       multiple: false,
@@ -113,7 +113,7 @@ export const TeamsPage: NextPage = () => {
       color: "yellow",
       showLearnMore: true,
     },
-  ];
+  ], []);
 
   const [teamLeaderImages, setTeamLeaderImages] = useState(
     teamLeaders.map((leader) => leader.image)
@@ -149,17 +149,17 @@ export const TeamsPage: NextPage = () => {
       showLearnMore?: boolean;
       linkedInUrl?: string;
     }>
-  > = {
+  > = useMemo(() => ({
     "GDSC 23/24": teamLeaders,
     "GDSC 22/23": exteams["GDSC 22/23"],
     "GDSC 21/22": exteams["GDSC 21/22"],
-  };
+  }), [teamLeaders]);
 
   useEffect(() => {
     setTeamLeaderImages(
       teamLeadersByYear[selectedYear]?.map((leader) => leader.image)
     );
-  }, [selectedYear]);
+  }, [selectedYear, teamLeadersByYear]);
 
   const handleYearChange = (year: string) => {
     const container = document.querySelector(".team-leaders-container");

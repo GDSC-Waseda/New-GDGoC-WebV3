@@ -45,9 +45,9 @@ const ArticlePage: NextPage = () => {
         <div className="article__author-text">
           <p className="article__author-names">
             {article.author}・
-            <a className="article__author-info" href="/404">
+            <Link className="article__author-info" href="/404">
               View
-            </a>
+            </Link>
           </p>
           <p className="article__length">
             {article.length} min read ・ {article.date}
@@ -148,7 +148,7 @@ const ArticlePage: NextPage = () => {
           Team &quot;We Could Not Think of a Name&quot; (Khaled Mohammad, Daeun Ko,
           Wonwoo, Seongmin, Kaede Saito, Nayeon) sought to figure out a solution
           for SDG 11: Sustainable Cities and Communities and SDG 13: Climate
-          Action. Named &quot;I'm Not Garbage!&quot;, the app eases the recycling
+          Action. Named &quot;I&apos;m Not Garbage!&quot;, the app eases the recycling
           procedure by using an automated image classifier. The app first
           targets Japanese nationals, but also the whole team projects its entry
           into the overseas market as the app hits big within Japan.
