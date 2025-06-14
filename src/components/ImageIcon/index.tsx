@@ -33,7 +33,7 @@ export const ImageIcon: React.FC<{
           props.multiple == true ? (
             <div className="image-icon__swap-container">
               <a href={`/teams/${props.link}`}>
-                <img
+                <Image
                   className={`image-icon__image ${props.size} ${props.color}`}
                   src={`/tempImg/leads/${currentImage}`}
                   alt="image-icon"
@@ -43,7 +43,7 @@ export const ImageIcon: React.FC<{
                 className="image-icon__swap-button"
                 onClick={handleSwapClick}
               >
-                <img
+                <Image
                   className="image-icon__swap"
                   src={`/tempImg/arrows-${props.color}.png`}
                   alt="arrows"
@@ -52,7 +52,7 @@ export const ImageIcon: React.FC<{
             </div>
           ) : (
             <a href={`/teams/${props.link}`}>
-              <img
+              <Image
                 className={`image-icon__image ${props.size} ${props.color}`}
                 src={`/tempImg/leads/${currentImage}`}
                 alt="image-icon"

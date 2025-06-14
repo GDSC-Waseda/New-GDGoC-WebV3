@@ -62,7 +62,8 @@ export const EducationTeam: NextPage<EducationTeamProps> = ({
 
   const imageCardProps: ImageCardProps = {
     title: "Beatrix Sylvani",
-    content: "Hi! My name is Beatrix, but you can call me Bea(🐝)! I am one of the co-leaders for the Education team for GDSC Waseda. Our team is focused on hosting coding classes with the public and building a wide range of connections. For this semester, we are planning to host Figma and Powerpoint 101 classes. Our team is welcoming for anyone who wants to learn and test the waters for different kind of programming classes :>",
+    content:
+      "Hi! My name is Beatrix, but you can call me Bea(🐝)! I am one of the co-leaders for the Education team for GDSC Waseda. Our team is focused on hosting coding classes with the public and building a wide range of connections. For this semester, we are planning to host Figma and Powerpoint 101 classes. Our team is welcoming for anyone who wants to learn and test the waters for different kind of programming classes :>",
     image: "/tempImg/leads/education_lead1.jpg",
     imagePosition: "left",
   };

@@ -12,6 +12,7 @@ import { HeaderCard, MediaCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps, MediaCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Image from "next/image";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -107,7 +108,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
             {t("events:event_past")}
           </span> */}
           <div className="events__search-bar">
-            <img
+            <Image
               src="/tempImg/events/magnefying-glass.png"
               alt=""
               className="events__search-icon"
@@ -137,9 +138,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
             <>
               {searchResults.map((eventCard, index) => (
                 <Link href={eventCard.link} key={index}>
-                  <a>
-                    <MediaCard props={eventCard} />
-                  </a>
+                  <MediaCard props={eventCard} />
                 </Link>
               ))}
             </>

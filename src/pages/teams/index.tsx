@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { HeaderCard, CategoryBar, YearBox } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps } from "~/types";
@@ -8,6 +8,7 @@ import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { useTranslation } from "next-i18next";
 import exteams from "./exteams.json";
 import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -40,80 +41,83 @@ export const TeamsPage: NextPage = () => {
     color: string;
     showLearnMore?: boolean;
     linkedInUrl?: string;
-  }> = [
-    {
-      team: "Project",
-      image: "project_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/project",
-      color: "green",
-      showLearnMore: true,
-    },
-    {
-      team: "Backend",
-      image: "backend_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/backend",
-      color: "blue",
-      showLearnMore: true,
-    },
-    {
-      team: "Frontend",
-      image: "frontend_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/frontend",
-      color: "yellow",
-      showLearnMore: true,
-    },
-    {
-      team: "Education",
-      image: "education_lead1.jpg",
-      image2: "education_lead2.jpg",
-      multiple: true,
-      link: "/education",
-      color: "red",
-      showLearnMore: true,
-    },
-    {
-      team: "Agile",
-      image: "agile_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/agile",
-      color: "blue",
-      showLearnMore: true,
-    },
-    {
-      team: "Outreach",
-      image: "outreach_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/outreach",
-      color: "red",
-      showLearnMore: true,
-    },
-    {
-      team: "Marketing",
-      image: "marketing_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/marketing",
-      color: "green",
-      showLearnMore: true,
-    },
-    {
-      team: "Finance",
-      image: "finance_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/finance",
-      color: "yellow",
-      showLearnMore: true,
-    },
-  ];
+  }> = useMemo(
+    () => [
+      {
+        team: "Project",
+        image: "project_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/project",
+        color: "green",
+        showLearnMore: true,
+      },
+      {
+        team: "Backend",
+        image: "backend_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/backend",
+        color: "blue",
+        showLearnMore: true,
+      },
+      {
+        team: "Frontend",
+        image: "frontend_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/frontend",
+        color: "yellow",
+        showLearnMore: true,
+      },
+      {
+        team: "Education",
+        image: "education_lead1.jpg",
+        image2: "education_lead2.jpg",
+        multiple: true,
+        link: "/education",
+        color: "red",
+        showLearnMore: true,
+      },
+      {
+        team: "Agile",
+        image: "agile_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/agile",
+        color: "blue",
+        showLearnMore: true,
+      },
+      {
+        team: "Outreach",
+        image: "outreach_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/outreach",
+        color: "red",
+        showLearnMore: true,
+      },
+      {
+        team: "Marketing",
+        image: "marketing_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/marketing",
+        color: "green",
+        showLearnMore: true,
+      },
+      {
+        team: "Finance",
+        image: "finance_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/finance",
+        color: "yellow",
+        showLearnMore: true,
+      },
+    ],
+    []
+  );
 
   const [teamLeaderImages, setTeamLeaderImages] = useState(
     teamLeaders.map((leader) => leader.image)
@@ -151,17 +155,20 @@ export const TeamsPage: NextPage = () => {
       showLearnMore?: boolean;
       linkedInUrl?: string;
     }>
-  > = {
-    "GDSC 23/24": teamLeaders,
-    "GDSC 22/23": exteams["GDSC 22/23"],
-    "GDSC 21/22": exteams["GDSC 21/22"],
-  };
+  > = useMemo(
+    () => ({
+      "GDSC 23/24": teamLeaders,
+      "GDSC 22/23": exteams["GDSC 22/23"],
+      "GDSC 21/22": exteams["GDSC 21/22"],
+    }),
+    [teamLeaders]
+  );
 
   useEffect(() => {
     setTeamLeaderImages(
       teamLeadersByYear[selectedYear]?.map((leader) => leader.image)
     );
-  }, [selectedYear]);
+  }, [selectedYear, teamLeadersByYear]);
 
   const handleYearChange = (year: string) => {
     const container = document.querySelector(".team-leaders-container");
@@ -234,9 +241,11 @@ export const TeamsPage: NextPage = () => {
                     className="team-leader-link"
                     href={`/teams/${teamCard.link}`}
                   >
-                    <img
+                    <Image
                       className={`team-leader-image ${teamCard.color}`}
                       src={`/tempImg/leads/${teamLeaderImages[index]}`}
+                      width={220}
+                      height={220}
                       alt="team leader"
                     />
                   </a>
@@ -244,9 +253,11 @@ export const TeamsPage: NextPage = () => {
                     className="team-leader-swap-button"
                     onClick={() => handleSwapClick(index)}
                   >
-                    <img
+                    <Image
                       className="team-leader-swap"
                       src={`/tempImg/arrows-${teamCard.color}.png`}
+                      width={220}
+                      height={220}
                       alt="arrows"
                     />
                   </button>
@@ -256,9 +267,11 @@ export const TeamsPage: NextPage = () => {
                   className="team-leader-link"
                   href={`/teams/${teamCard.link}`}
                 >
-                  <img
+                  <Image
                     className={`team-leader-image ${teamCard.color}`}
                     src={`/tempImg/leads/${teamLeaderImages[index]}`}
+                    width={220}
+                    height={220}
                     alt="team leader"
                   />
                 </a>

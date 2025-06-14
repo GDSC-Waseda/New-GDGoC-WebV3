@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import Image from "next/image";
 
 const ArticlePage: NextPage = () => {
   const article = {
@@ -36,17 +37,27 @@ const ArticlePage: NextPage = () => {
       <h1 className="article__title">{article.title}</h1>
       <div className="article__author">
         <div className="article__author-image-left">
-          <img src="/tempImg/leads/backend_lead.jpg" alt="author_image" />
+          <Image
+            src="/tempImg/leads/backend_lead.jpg"
+            alt="author_image"
+            width={92.19}
+            height={92.19}
+          />
         </div>
         <div className="article__author-image">
-          <img src="/tempImg/events/irfan.png" alt="author_image" />
+          <Image
+            src="/tempImg/events/irfan.png"
+            alt="author_image"
+            width={92.19}
+            height={92.19}
+          />
         </div>
         <div className="article__author-text">
           <p className="article__author-names">
             {article.author}・
-            <a className="article__author-info" href="/404">
+            <Link className="article__author-info" href="/404">
               View
-            </a>
+            </Link>
           </p>
           <p className="article__length">
             {article.length} min read ・ {article.date}
@@ -57,14 +68,20 @@ const ArticlePage: NextPage = () => {
       <hr />
 
       <div>
-        <img className="article__image" src="/tempImg/events/mini-231.png" />
+        <Image
+          className="article__image"
+          src="/tempImg/events/mini-231.png"
+          alt=""
+          width={974.58}
+          height={720}
+        />
       </div>
 
       <div>
         <p>
-          GDSC Waseda held our "Mini Solution Challenge 2023" on 14th July 2023
-          at the Google Japan Office with over 50 participants. This event
-          showcased the different teams that participated in the Solution
+          GDSC Waseda held our &quot;Mini Solution Challenge 2023&quot; on 14th
+          July 2023 at the Google Japan Office with over 50 participants. This
+          event showcased the different teams that participated in the Solution
           Challenge 2023 from GDSC Waseda.
         </p>
         <p>
@@ -76,6 +93,7 @@ const ArticlePage: NextPage = () => {
             className="article__link"
             target="_blank"
             href="https://developers.google.com/community/gdsc-solution-challenge/UN-goals"
+            rel="noreferrer"
           >
             {" "}
             the 17 United Nations Sustainable Development Goals
@@ -106,7 +124,7 @@ const ArticlePage: NextPage = () => {
           Kaneda) targeted SDG 12 (Responsible Consumption and Production) to
           ensure responsible consumption and production pattern by making sure
           that foreigners living in Japan can live responsibly and sort out
-          trashes in their daily lives according to each city's rules.
+          trashes in their daily lives according to each city&apos;s rules.
         </p>
 
         {/* Team OPLAND */}
@@ -114,9 +132,9 @@ const ArticlePage: NextPage = () => {
         <p>
           Team OPLAND (Irfan Satria, Haruka Takahira, Yao Chengxian) fulfilled
           SDG 8 (Decent Work and Economic Growth) by promoting sustained,
-          inclusive, and sustainable economic growth through their app “Opland”
-          which seeks to improve small business productivity through the help of
-          an AI assistant with business thinking.
+          inclusive, and sustainable economic growth through their app
+          &quot;Opland&quot; which seeks to improve small business productivity
+          through the help of an AI assistant with business thinking.
         </p>
 
         {/* Team myBasket */}
@@ -133,7 +151,12 @@ const ArticlePage: NextPage = () => {
       <br />
 
       <div className="article__image-container">
-        <img src="/tempImg/events/mini-232.png" />
+        <Image
+          src="/tempImg/events/mini-232.png"
+          alt=""
+          width={974.58}
+          height={526.8}
+        />
       </div>
       <div>
         <p>
@@ -161,6 +184,7 @@ const ArticlePage: NextPage = () => {
             className="article__link"
             target="_blank"
             href="https://developers.google.com/community/gdsc-solution-challenge/winners"
+            rel="noreferrer"
           >
             {" "}
             Top 100 teams
@@ -187,9 +211,12 @@ const ArticlePage: NextPage = () => {
             onClick={handleClick}
             className="article__return-button"
           >
-            <img
+            <Image
               className="article__arrow-img"
               src="/tempImg/events/up-arrow.png"
+              alt=""
+              width={50}
+              height={50}
             />
           </Button>
         </div>
