@@ -40,80 +40,83 @@ export const TeamsPage: NextPage = () => {
     color: string;
     showLearnMore?: boolean;
     linkedInUrl?: string;
-  }> = useMemo(() =>[
-    {
-      name: "Project",
-      image: "project_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/project",
-      color: "green",
-      showLearnMore: true,
-    },
-    {
-      name: "Backend",
-      image: "backend_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/backend",
-      color: "blue",
-      showLearnMore: true,
-    },
-    {
-      name: "Frontend",
-      image: "frontend_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/frontend",
-      color: "yellow",
-      showLearnMore: true,
-    },
-    {
-      name: "Education",
-      image: "education_lead1.jpg",
-      image2: "education_lead2.jpg",
-      multiple: true,
-      link: "/education",
-      color: "red",
-      showLearnMore: true,
-    },
-    {
-      name: "Agile",
-      image: "agile_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/agile",
-      color: "blue",
-      showLearnMore: true,
-    },
-    {
-      name: "Outreach",
-      image: "outreach_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/outreach",
-      color: "red",
-      showLearnMore: true,
-    },
-    {
-      name: "Marketing",
-      image: "marketing_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/marketing",
-      color: "green",
-      showLearnMore: true,
-    },
-    {
-      name: "Finance",
-      image: "finance_lead.jpg",
-      image2: null,
-      multiple: false,
-      link: "/finance",
-      color: "yellow",
-      showLearnMore: true,
-    },
-  ], []);
+  }> = useMemo(
+    () => [
+      {
+        name: "Project",
+        image: "project_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/project",
+        color: "green",
+        showLearnMore: true,
+      },
+      {
+        name: "Backend",
+        image: "backend_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/backend",
+        color: "blue",
+        showLearnMore: true,
+      },
+      {
+        name: "Frontend",
+        image: "frontend_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/frontend",
+        color: "yellow",
+        showLearnMore: true,
+      },
+      {
+        name: "Education",
+        image: "education_lead1.jpg",
+        image2: "education_lead2.jpg",
+        multiple: true,
+        link: "/education",
+        color: "red",
+        showLearnMore: true,
+      },
+      {
+        name: "Agile",
+        image: "agile_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/agile",
+        color: "blue",
+        showLearnMore: true,
+      },
+      {
+        name: "Outreach",
+        image: "outreach_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/outreach",
+        color: "red",
+        showLearnMore: true,
+      },
+      {
+        name: "Marketing",
+        image: "marketing_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/marketing",
+        color: "green",
+        showLearnMore: true,
+      },
+      {
+        name: "Finance",
+        image: "finance_lead.jpg",
+        image2: null,
+        multiple: false,
+        link: "/finance",
+        color: "yellow",
+        showLearnMore: true,
+      },
+    ],
+    []
+  );
 
   const [teamLeaderImages, setTeamLeaderImages] = useState(
     teamLeaders.map((leader) => leader.image)
@@ -149,11 +152,14 @@ export const TeamsPage: NextPage = () => {
       showLearnMore?: boolean;
       linkedInUrl?: string;
     }>
-  > = useMemo(() => ({
-    "GDSC 23/24": teamLeaders,
-    "GDSC 22/23": exteams["GDSC 22/23"],
-    "GDSC 21/22": exteams["GDSC 21/22"],
-  }), [teamLeaders]);
+  > = useMemo(
+    () => ({
+      "GDSC 23/24": teamLeaders,
+      "GDSC 22/23": exteams["GDSC 22/23"],
+      "GDSC 21/22": exteams["GDSC 21/22"],
+    }),
+    [teamLeaders]
+  );
 
   useEffect(() => {
     setTeamLeaderImages(

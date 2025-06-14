@@ -60,9 +60,9 @@ const ArticlePage: NextPage = () => {
 
       <div>
         {/*Figure this out (image directory)*/}
-        <Image 
-          className="article__image" 
-          src="/tempImg/events/mini-221.png" 
+        <Image
+          className="article__image"
+          src="/tempImg/events/mini-221.png"
           alt=""
           width={974.58}
           height={514.36}
@@ -140,16 +140,16 @@ const ArticlePage: NextPage = () => {
         <br />
         <div className="article__two-image-container">
           <div className="article__two-image">
-            <Image 
-              src="/tempImg/events/mini-222.png" 
+            <Image
+              src="/tempImg/events/mini-222.png"
               alt=""
               width={460.95}
               height={460.95}
-              />
+            />
           </div>
           <div className="article__two-image">
-            <Image 
-              src="/tempImg/events/mini-223.png" 
+            <Image
+              src="/tempImg/events/mini-223.png"
               alt=""
               width={460.95}
               height={460.95}

@@ -37,20 +37,20 @@ const ArticlePage: NextPage = () => {
       <h1 className="article__title">{article.title}</h1>
       <div className="article__author">
         <div className="article__author-image-left">
-          <Image 
-            src="/tempImg/leads/backend_lead.jpg" 
-            alt="author_image" 
+          <Image
+            src="/tempImg/leads/backend_lead.jpg"
+            alt="author_image"
             width={92.19}
             height={92.19}
           />
         </div>
         <div className="article__author-image">
-          <Image 
-            src="/tempImg/events/irfan.png" 
-            alt="author_image" 
+          <Image
+            src="/tempImg/events/irfan.png"
+            alt="author_image"
             width={92.19}
             height={92.19}
-            />
+          />
         </div>
         <div className="article__author-text">
           <p className="article__author-names">
@@ -68,20 +68,20 @@ const ArticlePage: NextPage = () => {
       <hr />
 
       <div>
-        <Image 
-          className="article__image" 
-          src="/tempImg/events/mini-231.png" 
+        <Image
+          className="article__image"
+          src="/tempImg/events/mini-231.png"
           alt=""
           width={974.58}
           height={720}
-          />
+        />
       </div>
 
       <div>
         <p>
-          GDSC Waseda held our &quot;Mini Solution Challenge 2023&quot; on 14th July 2023
-          at the Google Japan Office with over 50 participants. This event
-          showcased the different teams that participated in the Solution
+          GDSC Waseda held our &quot;Mini Solution Challenge 2023&quot; on 14th
+          July 2023 at the Google Japan Office with over 50 participants. This
+          event showcased the different teams that participated in the Solution
           Challenge 2023 from GDSC Waseda.
         </p>
         <p>
@@ -132,9 +132,9 @@ const ArticlePage: NextPage = () => {
         <p>
           Team OPLAND (Irfan Satria, Haruka Takahira, Yao Chengxian) fulfilled
           SDG 8 (Decent Work and Economic Growth) by promoting sustained,
-          inclusive, and sustainable economic growth through their app &quot;Opland&quot;
-          which seeks to improve small business productivity through the help of
-          an AI assistant with business thinking.
+          inclusive, and sustainable economic growth through their app
+          &quot;Opland&quot; which seeks to improve small business productivity
+          through the help of an AI assistant with business thinking.
         </p>
 
         {/* Team myBasket */}
@@ -151,8 +151,8 @@ const ArticlePage: NextPage = () => {
       <br />
 
       <div className="article__image-container">
-        <Image 
-          src="/tempImg/events/mini-232.png" 
+        <Image
+          src="/tempImg/events/mini-232.png"
           alt=""
           width={974.58}
           height={526.8}

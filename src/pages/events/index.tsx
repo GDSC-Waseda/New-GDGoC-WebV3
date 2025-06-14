@@ -138,9 +138,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
             <>
               {searchResults.map((eventCard, index) => (
                 <Link href={eventCard.link} key={index}>
-
                   <MediaCard props={eventCard} />
-
                 </Link>
               ))}
             </>

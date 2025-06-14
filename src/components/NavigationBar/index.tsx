@@ -57,22 +57,34 @@ export const NavigationBar = (): JSX.Element => {
           >
             <Nav className="ms-auto gradient-container">
               <Nav.Item className="navItem">
-                <Link href="/about" legacyBehavior>{t("about")}</Link>
+                <Link href="/about" legacyBehavior>
+                  {t("about")}
+                </Link>
               </Nav.Item>
               <Nav.Item className="navItem">
-                <Link href="/teams" legacyBehavior>{t("team")}</Link>
+                <Link href="/teams" legacyBehavior>
+                  {t("team")}
+                </Link>
               </Nav.Item>
               <Nav.Item className="navItem">
-                <Link href="/events" legacyBehavior>{t("event")}</Link>
+                <Link href="/events" legacyBehavior>
+                  {t("event")}
+                </Link>
               </Nav.Item>
               <Nav.Item className="navItem">
-                <Link href="/project" legacyBehavior>{t("project")}</Link>
+                <Link href="/project" legacyBehavior>
+                  {t("project")}
+                </Link>
               </Nav.Item>
               <Nav.Item className="navItem">
                 <LanguageToggle />
               </Nav.Item>
               <Nav.Item className="navItem">
-                <Link href="https://forms.gle/uewfWU2QZjpHmSqc9" target="_blank" legacyBehavior>
+                <Link
+                  href="https://forms.gle/uewfWU2QZjpHmSqc9"
+                  target="_blank"
+                  legacyBehavior
+                >
                   <Button variant="outline-dark" className="butto">
                     <small>{t("more")}</small>
                   </Button>
