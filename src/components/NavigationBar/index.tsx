@@ -79,17 +79,6 @@ export const NavigationBar = (): JSX.Element => {
               <Nav.Item className="navItem">
                 <LanguageToggle />
               </Nav.Item>
-              <Nav.Item className="navItem">
-                <Link
-                  href="https://forms.gle/uewfWU2QZjpHmSqc9"
-                  target="_blank"
-                  legacyBehavior
-                >
-                  <Button variant="outline-dark" className="butto">
-                    <small>{t("more")}</small>
-                  </Button>
-                </Link>
-              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>
