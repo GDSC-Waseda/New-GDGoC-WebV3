@@ -29,7 +29,7 @@ export const NavigationBar = (): JSX.Element => {
       <Navbar expand="sm" className="header__container">
         <Container fluid>
           <Navbar.Brand>
-            <Link href="/" legacyBehavior>
+            <Link href="/">
               <div className="logo">
                 <Image alt="" src={logo} layout="intrinsic" />
               </div>
@@ -39,7 +39,7 @@ export const NavigationBar = (): JSX.Element => {
             <div
               className={`nav-text-title ${isClient ? "start-animation" : ""}`}
             >
-              <Link href="/">GDSC Waseda</Link>
+              <Link href="/">GDGoC <br />Waseda</Link>
             </div>
           </Navbar.Brand>
           <Navbar.Toggle
@@ -55,32 +55,31 @@ export const NavigationBar = (): JSX.Element => {
             id="basic-navbar-nav"
             className={`navbarCollaps ${menuOpen ? "show" : ""}`}
           >
-            <Nav className="ms-auto gradient-container">
+            <Nav className="navBar-navItem">
               <Nav.Item className="navItem">
-                <Link href="/about" legacyBehavior>
-                  {t("about")}
+                <Link href="/about">{t("about")}</Link>
+              </Nav.Item>
+              <Nav.Item className="navItem">
+                <Link href="/teams">{t("team")}</Link>
+              </Nav.Item>
+              <Nav.Item className="navItem">
+                <Link href="/project">{t("project")}</Link>
+              </Nav.Item>
+              <Nav.Item className="navItem">
+                <Link href="/events">{t("event")}</Link>
+              </Nav.Item>
+              {/* <Nav.Item className="navItem">
+                <Link href="https://forms.gle/uewfWU2QZjpHmSqc9" target="_blank">
+                  <Button variant="outline-dark" className="butto">
+                    <small>{t("more")}</small>
+                  </Button>
                 </Link>
-              </Nav.Item>
-              <Nav.Item className="navItem">
-                <Link href="/teams" legacyBehavior>
-                  {t("team")}
-                </Link>
-              </Nav.Item>
-              <Nav.Item className="navItem">
-                <Link href="/events" legacyBehavior>
-                  {t("event")}
-                </Link>
-              </Nav.Item>
-              <Nav.Item className="navItem">
-                <Link href="/project" legacyBehavior>
-                  {t("project")}
-                </Link>
-              </Nav.Item>
-              <Nav.Item className="navItem">
-                <LanguageToggle />
-              </Nav.Item>
+              </Nav.Item> */}
             </Nav>
           </Navbar.Collapse>
+            <Button className="languageToggle">
+                <LanguageToggle />
+              </Button>
         </Container>
       </Navbar>
     </div>

@@ -23,7 +23,7 @@ export const HeaderCard: React.FC<{ props: HeaderCardProps }> = ({ props }) => {
           </p>
         ))}
       {props.button && (
-        <Link href="/events" passHref className="headerCard__button">
+        <Link href="/events" passHref>
           {buttonText}
         </Link>
       )}

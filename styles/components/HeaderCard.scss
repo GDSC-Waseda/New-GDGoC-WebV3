@@ -6,20 +6,9 @@
 .headerCard {
   border: 0px;
   margin: 0 60px;
-  height: 814px;
   border-radius: 0px;
   min-height: 200px;
-  background-color: #f2f2f2;
   justify-content: center;
-
-  @media (min-width: 790px) {
-    height: 700px;
-  }
-
-  @media (max-width: 790px) {
-    background-color: #f2f2f2;
-    margin: 0;
-  }
 
   &__headerTitle {
     text-align: center;
@@ -31,6 +20,8 @@
     font-family: "myFont", sans-serif;
     font-weight: 700;
   }
+
+ 
 
   &__logoRight,
   &__logoLeft {
