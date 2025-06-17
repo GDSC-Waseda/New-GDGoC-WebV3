@@ -5,8 +5,8 @@ export const SectionCard: React.FC<{ props: SectionCardProps }> = ({
 }) => {
   return (
     <div className="sectionCard">
-        <h1 className="sectionCard__title">{props.title}</h1>
-        <p className="sectionCard__contents">{props.content}</p>
+      <h1 className="sectionCard__title">{props.title}</h1>
+      <p className="sectionCard__contents">{props.content}</p>
     </div>
   );
 };
