@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, TeamHeaderCardProps } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import TeamHeaderCard from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
@@ -44,8 +44,7 @@ interface FinanceTeamProps {
 export const FinanceTeam: NextPage<FinanceTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    headTitle: "",
+  const card: SectionCardProps = {
     title: "Finance Team",
     content: "Waseda University's chapter of the Google Developer Student Club",
   };

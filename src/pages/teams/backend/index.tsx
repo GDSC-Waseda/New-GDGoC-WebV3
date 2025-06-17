@@ -5,9 +5,9 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  TeamHeaderCardProps,
+  SectionCardProps,
 } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import TeamHeaderCard from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
@@ -49,15 +49,9 @@ interface BackendTeamProps {
 export const BackendTeam: NextPage<BackendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    headTitle: "",
+  const card: SectionCardProps = {
     title: "Backend Team",
     content: "Waseda University's chapter of the Google Developer Student Club",
-    featureList: [
-      "Benifit of feature",
-      "Benifit of feature",
-      "Benifit of feature",
-    ],
   };
 
   const imageCardProps: ImageCardProps = {
