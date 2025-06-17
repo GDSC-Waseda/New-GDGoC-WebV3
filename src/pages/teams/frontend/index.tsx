@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { TeamCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
-import {SectionCard} from "~/components/Cards/SectionCard";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { client } from "../../../sanity";
 
