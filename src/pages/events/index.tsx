@@ -97,7 +97,6 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
       />
       <HeaderCard
         props={{
-          headTitle: "",
           title: t("events:event_title"),
           content: t("events:event_message"),
         }}

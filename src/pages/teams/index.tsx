@@ -26,7 +26,6 @@ export const TeamsPage: NextPage = () => {
   const { t } = useTranslation();
 
   const card: HeaderCardProps = {
-    headTitle: "",
     title: t("teams:team"),
     content: t("teams:team_mes"),
   };
