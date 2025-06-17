@@ -44,11 +44,8 @@ export interface MembersCardProps {
 }
 
 export interface HeaderCardProps {
-  headTitle?: string;
   title: string;
   content?: string;
-  button?: boolean;
-  buttonText?: string;
 }
 export interface TeamHeaderCardProps {
   headTitle?: string;

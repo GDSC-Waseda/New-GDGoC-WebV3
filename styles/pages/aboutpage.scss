@@ -6,64 +6,6 @@
 .about-page {
   font-family: "myFont", sans-serif;
 
-  .headerCard {
-    border: 0;
-    margin: 0 60px;
-    height: 814px;
-    border-radius: 0;
-    min-height: 200px;
-    background-color: #f2f2f2;
-    justify-content: center;
-
-    @media (min-width: 790px) {
-      height: 700px;
-    }
-
-    &__headerTitle {
-      text-align: center;
-    }
-
-    &__title {
-      text-align: center;
-      font-size: max(4vw, 66px);
-      font-weight: 700;
-    }
-
-    &__container {
-      width: 100%;
-      padding: 10px;
-    }
-
-    &__contents {
-      padding-top: 10px;
-      text-align: center;
-      font-size: max(1.5vw, 15px);
-      color: #404040;
-    }
-
-    &__button {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      background: #000000;
-      width: 197px;
-      height: 59px;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      color: #fff;
-
-      &:hover {
-        color: #fff;
-      }
-    }
-  }
-
   .textCard__section {
     align-items: left;
     text-align: left;
