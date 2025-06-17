@@ -65,11 +65,8 @@ export const AboutPage: NextPage = () => {
   ];
 
   const card: HeaderCardProps = {
-    headTitle: "",
     title: t("about:header"),
-    content: "",
-    button: true,
-    buttonText: t("about:discButt"),
+    content: t("about:mesg"),
   };
 
   const whatWeDo: TextCardProps = {
