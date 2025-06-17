@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { TeamCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
-import TeamHeaderCard from "~/components/Cards/SectionCard";
+import {SectionCard} from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { client } from "../../../sanity";
 
@@ -65,9 +65,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
