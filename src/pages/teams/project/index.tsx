@@ -72,9 +72,8 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <h1 className="team-title">{card.title}</h1>
+      <p className="team-description">{card.content}</p>
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
