@@ -66,7 +66,7 @@ export const AboutPage: NextPage = () => {
 
   const card: HeaderCardProps = {
     title: t("about:header"),
-    content: t("about:mesg"),
+    content: t("about:headermesg"),
   };
 
   const whatWeDo: TextCardProps = {
