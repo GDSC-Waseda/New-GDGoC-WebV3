@@ -47,11 +47,9 @@ export interface HeaderCardProps {
   title: string;
   content?: string;
 }
-export interface TeamHeaderCardProps {
-  headTitle?: string;
-  title?: string;
+export interface SectionCardProps {
+  title: string;
   content?: string;
-  featureList?: string[];
 }
 
 export interface ImageCardProps {
