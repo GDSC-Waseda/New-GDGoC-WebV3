@@ -5,13 +5,12 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  SectionCardProps,
+  TeamHeaderCardProps,
 } from "~/types";
-import { SectionCard } from "~/components/Cards/SectionCard";
+import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "project"]{
@@ -50,9 +49,9 @@ interface FrontendTeamProps {
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: SectionCardProps = {
-    title: sections["Project"].title,
-    content: sections["Project"].content,
+  const card: TeamHeaderCardProps = {
+    title: "Project Team",
+    content: "Waseda University's chapter of the Google Developer Student Club",
   };
 
   const imageCardProps: ImageCardProps = {
@@ -72,7 +71,9 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
+      <div className="header-padding">
+        <TeamHeaderCard props={card} />
+      </div>
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
