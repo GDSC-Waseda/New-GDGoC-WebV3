@@ -5,13 +5,12 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  SectionCardProps,
+  TeamHeaderCardProps,
 } from "~/types";
-import { SectionCard } from "~/components/Cards/SectionCard";
+import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "agile"]{
@@ -48,9 +47,11 @@ interface AgileTeamProps {
 }
 
 export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
-  const card: SectionCardProps = {
-    title: sections["Agile"].title,
-    content: sections["Agile"].content,
+  const card: TeamHeaderCardProps = {
+    headTitle: "",
+    title: "Agile Team",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   };
 
   const imageCardProps: ImageCardProps = {
@@ -70,7 +71,9 @@ export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
+      <div className="header-padding">
+        <TeamHeaderCard props={card} />
+      </div>
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
