@@ -7,7 +7,7 @@ import {
   TeamCardProps,
   SectionCardProps,
 } from "~/types";
-import SectionCard from "~/components/Cards/SectionCard";
+import {SectionCard} from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
