@@ -11,6 +11,7 @@ import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "frontend"]{
@@ -50,8 +51,8 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: "Frontend Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
+    title: sections["Operations"].title,
+    content: sections["Operations"].content,
   };
 
   const imageCardProps: ImageCardProps = {

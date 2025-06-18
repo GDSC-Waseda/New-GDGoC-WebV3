@@ -5,6 +5,7 @@ import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "frontend"]{
@@ -44,8 +45,8 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: "Frontend Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
+    title: sections["Frontend"].title,
+    content: sections["Frontend"].content,
   };
 
   const imageCardProps: ImageCardProps = {
