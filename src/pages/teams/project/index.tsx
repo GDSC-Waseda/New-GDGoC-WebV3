@@ -12,6 +12,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "project"]{
@@ -56,10 +57,9 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Priya Mukkundi",
-    content:
-      "Hi! I’m Priya, a third year student majoring in Economics at Waseda University. Project Team’s main goals are to foster innovation, efficiently deliver projects, and bridge technical and non-technical teams through effective communication and collaboration. No matter your tech background, we're thrilled to collaborate with you on your unique ideas and bring practical projects to life.😄",
-    image: "/tempImg/leads/project_lead.jpg",
+    title: leaders["Project"].title,
+    content: leaders["Project"].content,
+    image: leaders["Project"].image,
     imagePosition: "left",
   };
 

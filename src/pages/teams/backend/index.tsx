@@ -12,6 +12,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "backend"]{
@@ -56,10 +57,9 @@ export const BackendTeam: NextPage<BackendTeamProps> = ({
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Gunjan Srivastava",
-    content:
-      "Hello everyone! I’m Gunjan, a third year student at Waseda University studying Computer Science and Communications Engineering. In my team, I hope to drive development through implementation of creative solutions (and a little bit of ChatGPT). Together, let's push boundaries and unlock new possibilities, one step at a time!",
-    image: "/tempImg/leads/backend_lead.jpg",
+    title: leaders["Backend"].title,
+    content: leaders["Backend"].content,
+    image: leaders["Backend"].image,
     imagePosition: "left",
   };
 

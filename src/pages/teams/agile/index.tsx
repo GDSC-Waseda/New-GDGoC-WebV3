@@ -12,6 +12,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "agile"]{
@@ -54,10 +55,9 @@ export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Lahiru Udawatta",
-    content:
-      "Hoi everyone 🙌, my name's Lahiru, and I'm honored to be the lead of the Agile team for GDSC Waseda. Our dynamic team uses the Agile methodology, infusing industry-oriented practices into our web development projects. The sleek website you're currently browsing is brought to you by my team ;). Excited to see what we can build this year with all of you!",
-    image: "/tempImg/leads/agile_lead.jpg",
+    title: leaders["Agile"].title,
+    content: leaders["Agile"].content,
+    image: leaders["Agile"].image,
     imagePosition: "left",
   };
 

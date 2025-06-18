@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "Finance"]{
@@ -51,10 +52,9 @@ export const FinanceTeam: NextPage<FinanceTeamProps> = ({
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Hyonjoon PARK",
-    content:
-      "Hey there! 😊 I'm Hyonjoon, a junior at Waseda University's School of International Liberal Studies (SILS). I'm thrilled to serve as the team lead for GDSC Waseda's Finance Team this year. Our team plays a vital role in managing and optimizing project finances, ensuring the success of our tech initiatives. I'm looking forward to a fantastic year ahead and can't wait to collaborate with you and our GDSC community to achieve great things together!",
-    image: "/tempImg/leads/finance_lead.jpg",
+    title: leaders["Finance"].title,
+    content: leaders["Finance"].content,
+    image: leaders["Finance"].image,
     imagePosition: "left",
   };
 

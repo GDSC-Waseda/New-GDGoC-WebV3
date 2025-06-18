@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "marketing"]{
@@ -51,10 +52,9 @@ export const MarketingTeam: NextPage<MarketingTeamProps> = ({
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Seongjoon Park ",
-    content:
-      "Hi everyone! 😊 I’m Seongjoon, a junior year student at Waseda University's School of International Liberal Studies (SILS). Our Marketing Team at GDSC Waseda is all about promoting and spreading the word about the exciting tech events, workshops, and opportunities we have in store. From creating engaging content to utilizing social media and other marketing channels, we're dedicated to enhancing the GDSC Waseda brand and ensuring that students don't miss out on all the innovation and learning opportunities we offer.",
-    image: "/tempImg/leads/marketing_lead.jpg",
+    title: leaders["Marketing"].title,
+    content: leaders["Marketing"].content,
+    image: leaders["Marketing"].image,
     imagePosition: "left",
   };
 

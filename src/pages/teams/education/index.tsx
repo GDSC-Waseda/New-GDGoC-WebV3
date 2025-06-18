@@ -12,6 +12,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "education"]{
@@ -56,10 +57,9 @@ export const EducationTeam: NextPage<EducationTeamProps> = ({
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Beatrix Sylvani",
-    content:
-      "Hi! My name is Beatrix, but you can call me Bea(🐝)! I am one of the co-leaders for the Education team for GDSC Waseda. Our team is focused on hosting coding classes with the public and building a wide range of connections. For this semester, we are planning to host Figma and Powerpoint 101 classes. Our team is welcoming for anyone who wants to learn and test the waters for different kind of programming classes :>",
-    image: "/tempImg/leads/education_lead1.jpg",
+    title: leaders["Education"].title,
+    content: leaders["Education"].content,
+    image: leaders["Education"].image,
     imagePosition: "left",
   };
 

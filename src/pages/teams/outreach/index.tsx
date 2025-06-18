@@ -12,6 +12,7 @@ import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
 import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "frontend"]{
@@ -56,10 +57,9 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Harshita Chivukula",
-    content:
-      "Hello there! 👋 My name is Haruki,  a second year student at Waseda University majoring in Computer Science and Communications Engineering. In this team, we craft user-centric interfaces and use code to develop lively websites and applications. I’m thrilled to craft projects in collaborations with other teams, expand my knowledge, and innovate remarkable experiences with all of you!",
-    image: "/tempImg/leads/outreach_lead.jpg",
+    title: leaders["Outreach"].title,
+    content: leaders["Outreach"].content,
+    image: leaders["Outreach"].image,
     imagePosition: "left",
   };
 
