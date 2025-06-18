@@ -50,14 +50,8 @@ export const BackendTeam: NextPage<BackendTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: TeamHeaderCardProps = {
-    headTitle: "",
     title: "Backend Team",
     content: "Waseda University's chapter of the Google Developer Student Club",
-    featureList: [
-      "Benifit of feature",
-      "Benifit of feature",
-      "Benifit of feature",
-    ],
   };
 
   const imageCardProps: ImageCardProps = {

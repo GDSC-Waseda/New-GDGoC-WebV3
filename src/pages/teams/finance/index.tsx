@@ -45,7 +45,6 @@ export const FinanceTeam: NextPage<FinanceTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: TeamHeaderCardProps = {
-    headTitle: "",
     title: "Finance Team",
     content: "Waseda University's chapter of the Google Developer Student Club",
   };
