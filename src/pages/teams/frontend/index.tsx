@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import { TeamCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, TeamHeaderCardProps } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "frontend"]{
@@ -43,16 +45,15 @@ interface FrontendTeamProps {
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    title: "Frontend Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
+  const card: SectionCardProps = {
+    title: sections["Frontend"].title,
+    content: sections["Frontend"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Haruki Oyama",
-    content:
-      "Hello there! 👋 My name is Haruki,  a second year student at Waseda University majoring in Computer Science and Communications Engineering. In this team, we craft user-centric interfaces and use code to develop lively websites and applications. I’m thrilled to craft projects in collaborations with other teams, expand my knowledge, and innovate remarkable experiences with all of you!",
-    image: "/tempImg/leads/frontend_lead.jpg",
+    title: leaders["Frontend"].title,
+    content: leaders["Frontend"].content,
+    image: leaders["Frontend"].image,
     imagePosition: "left",
   };
 
@@ -65,9 +66,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">

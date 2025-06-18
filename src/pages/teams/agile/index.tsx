@@ -5,12 +5,14 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  TeamHeaderCardProps,
+  SectionCardProps,
 } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "agile"]{
@@ -47,17 +49,15 @@ interface AgileTeamProps {
 }
 
 export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
-  const card: TeamHeaderCardProps = {
-    title: "Agile Team",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  const card: SectionCardProps = {
+    title: sections["Agile"].title,
+    content: sections["Agile"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Lahiru Udawatta",
-    content:
-      "Hoi everyone 🙌, my name's Lahiru, and I'm honored to be the lead of the Agile team for GDSC Waseda. Our dynamic team uses the Agile methodology, infusing industry-oriented practices into our web development projects. The sleek website you're currently browsing is brought to you by my team ;). Excited to see what we can build this year with all of you!",
-    image: "/tempImg/leads/agile_lead.jpg",
+    title: leaders["Agile"].title,
+    content: leaders["Agile"].content,
+    image: leaders["Agile"].image,
     imagePosition: "left",
   };
 
@@ -70,9 +70,7 @@ export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
