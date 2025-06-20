@@ -5,12 +5,14 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  TeamHeaderCardProps,
+  SectionCardProps,
 } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "project"]{
@@ -49,17 +51,15 @@ interface FrontendTeamProps {
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    headTitle: "",
-    title: "Project Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
+  const card: SectionCardProps = {
+    title: sections["Project"].title,
+    content: sections["Project"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Priya Mukkundi",
-    content:
-      "Hi! I’m Priya, a third year student majoring in Economics at Waseda University. Project Team’s main goals are to foster innovation, efficiently deliver projects, and bridge technical and non-technical teams through effective communication and collaboration. No matter your tech background, we're thrilled to collaborate with you on your unique ideas and bring practical projects to life.😄",
-    image: "/tempImg/leads/project_lead.jpg",
+    title: leaders["Project"].title,
+    content: leaders["Project"].content,
+    image: leaders["Project"].image,
     imagePosition: "left",
   };
 
@@ -72,9 +72,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">

@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
 import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, TeamHeaderCardProps } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "Finance"]{
@@ -44,17 +46,15 @@ interface FinanceTeamProps {
 export const FinanceTeam: NextPage<FinanceTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    headTitle: "",
-    title: "Finance Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
+  const card: SectionCardProps = {
+    title: sections["Finance"].title,
+    content: sections["Finance"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Hyonjoon PARK",
-    content:
-      "Hey there! 😊 I'm Hyonjoon, a junior at Waseda University's School of International Liberal Studies (SILS). I'm thrilled to serve as the team lead for GDSC Waseda's Finance Team this year. Our team plays a vital role in managing and optimizing project finances, ensuring the success of our tech initiatives. I'm looking forward to a fantastic year ahead and can't wait to collaborate with you and our GDSC community to achieve great things together!",
-    image: "/tempImg/leads/finance_lead.jpg",
+    title: leaders["Finance"].title,
+    content: leaders["Finance"].content,
+    image: leaders["Finance"].image,
     imagePosition: "left",
   };
 
@@ -67,9 +67,7 @@ export const FinanceTeam: NextPage<FinanceTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       {/* <h1 className="members-title">Meet Our Team</h1> */}
       <div className="team-cards-container">

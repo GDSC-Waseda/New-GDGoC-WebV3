@@ -5,12 +5,15 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  TeamHeaderCardProps,
+  SectionCardProps,
 } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
+import { LeaderboardSharp } from "@mui/icons-material";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "frontend"]{
@@ -49,18 +52,15 @@ interface FrontendTeamProps {
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    headTitle: "",
-    title: "Frontend Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
+  const card: SectionCardProps = {
+    title: sections["Operations"].title,
+    content: sections["Operations"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Frontend Team - Haruki Oyama",
-    content:
-      "Hello there! 👋 My name is Haruki,  a second year student at Waseda University majoring in Computer Science and Communications Engineering. In this team, we craft user-centric interfaces and use code to develop lively websites and applications. I’m thrilled to craft projects in collaborations with other teams, expand my knowledge, and innovate remarkable experiences with all of you!",
-    image:
-      "https://res.cloudinary.com/df3ab0lxf/image/upload/v1705310639/frontend_lead_2900445902.jpg",
+    title: leaders["Operations"].title,
+    content: leaders["Operations"].content,
+    image: leaders["Operations"].image,
     imagePosition: "left",
   };
 
@@ -73,9 +73,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">

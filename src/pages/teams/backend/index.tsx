@@ -5,12 +5,14 @@ import {
   HeaderCardProps,
   ImageCardProps,
   TeamCardProps,
-  TeamHeaderCardProps,
+  SectionCardProps,
 } from "~/types";
-import TeamHeaderCard from "~/components/Cards/TeamHeaderCard";
+import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
+import sections from "../team/sections.json";
+import leaders from "../team/leaders.json";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "backend"]{
@@ -49,22 +51,15 @@ interface BackendTeamProps {
 export const BackendTeam: NextPage<BackendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: TeamHeaderCardProps = {
-    headTitle: "",
-    title: "Backend Team",
-    content: "Waseda University's chapter of the Google Developer Student Club",
-    featureList: [
-      "Benifit of feature",
-      "Benifit of feature",
-      "Benifit of feature",
-    ],
+  const card: SectionCardProps = {
+    title: sections["Backend"].title,
+    content: sections["Backend"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: "Gunjan Srivastava",
-    content:
-      "Hello everyone! I’m Gunjan, a third year student at Waseda University studying Computer Science and Communications Engineering. In my team, I hope to drive development through implementation of creative solutions (and a little bit of ChatGPT). Together, let's push boundaries and unlock new possibilities, one step at a time!",
-    image: "/tempImg/leads/backend_lead.jpg",
+    title: leaders["Backend"].title,
+    content: leaders["Backend"].content,
+    image: leaders["Backend"].image,
     imagePosition: "left",
   };
 
@@ -77,9 +72,7 @@ export const BackendTeam: NextPage<BackendTeamProps> = ({
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <div className="header-padding">
-        <TeamHeaderCard props={card} />
-      </div>
+      <SectionCard props={card} />
       <ImageCard props={imageCardProps} />
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">

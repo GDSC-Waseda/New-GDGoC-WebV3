@@ -44,17 +44,12 @@ export interface MembersCardProps {
 }
 
 export interface HeaderCardProps {
-  headTitle?: string;
   title: string;
   content?: string;
-  button?: boolean;
-  buttonText?: string;
 }
-export interface TeamHeaderCardProps {
-  headTitle?: string;
-  title?: string;
+export interface SectionCardProps {
+  title: string;
   content?: string;
-  featureList?: string[];
 }
 
 export interface ImageCardProps {

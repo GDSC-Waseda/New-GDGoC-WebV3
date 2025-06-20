@@ -1,11 +1,6 @@
-import { Col, Row, Card } from "react-bootstrap";
-import Link from "next/link";
-
 import { HeaderCardProps } from "~/types/index";
 
 export const HeaderCard: React.FC<{ props: HeaderCardProps }> = ({ props }) => {
-  const buttonText = props.buttonText || "Discover";
-
   return (
     <Card className="headerCard">
       {props.headTitle && (
