@@ -1,9 +1,15 @@
 .footer {
   width: 100%;
-  padding: 10px 15px 20px 15px;
+  margin-top: 10vh;
+  padding: 10px 15px 0px 15px;
   text-align: center;
 
   &__logoContainer {
+    text-align: center;
+    padding: 10px;
+  }
+
+  &__pathContainer {
     text-align: center;
     padding: 10px;
   }
@@ -16,9 +22,5 @@
 
   &__reserved {
     text-align: center;
-
-    @media (max-width: 790px) {
-      font-size: 0.8em;
-    }
   }
 }

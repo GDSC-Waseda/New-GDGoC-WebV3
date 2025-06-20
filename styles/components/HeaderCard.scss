@@ -5,9 +5,14 @@
 
 .headerCard {
   border: 0px;
-  margin: 20px 60px;
+  margin: 0 60px;
+  border-radius: 0px;
+  min-height: 200px;
   justify-content: center;
 
+  &__headerTitle {
+    text-align: center;
+  }
   &__title {
     text-align: center;
     font-size: max(4vw, 66px);
@@ -15,6 +20,14 @@
     font-weight: 700;
   }
 
+ 
+
+  &__logoRight,
+  &__logoLeft {
+    width: 100%;
+    min-width: 20px;
+    max-width: 60px;
+  }
   &__contents {
     padding-top: 10px;
     text-align: center;
