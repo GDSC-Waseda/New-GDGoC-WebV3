@@ -1,37 +1,37 @@
 {
-  "Project": {
+  "project": {
     "title": "Project Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Backend": {
+  "backend": {
     "title": "Backend Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Frontend": {
+  "frontend": {
     "title": "Frontend Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Education": {
+  "education": {
     "title": "Education Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Agile": {
+  "agile": {
     "title": "Agile Team",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
-  "Outreach": {
+  "outreach": {
     "title": "Outreach Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Marketing": {
+  "marketing": {
     "title": "Marketing Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Finance": {
+  "finance": {
     "title": "Finance Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   },
-  "Operations": {
+  "operations": {
     "title": "Operations Team",
     "content": "Waseda University's chapter of the Google Developer Student Club"
   }

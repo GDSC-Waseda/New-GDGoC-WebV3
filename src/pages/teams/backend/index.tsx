@@ -1,21 +1,25 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { HeaderCard, MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import {
   HeaderCardProps,
   ImageCardProps,
-  TeamCardProps,
+  MemberCardProps,
   SectionCardProps,
 } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
-import leaders from "../team/leaders.json";
+import rawSections from "../team/sections.json";
+import rawLeaders from "../team/leaders.json";
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leaders: { [key: string]: ImageCardProps } = rawLeaders;
+
+const team = "backend";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "member" && team == "backend"]{
+  const query = `*[_type == "member" && team == ${team}]{
     name,
     program,
     school,
@@ -25,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -45,39 +49,29 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface BackendTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const BackendTeam: NextPage<BackendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: SectionCardProps = {
-    title: sections["Backend"].title,
-    content: sections["Backend"].content,
-  };
-
-  const imageCardProps: ImageCardProps = {
-    title: leaders["Backend"].title,
-    content: leaders["Backend"].content,
-    image: leaders["Backend"].image,
-    imagePosition: "left",
-  };
-
+  const section: SectionCardProps = sections[team];
+  const leader = leaders[team];
   return (
     <div className="team-page">
       <CommonMeta
-        pageTitle={card.title}
-        pageDescription={card.content}
+        pageTitle={section.title}
+        pageDescription={section.content}
         pagePath="team"
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
-      <ImageCard props={imageCardProps} />
-      <h1 className="members-title">Meet Our Team</h1>
+      <SectionCard props={section} />
+      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <h1 className="members-title">Meet Our {team} Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

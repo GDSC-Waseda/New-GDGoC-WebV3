@@ -1,12 +1,16 @@
 import type { NextPage } from "next";
-import { TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
-import leaders from "../team/leaders.json";
+import rawSections from "../team/sections.json";
+import rawLeaders from "../team/leaders.json";
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leaders: { [key: string]: ImageCardProps } = rawLeaders;
+
+const team = "frontend";
 
 export const getStaticProps: GetStaticProps = async () => {
   const query = `*[_type == "member" && team == "frontend"]{
@@ -19,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -39,39 +43,29 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface FrontendTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: SectionCardProps = {
-    title: sections["Frontend"].title,
-    content: sections["Frontend"].content,
-  };
-
-  const imageCardProps: ImageCardProps = {
-    title: leaders["Frontend"].title,
-    content: leaders["Frontend"].content,
-    image: leaders["Frontend"].image,
-    imagePosition: "left",
-  };
-
+  const section: SectionCardProps = sections[team];
+  const leader = leaders[team];
   return (
     <div className="team-page">
       <CommonMeta
-        pageTitle={card.title}
-        pageDescription={card.content}
+        pageTitle={section.title}
+        pageDescription={section.content}
         pagePath="team"
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
-      <ImageCard props={imageCardProps} />
-      <h1 className="members-title">Meet Our Team</h1>
+      <SectionCard props={section} />
+      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <h1 className="members-title">Meet Our {team} Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

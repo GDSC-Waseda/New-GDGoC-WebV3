@@ -1,16 +1,20 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
-import leaders from "../team/leaders.json";
+import rawSections from "../team/sections.json";
+import rawLeaders from "../team/leaders.json";
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leaders: { [key: string]: ImageCardProps } = rawLeaders;
+
+const team = "marketing";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "member" && team == "marketing"]{
+  const query = `*[_type == "member" && team == ${team}]{
     name,
     program,
     school,
@@ -20,7 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -40,39 +44,29 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface MarketingTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const MarketingTeam: NextPage<MarketingTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: SectionCardProps = {
-    title: sections["Marketing"].title,
-    content: sections["Marketing"].content,
-  };
-
-  const imageCardProps: ImageCardProps = {
-    title: leaders["Marketing"].title,
-    content: leaders["Marketing"].content,
-    image: leaders["Marketing"].image,
-    imagePosition: "left",
-  };
-
+  const section: SectionCardProps = sections[team];
+  const leader = leaders[team];
   return (
     <div className="team-page">
       <CommonMeta
-        pageTitle={card.title}
-        pageDescription={card.content}
+        pageTitle={section.title}
+        pageDescription={section.content}
         pagePath="team"
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
-      <ImageCard props={imageCardProps} />
-      <h1 className="members-title">Meet Our Team</h1>
+      <SectionCard props={section} />
+      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <h1 className="members-title">Meet Our {team} Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>
