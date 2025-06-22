@@ -6,12 +6,15 @@ import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
-import { LeaderboardSharp } from "@mui/icons-material";
-import leaders from "../team/leaders.json";
+import rawSections from "../team/sections.json";
+import rawLeaders from "../team/leaders.json";
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leaders: { [key: string]: ImageCardProps } = rawLeaders;
+
+const team = "operations";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "member" && team == "frontend"]{
+  const query = `*[_type == "member" && team == ${team}]{
     name,
     program,
     school,
@@ -47,30 +50,20 @@ interface FrontendTeamProps {
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: SectionCardProps = {
-    title: sections["operations"].title,
-    content: sections["operations"].content,
-  };
-
-  const imageCardProps: ImageCardProps = {
-    title: leaders["operations"].title,
-    content: leaders["operations"].content,
-    image: leaders["operations"].image,
-    imagePosition: "left",
-  };
-
+  const section: SectionCardProps = sections[team];
+  const leader = leaders[team];
   return (
     <div className="team-page">
       <CommonMeta
-        pageTitle={card.title}
-        pageDescription={card.content}
+        pageTitle={section.title}
+        pageDescription={section.content}
         pagePath="team"
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
-      <ImageCard props={imageCardProps} />
-      <h1 className="members-title">Meet Our Team</h1>
+      <SectionCard props={section} />
+      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <h1 className="members-title">Meet Our {team} Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
           <MemberCard key={index} props={teamCard} />

@@ -6,11 +6,15 @@ import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
 import { client } from "../../../sanity";
-import sections from "../team/sections.json";
-import leaders from "../team/leaders.json";
+import rawSections from "../team/sections.json";
+import rawLeaders from "../team/leaders.json";
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leaders: { [key: string]: ImageCardProps } = rawLeaders;
+
+const team = "marketing";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "member" && team == "marketing"]{
+  const query = `*[_type == "member" && team == ${team}]{
     name,
     program,
     school,
@@ -46,30 +50,20 @@ interface MarketingTeamProps {
 export const MarketingTeam: NextPage<MarketingTeamProps> = ({
   dynamicTeamCards,
 }) => {
-  const card: SectionCardProps = {
-    title: sections["marketing"].title,
-    content: sections["marketing"].content,
-  };
-
-  const imageCardProps: ImageCardProps = {
-    title: leaders["marketing"].title,
-    content: leaders["marketing"].content,
-    image: leaders["marketing"].image,
-    imagePosition: "left",
-  };
-
+  const section: SectionCardProps = sections[team];
+  const leader = leaders[team];
   return (
     <div className="team-page">
       <CommonMeta
-        pageTitle={card.title}
-        pageDescription={card.content}
+        pageTitle={section.title}
+        pageDescription={section.content}
         pagePath="team"
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <SectionCard props={card} />
-      <ImageCard props={imageCardProps} />
-      <h1 className="members-title">Meet Our Team</h1>
+      <SectionCard props={section} />
+      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <h1 className="members-title">Meet Our {team} Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
           <MemberCard key={index} props={teamCard} />

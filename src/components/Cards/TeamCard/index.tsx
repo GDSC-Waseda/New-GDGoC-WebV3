@@ -19,7 +19,6 @@ interface TeamCardProps {
 
 export const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
   const [dynamicTeamCards, setDynamicTeamCards] = useState<MemberCardProps[]>([]);
-console.log("チームだよ: ", team)
   useEffect(() => {
     const fetchMembers = async () => {
       const query = `*[_type == "member" && team == "${team}"]{
