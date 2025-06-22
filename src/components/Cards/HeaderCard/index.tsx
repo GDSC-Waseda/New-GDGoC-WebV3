@@ -19,11 +19,6 @@ export const HeaderCard: React.FC<{ props: HeaderCardProps }> = ({ props }) => {
             {text}
           </p>
         ))}
-      {props.button && (
-        <Link href="/events" passHref>
-          {buttonText}
-        </Link>
-      )}
     </Card>
   );
 };
