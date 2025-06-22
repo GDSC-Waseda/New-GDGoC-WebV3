@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { HeaderCard, MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import {
   HeaderCardProps,
   ImageCardProps,
-  TeamCardProps,
+  MemberCardProps,
   SectionCardProps,
 } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -45,19 +45,19 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface AgileTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
   const card: SectionCardProps = {
-    title: sections["Agile"].title,
-    content: sections["Agile"].content,
+    title: sections["agile"].title,
+    content: sections["agile"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Agile"].title,
-    content: leaders["Agile"].content,
-    image: leaders["Agile"].image,
+    title: leaders["agile"].title,
+    content: leaders["agile"].content,
+    image: leaders["agile"].image,
     imagePosition: "left",
   };
 
@@ -75,7 +75,7 @@ export const AgileTeam: NextPage<AgileTeamProps> = ({ dynamicTeamCards }) => {
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

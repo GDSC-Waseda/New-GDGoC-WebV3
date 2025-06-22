@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -40,21 +40,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface MarketingTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const MarketingTeam: NextPage<MarketingTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: sections["Marketing"].title,
-    content: sections["Marketing"].content,
+    title: sections["marketing"].title,
+    content: sections["marketing"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Marketing"].title,
-    content: leaders["Marketing"].content,
-    image: leaders["Marketing"].image,
+    title: leaders["marketing"].title,
+    content: leaders["marketing"].content,
+    image: leaders["marketing"].image,
     imagePosition: "left",
   };
 
@@ -72,7 +72,7 @@ export const MarketingTeam: NextPage<MarketingTeamProps> = ({
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

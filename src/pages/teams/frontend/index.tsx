@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { client } from "../../../sanity";
@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -39,21 +39,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface FrontendTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: sections["Frontend"].title,
-    content: sections["Frontend"].content,
+    title: sections["frontend"].title,
+    content: sections["frontend"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Frontend"].title,
-    content: leaders["Frontend"].content,
-    image: leaders["Frontend"].image,
+    title: leaders["frontend"].title,
+    content: leaders["frontend"].content,
+    image: leaders["frontend"].image,
     imagePosition: "left",
   };
 
@@ -71,7 +71,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

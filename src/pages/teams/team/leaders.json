@@ -1,45 +1,45 @@
 {
-  "Project": {
+  "project": {
     "title": "Priya Mukkundi",
     "content": "Hi! I’m Priya, a third year student majoring in Economics at Waseda University. Project Team’s main goals are to foster innovation, efficiently deliver projects, and bridge technical and non-technical teams through effective communication and collaboration. No matter your tech background, we're thrilled to collaborate with you on your unique ideas and bring practical projects to life.😄",
     "image": "/tempImg/leads/project_lead.jpg"
   },
-  "Backend": {
+  "backend": {
     "title": "Gunjan Srivastava",
     "content": "Hello everyone! I’m Gunjan, a third year student at Waseda University studying Computer Science and Communications Engineering. In my team, I hope to drive development through implementation of creative solutions (and a little bit of ChatGPT). Together, let's push boundaries and unlock new possibilities, one step at a time!",
     "image": "/tempImg/leads/backend_lead.jpg"
   },
-  "Frontend": {
+  "frontend": {
     "title": "Haruki Oyama",
     "content": "Hello there! 👋 My name is Haruki,  a second year student at Waseda University majoring in Computer Science and Communications Engineering. In this team, we craft user-centric interfaces and use code to develop lively websites and applications. I’m thrilled to craft projects in collaborations with other teams, expand my knowledge, and innovate remarkable experiences with all of you!",
     "image": "/tempImg/leads/frontend_lead.jpg"
   },
-  "Education": {
+  "education": {
     "title": "Beatrix Sylvani",
     "content": "Hi! My name is Beatrix, but you can call me Bea(🐝)! I am one of the co-leaders for the Education team for GDSC Waseda. Our team is focused on hosting coding classes with the public and building a wide range of connections. For this semester, we are planning to host Figma and Powerpoint 101 classes. Our team is welcoming for anyone who wants to learn and test the waters for different kind of programming classes :>",
     "image": "/tempImg/leads/education_lead1.jpg"
   },
-  "Agile": {
+  "agile": {
     "title": "Lahiru Udawatta",
     "content": "Hoi everyone 🙌, my name's Lahiru, and I'm honored to be the lead of the Agile team for GDSC Waseda. Our dynamic team uses the Agile methodology, infusing industry-oriented practices into our web development projects. The sleek website you're currently browsing is brought to you by my team ;). Excited to see what we can build this year with all of you!",
     "image": "/tempImg/leads/agile_lead.jpg"
   },
-  "Outreach": {
+  "outreach": {
     "title": "Harshita Chivukula",
     "content": "Hello there! 👋 My name is Haruki,  a second year student at Waseda University majoring in Computer Science and Communications Engineering. In this team, we craft user-centric interfaces and use code to develop lively websites and applications. I’m thrilled to craft projects in collaborations with other teams, expand my knowledge, and innovate remarkable experiences with all of you!",
     "image": "/tempImg/leads/outreach_lead.jpg"
   },
-  "Marketing": {
+  "marketing": {
     "title": "Seongjoon Park",
     "content": "Hi everyone! 😊 I’m Seongjoon, a junior year student at Waseda University's School of International Liberal Studies (SILS). Our Marketing Team at GDSC Waseda is all about promoting and spreading the word about the exciting tech events, workshops, and opportunities we have in store. From creating engaging content to utilizing social media and other marketing channels, we're dedicated to enhancing the GDSC Waseda brand and ensuring that students don't miss out on all the innovation and learning opportunities we offer.",
     "image": "/tempImg/leads/marketing_lead.jpg"
   },
-  "Finance": {
+  "finance": {
     "title": "Hyonjoon PARK",
     "content": "Hey there! 😊 I'm Hyonjoon, a junior at Waseda University's School of International Liberal Studies (SILS). I'm thrilled to serve as the team lead for GDSC Waseda's Finance Team this year. Our team plays a vital role in managing and optimizing project finances, ensuring the success of our tech initiatives. I'm looking forward to a fantastic year ahead and can't wait to collaborate with you and our GDSC community to achieve great things together!",
     "image": "/tempImg/leads/finance_lead.jpg"
   },
-  "Operations": {
+  "operations": {
     "title": "",
     "content": "",
     "image": ""

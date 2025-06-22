@@ -1,12 +1,7 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import {
-  HeaderCardProps,
-  ImageCardProps,
-  TeamCardProps,
-  SectionCardProps,
-} from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
@@ -26,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -46,21 +41,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface FrontendTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: sections["Operations"].title,
-    content: sections["Operations"].content,
+    title: sections["operations"].title,
+    content: sections["operations"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Operations"].title,
-    content: leaders["Operations"].content,
-    image: leaders["Operations"].image,
+    title: leaders["operations"].title,
+    content: leaders["operations"].content,
+    image: leaders["operations"].image,
     imagePosition: "left",
   };
 
@@ -78,7 +73,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

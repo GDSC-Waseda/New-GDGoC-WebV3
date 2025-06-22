@@ -1,12 +1,7 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import {
-  HeaderCardProps,
-  ImageCardProps,
-  TeamCardProps,
-  SectionCardProps,
-} from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
@@ -25,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -45,21 +40,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface FrontendTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const FrontendTeam: NextPage<FrontendTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: sections["Outreach"].title,
-    content: sections["Outreach"].content,
+    title: sections["outreach"].title,
+    content: sections["outreach"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Outreach"].title,
-    content: leaders["Outreach"].content,
-    image: leaders["Outreach"].image,
+    title: leaders["outreach"].title,
+    content: leaders["outreach"].content,
+    image: leaders["outreach"].image,
     imagePosition: "left",
   };
 
@@ -77,7 +72,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
       <h1 className="members-title">Meet Our Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

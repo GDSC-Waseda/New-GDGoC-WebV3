@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { HeaderCard, MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import {
   HeaderCardProps,
   ImageCardProps,
-  TeamCardProps,
+  MemberCardProps,
   SectionCardProps,
 } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -45,21 +45,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface EducationTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const EducationTeam: NextPage<EducationTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: sections["Education"].title,
-    content: sections["Education"].content,
+    title: sections["education"].title,
+    content: sections["education"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Education"].title,
-    content: leaders["Education"].content,
-    image: leaders["Education"].image,
+    title: leaders["education"].title,
+    content: leaders["education"].content,
+    image: leaders["education"].image,
     imagePosition: "left",
   };
 
@@ -77,7 +77,7 @@ export const EducationTeam: NextPage<EducationTeamProps> = ({
       {/* <h1 className="members-title">Meet Our Team</h1> */}
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>

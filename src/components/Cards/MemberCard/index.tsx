@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { TeamCardProps } from "~/types/index";
+import { MemberCardProps } from "~/types/index";
 
-export const TeamCard: React.FC<{
+export const MemberCard: React.FC<{
   children?: React.ReactNode;
-  props: TeamCardProps;
+  props: MemberCardProps;
 }> = ({ children, props }) => {
   return (
     <div className="team-card">
@@ -39,4 +39,4 @@ export const TeamCard: React.FC<{
   );
 };
 
-export default TeamCard;
+export default MemberCard;

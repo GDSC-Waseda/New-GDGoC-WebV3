@@ -58,10 +58,10 @@ export interface ImageCardProps {
   title: string;
   content?: string;
   image: string;
-  imagePosition: "left" | "right";
+  imagePosition?: "left" | "right";
 }
 
-export interface TeamCardProps {
+export interface MemberCardProps {
   image: string;
   title: string;
   major?: string;

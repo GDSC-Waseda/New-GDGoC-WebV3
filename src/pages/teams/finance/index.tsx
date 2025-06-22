@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { HeaderCard, TeamCard, ImageCard } from "components/Cards/index";
+import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { ImageCardProps, TeamCardProps, SectionCardProps } from "~/types";
+import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
 import { GetStaticProps } from "next";
 import { MemberType, memberAtributes } from "../../../types";
@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const members = await client.fetch(query);
 
-  const dynamicTeamCards: TeamCardProps[] = members.map(
+  const dynamicTeamCards: MemberCardProps[] = members.map(
     (member: {
       name: any;
       imageUrl: any;
@@ -40,21 +40,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface FinanceTeamProps {
-  dynamicTeamCards: TeamCardProps[];
+  dynamicTeamCards: MemberCardProps[];
 }
 
 export const FinanceTeam: NextPage<FinanceTeamProps> = ({
   dynamicTeamCards,
 }) => {
   const card: SectionCardProps = {
-    title: sections["Finance"].title,
-    content: sections["Finance"].content,
+    title: sections["finance"].title,
+    content: sections["finance"].content,
   };
 
   const imageCardProps: ImageCardProps = {
-    title: leaders["Finance"].title,
-    content: leaders["Finance"].content,
-    image: leaders["Finance"].image,
+    title: leaders["finance"].title,
+    content: leaders["finance"].content,
+    image: leaders["finance"].image,
     imagePosition: "left",
   };
 
@@ -72,7 +72,7 @@ export const FinanceTeam: NextPage<FinanceTeamProps> = ({
       {/* <h1 className="members-title">Meet Our Team</h1> */}
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
-          <TeamCard key={index} props={teamCard} />
+          <MemberCard key={index} props={teamCard} />
         ))}
       </div>
     </div>
