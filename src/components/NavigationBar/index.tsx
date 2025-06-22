@@ -39,7 +39,10 @@ export const NavigationBar = (): JSX.Element => {
             <div
               className={`nav-text-title ${isClient ? "start-animation" : ""}`}
             >
-              <Link href="/">GDGoC <br />Waseda</Link>
+              <Link href="/">
+                GDGoC <br />
+                Waseda
+              </Link>
             </div>
           </Navbar.Brand>
           <Navbar.Toggle
@@ -77,9 +80,9 @@ export const NavigationBar = (): JSX.Element => {
               </Nav.Item> */}
             </Nav>
           </Navbar.Collapse>
-            <Button className="languageToggle">
-                <LanguageToggle />
-              </Button>
+          <Button className="languageToggle">
+            <LanguageToggle />
+          </Button>
         </Container>
       </Navbar>
     </div>

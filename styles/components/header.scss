@@ -76,8 +76,6 @@
     }
   }
 
-  
-
   @media (max-width: 790px) {
     .navbarCollapse {
       background-color: rgba(250, 250, 250, 0.65);
@@ -145,8 +143,7 @@
 .nav-text-title {
   font-family: myFont;
   font-size: med;
-  background-image: linear-gradient(to right,
-      #000000);
+  background-image: linear-gradient(to right, #000000);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
