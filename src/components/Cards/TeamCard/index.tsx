@@ -30,7 +30,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ team, members }) => {
         pageImgHeight={630}
       />
       <SectionCard props={section} />
-      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <ImageCard props={leader} />
       {members && members.length > 0 && (
         <div>
           <h1 className="members-title">Meet Our {team} Team</h1>

@@ -61,7 +61,7 @@ export const FrontendTeam: NextPage<FrontendTeamProps> = ({
         pageImgHeight={630}
       />
       <SectionCard props={section} />
-      <ImageCard props={{ ...leader, imagePosition: "left" }} />
+      <ImageCard props={leader} />
       <h1 className="members-title">Meet Our {team} Team</h1>
       <div className="team-cards-container">
         {dynamicTeamCards.map((teamCard, index) => (
