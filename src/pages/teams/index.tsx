@@ -1,28 +1,58 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState, useMemo } from "react";
-import { HeaderCard, CategoryBar, YearBox } from "components/Cards/index";
+import { HeaderCard, CategoryBar, YearBox, TeamCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { HeaderCardProps } from "~/types";
+import { HeaderCardProps, MemberCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { useTranslation } from "next-i18next";
 import exteams from "./exteams.json";
 import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import { client } from "../../sanity";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const { locale } = context;
 
+  const query = `*[_type == "member" && team == "project"]{
+    name,
+    program,
+    school,
+    grade,
+    "imageUrl": image.asset->url
+  }`;
+
+  const members = await client.fetch(query);
+  console.log("groupedMembers: ", members)
+  const groupedMembers: Record<string, MemberCardProps[]> = {};
+
+  members.forEach((member: any) => {
+    const card: MemberCardProps = {
+      title: member.name || "No Name",
+      image: member.imageUrl || "/default-image-path.jpg",
+      major: member.program || "No Program",
+      school: member.school || "No School",
+      year: member.grade || "No Year",
+    };
+
+    if (!groupedMembers[member.team]) {
+      groupedMembers[member.team] = [];
+    }
+    groupedMembers[member.team].push(card);
+  });
   return {
     props: {
       ...(await serverSideTranslations(locale as string, ["teams", "common"])),
+      teamMemberData: groupedMembers,
     },
   };
 };
 
-export const TeamsPage: NextPage = () => {
+export const TeamsPage: NextPage<{ teamMemberData: Record<string, MemberCardProps[]> }> = ({
+  teamMemberData,
+}) => {
   const { t } = useTranslation();
 
   const card: HeaderCardProps = {
@@ -245,6 +275,10 @@ export const TeamsPage: NextPage = () => {
               ref={teamRefs[teamCard.team]}
               className="team-leader"
             >
+              <TeamCard
+                team={teamCard.team}
+                members={teamMemberData[teamCard.team] || []}
+              />
               {teamCard.multiple === true ? (
                 <div className="team-leader-swap-container">
                   <a

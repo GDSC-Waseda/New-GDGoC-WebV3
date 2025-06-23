@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
       year: member.grade || "No Year",
     })
   );
-
+  console.log(dynamicTeamCards)
   return { props: { dynamicTeamCards } };
 };
 
