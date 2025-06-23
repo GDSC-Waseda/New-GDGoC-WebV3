@@ -62,6 +62,7 @@ export interface ImageCardProps {
 }
 
 export interface MemberCardProps {
+  team: string;
   image: string;
   title: string;
   major?: string;

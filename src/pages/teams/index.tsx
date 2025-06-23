@@ -16,7 +16,8 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   const { locale } = context;
 
-  const query = `*[_type == "member" && team == "project"]{
+  const query = `*[_type == "member"]{
+    team,
     name,
     program,
     school,
@@ -29,6 +30,7 @@ export const getStaticProps: GetStaticProps = async (
 
   members.forEach((member: any) => {
     const card: MemberCardProps = {
+      team: member.team || "No Team",
       title: member.name || "No Name",
       image: member.imageUrl || "/default-image-path.jpg",
       major: member.program || "No Program",
@@ -274,42 +276,13 @@ export const TeamsPage: NextPage<{ teamMemberData: Record<string, MemberCardProp
               ref={teamRefs[teamCard.team]}
               className="team-leader"
             >
-              <TeamCard
-                team={teamCard.team}
-                members={teamMemberData[teamCard.team] || []}
-              />
-              {teamCard.multiple === true ? (
-                <div className="team-leader-swap-container">
-                  <a
-                    className="team-leader-link"
-                    href={`/teams/${teamCard.link}`}
-                  >
-                    <Image
-                      className={`team-leader-image ${teamCard.color}`}
-                      src={`/tempImg/leads/${teamLeaderImages[index]}`}
-                      width={220}
-                      height={220}
-                      alt="team leader"
-                    />
-                  </a>
-                  <button
-                    className="team-leader-swap-button"
-                    onClick={() => handleSwapClick(index)}
-                  >
-                    <Image
-                      className="team-leader-swap"
-                      src={`/tempImg/arrows-${teamCard.color}.png`}
-                      width={220}
-                      height={220}
-                      alt="arrows"
-                    />
-                  </button>
-                </div>
+              {selectedYear === "GDSC 23/24" ? (
+                <TeamCard
+                  team={teamCard.team}
+                  members={teamMemberData[teamCard.team.toLowerCase()] || []}
+                />
               ) : (
-                <a
-                  className="team-leader-link"
-                  href={`/teams/${teamCard.link}`}
-                >
+                <div className="team-leader-name">{teamCard.team}
                   <Image
                     className={`team-leader-image ${teamCard.color}`}
                     src={`/tempImg/leads/${teamLeaderImages[index]}`}
@@ -317,26 +290,19 @@ export const TeamsPage: NextPage<{ teamMemberData: Record<string, MemberCardProp
                     height={220}
                     alt="team leader"
                   />
-                </a>
+                  <div className="team-leader-name">{teamCard.name}</div>
+                  {teamCard.linkedInUrl ? (
+                    <a
+                      className="team-leader-linkedin"
+                      href={teamCard.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  ) : null}
+                </div>
               )}
-              <div className="team-leader-name">{teamCard.team}</div>
-              {teamCard.showLearnMore === true ? (
-                <a
-                  className="team-leader-link"
-                  href={`/teams/${teamCard.link}`}
-                >
-                  {t("teams:learn_more")}
-                </a>
-              ) : teamCard.linkedInUrl ? (
-                <a
-                  className="team-leader-linkedin"
-                  href={teamCard.linkedInUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin />
-                </a>
-              ) : null}
             </div>
           ))}
         </div>
