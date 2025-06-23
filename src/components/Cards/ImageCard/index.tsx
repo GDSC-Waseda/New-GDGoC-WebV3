@@ -33,7 +33,7 @@ export const ImageCard: React.FC<{
           fontWeight="normal"
           className="imageCard__title"
         >
-          {props.title}
+          {props.name}
         </Typography>
         {props.content !== undefined &&
           props.content.split("\n").map((text, key) => (
@@ -62,12 +62,20 @@ export const ImageCard: React.FC<{
         alignItems="center"
         className={`image - card__layout--left} `}
       >
+        {textProps ? ( 
+          <>
+            <Grid item sm="auto">
+              {imageProps}
+            </Grid>
+            <Grid item sm="auto">
+              {textProps}
+            </Grid>
+          </>
+        ) : 
         <Grid item sm="auto">
           {imageProps}
         </Grid>
-        <Grid item sm="auto">
-          {textProps}
-        </Grid>
+        }
       </Grid>
     </Box>
   );
