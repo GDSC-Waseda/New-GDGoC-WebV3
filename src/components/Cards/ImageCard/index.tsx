@@ -62,20 +62,12 @@ export const ImageCard: React.FC<{
         alignItems="center"
         className={`image - card__layout--left} `}
       >
-        {textProps ? ( 
-          <>
-            <Grid item sm="auto">
-              {imageProps}
-            </Grid>
-            <Grid item sm="auto">
-              {textProps}
-            </Grid>
-          </>
-        ) : 
         <Grid item sm="auto">
           {imageProps}
         </Grid>
-        }
+        <Grid item sm="auto">
+          {textProps}
+        </Grid>
       </Grid>
     </Box>
   );

@@ -281,8 +281,14 @@ export const TeamsPage: NextPage<{
               ref={teamRefs[teamCard.team]}
               className="team-leader"
             >
-              {selectedYear === "GDSC 23/24" ? (
+              <TeamCard
+                year={selectedYear}
+                team={teamCard.team}
+                members={teamMemberData[teamCard.team.toLowerCase()] || []}
+              />
+              {/* {selectedYear === "GDSC 23/24" ? (
                 <TeamCard
+                  year={selectedYear}
                   team={teamCard.team}
                   members={teamMemberData[teamCard.team.toLowerCase()] || []}
                 />
@@ -308,7 +314,7 @@ export const TeamsPage: NextPage<{
                     </a>
                   ) : null}
                 </div>
-              )}
+              )} */}
             </div>
           ))}
         </div>
