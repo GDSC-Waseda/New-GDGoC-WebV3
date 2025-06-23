@@ -33,7 +33,7 @@ export const ImageCard: React.FC<{
           fontWeight="normal"
           className="imageCard__title"
         >
-          {props.title}
+          {props.name}
         </Typography>
         {props.content !== undefined &&
           props.content.split("\n").map((text, key) => (
@@ -54,22 +54,19 @@ export const ImageCard: React.FC<{
     </Box>
   );
 
-  const propsRight = props.imagePosition === "left" ? textProps : imageProps;
-  const propsLeft = props.imagePosition === "left" ? imageProps : textProps;
-
   return (
     <Box padding={3} className="image-card">
       <Grid
         container
         justifyContent="center"
         alignItems="center"
-        className={`image - card__layout--${props.imagePosition} `}
+        className={`image - card__layout--left} `}
       >
         <Grid item sm="auto">
-          {propsLeft}
+          {imageProps}
         </Grid>
         <Grid item sm="auto">
-          {propsRight}
+          {textProps}
         </Grid>
       </Grid>
     </Box>

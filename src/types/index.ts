@@ -55,10 +55,16 @@ export interface SectionCardProps {
 }
 
 export interface ImageCardProps {
-  title: string;
+  affiliation: string;
+  name: string;
   content?: string;
   image: string;
   imagePosition?: "left" | "right";
+  linkedInUrl?: string;
+  gitHubUrl?: string;
+  graduation?: string;
+  major?: string;
+  school?: string;
 }
 
 export interface MemberCardProps {

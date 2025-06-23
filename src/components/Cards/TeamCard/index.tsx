@@ -3,20 +3,22 @@ import { MemberCard, ImageCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { ImageCardProps, MemberCardProps, SectionCardProps } from "~/types";
 import { SectionCard } from "~/components/Cards/SectionCard";
-import rawSections from "../../../../src/pages/teams/team/sections.json";
-import rawLeaders from "../../../../src/pages/teams/team/leaders.json";
+import rawSections from "../../../../src/pages/teams/sections.json";
+import rawLeaders from "../../../../src/pages/teams/leaders.json";
 
 const sections: { [key: string]: SectionCardProps } = rawSections;
-const leaders: { [key: string]: ImageCardProps } = rawLeaders;
+const leaders: { [year: string]: { [key: string]: ImageCardProps } } =
+  rawLeaders;
 
 interface TeamCardProps {
+  year: string;
   team: string;
   members: MemberCardProps[];
 }
 
-export const TeamCard: React.FC<TeamCardProps> = ({ team, members }) => {
+export const TeamCard: React.FC<TeamCardProps> = ({ year, team, members }) => {
   const section = sections[team];
-  const leader = leaders[team];
+  const leader = leaders[year][team];
 
   if (!section || !leader) return <div>Invalid Team Name</div>;
 
@@ -30,8 +32,8 @@ export const TeamCard: React.FC<TeamCardProps> = ({ team, members }) => {
         pageImgHeight={630}
       />
       <SectionCard props={section} />
-      <ImageCard props={{ ...leader, imagePosition: "left" }} />
-      {members && members.length > 0 && (
+      <ImageCard props={leader} />
+      {year === "GDSC 23/24" && members && members.length > 0 && (
         <div>
           <h1 className="members-title">Meet Our {team} Team</h1>
           <div className="team-cards-container">
