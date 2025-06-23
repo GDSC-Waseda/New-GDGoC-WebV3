@@ -7,3 +7,4 @@ export { TextCard } from "./TextCard";
 export { CategoryBar } from "./CategoryBar";
 export { YearBox } from "./YearBox";
 export { TeamCard } from "./TeamCard";
+export { SectionCard } from "./SectionCard";

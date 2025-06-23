@@ -1,12 +1,28 @@
 import type { NextPage } from "next";
+import React, { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
-import { HeaderCard } from "components/Cards/index";
+import {
+  CategoryBar,
+  HeaderCard,
+  ImageCard,
+  SectionCard,
+} from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { HeaderCardProps, TextCardProps } from "~/types";
+import {
+  HeaderCardProps,
+  TextCardProps,
+  ImageCardProps,
+  SectionCardProps,
+} from "~/types";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import rawLeads from "../../../src/pages/about/leads.json";
+import rawSections from "../../../src/pages/about/sections.json";
+
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leads: { [year: string]: ImageCardProps } = rawLeads;
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -66,7 +82,7 @@ export const AboutPage: NextPage = () => {
 
   const card: HeaderCardProps = {
     title: t("about:header"),
-    content: t("about:mesg"),
+    content: t("about:motomesg"),
   };
 
   const whatWeDo: TextCardProps = {
@@ -74,7 +90,14 @@ export const AboutPage: NextPage = () => {
     content: t("about:motomesg"),
   };
 
-  const leadsThoughtsContent = t("about:leadmesg");
+  const years: string[] = Array.from(Object.keys(leads));
+  const [selectedYear, setSelectedYear] = useState("GDSC 23/24");
+
+  const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
+  Object.keys(leads).forEach((year) => {
+    console.log("year: ", year);
+    teamRefs[year] = React.createRef<HTMLDivElement>();
+  });
 
   return (
     <div className="about-page">
@@ -87,14 +110,33 @@ export const AboutPage: NextPage = () => {
       />
       <HeaderCard props={card} />
 
-      {/* What We Do Section */}
-      <div className="textCard__section">
-        <h2 className="textCard__section__title">{whatWeDo.title}</h2>
-        <p className="textCard__section__content">{whatWeDo.content}</p>
+      <div className="team-filter">
+        <CategoryBar
+          categories={years}
+          selectedCategory={selectedYear}
+          onCategoryChange={(year) => {
+            console.log("innner year: ", year);
+            setSelectedYear(year);
+            teamRefs[year]?.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }}
+        />
       </div>
 
+      <div className="team-leaders-wrapper">
+        <div className="team-leaders-container">
+          {Object.entries(leads).map(([year, lead], index) => (
+            <div key={index} ref={teamRefs[year]} className="team-leader">
+              <SectionCard props={sections[year]} />
+              <ImageCard props={lead} />
+            </div>
+          ))}
+        </div>
+      </div>
       {/* Current Lead Section */}
-      <div className="current-lead-section">
+      {/* <div className="current-lead-section">
         <h2 className="section-title">{t("about:currentLead")}</h2>
         <div className="lead-card">
           <div className="lead-image">
@@ -134,10 +176,10 @@ export const AboutPage: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Previous Leads Section */}
-      <div className="previous-leads-section">
+      {/* <div className="previous-leads-section">
         <h2 className="section-title">{t("about:previousLeads")}</h2>
         <div className="previous-leads-container">
           {previousLeads.map((lead, index) => (
@@ -174,7 +216,7 @@ export const AboutPage: NextPage = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

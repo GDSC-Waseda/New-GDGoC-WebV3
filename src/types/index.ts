@@ -55,14 +55,13 @@ export interface SectionCardProps {
 }
 
 export interface ImageCardProps {
-  affiliation: string;
   name: string;
   content?: string;
   image: string;
   imagePosition?: "left" | "right";
   linkedInUrl?: string;
   gitHubUrl?: string;
-  graduation?: string;
+  graduationDate?: string;
   major?: string;
   school?: string;
 }
