@@ -16,10 +16,10 @@ import rawLeaders from "../team/leaders.json";
 const sections: { [key: string]: SectionCardProps } = rawSections;
 const leaders: { [key: string]: ImageCardProps } = rawLeaders;
 
-const team = "education";
+const team = "Education";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "member" && team == ${team}]{
+  const query = `*[_type == "member" && team == "${team.toLowerCase()}"]{
     name,
     program,
     school,

@@ -16,10 +16,10 @@ import rawLeaders from "../team/leaders.json";
 const sections: { [key: string]: SectionCardProps } = rawSections;
 const leaders: { [key: string]: ImageCardProps } = rawLeaders;
 
-const team = "agile";
+const team = "Agile";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "member" && team == ${team}]{
+  const query = `*[_type == "member" && team == "${team.toLowerCase()}"]{
     name,
     program,
     school,
@@ -44,7 +44,6 @@ export const getStaticProps: GetStaticProps = async () => {
       year: member.grade || "No Year",
     })
   );
-
   return { props: { dynamicTeamCards } };
 };
 

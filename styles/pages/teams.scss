@@ -40,7 +40,6 @@
 
 .team-leader {
   width: 100%;
-  max-width: 250px;
   text-align: center;
   padding-top: 60px;
   display: flex;
@@ -108,10 +107,6 @@
     color: black;
     padding-top: 10px;
     transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: #4285f4;
-    }
   }
 
   &-link {

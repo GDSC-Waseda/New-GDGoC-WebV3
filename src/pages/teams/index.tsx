@@ -1,28 +1,64 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState, useMemo } from "react";
-import { HeaderCard, CategoryBar, YearBox } from "components/Cards/index";
+import {
+  HeaderCard,
+  CategoryBar,
+  YearBox,
+  TeamCard,
+} from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { HeaderCardProps } from "~/types";
+import { HeaderCardProps, MemberCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { useTranslation } from "next-i18next";
 import exteams from "./exteams.json";
 import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import { client } from "../../sanity";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const { locale } = context;
 
+  const query = `*[_type == "member"]{
+    team,
+    name,
+    program,
+    school,
+    grade,
+    "imageUrl": image.asset->url
+  }`;
+
+  const members = await client.fetch(query);
+  const groupedMembers: Record<string, MemberCardProps[]> = {};
+
+  members.forEach((member: any) => {
+    const card: MemberCardProps = {
+      team: member.team || "No Team",
+      title: member.name || "No Name",
+      image: member.imageUrl || "/default-image-path.jpg",
+      major: member.program || "No Program",
+      school: member.school || "No School",
+      year: member.grade || "No Year",
+    };
+
+    if (!groupedMembers[member.team]) {
+      groupedMembers[member.team] = [];
+    }
+    groupedMembers[member.team].push(card);
+  });
   return {
     props: {
       ...(await serverSideTranslations(locale as string, ["teams", "common"])),
+      teamMemberData: groupedMembers,
     },
   };
 };
 
-export const TeamsPage: NextPage = () => {
+export const TeamsPage: NextPage<{
+  teamMemberData: Record<string, MemberCardProps[]>;
+}> = ({ teamMemberData }) => {
   const { t } = useTranslation();
 
   const card: HeaderCardProps = {
@@ -245,38 +281,14 @@ export const TeamsPage: NextPage = () => {
               ref={teamRefs[teamCard.team]}
               className="team-leader"
             >
-              {teamCard.multiple === true ? (
-                <div className="team-leader-swap-container">
-                  <a
-                    className="team-leader-link"
-                    href={`/teams/${teamCard.link}`}
-                  >
-                    <Image
-                      className={`team-leader-image ${teamCard.color}`}
-                      src={`/tempImg/leads/${teamLeaderImages[index]}`}
-                      width={220}
-                      height={220}
-                      alt="team leader"
-                    />
-                  </a>
-                  <button
-                    className="team-leader-swap-button"
-                    onClick={() => handleSwapClick(index)}
-                  >
-                    <Image
-                      className="team-leader-swap"
-                      src={`/tempImg/arrows-${teamCard.color}.png`}
-                      width={220}
-                      height={220}
-                      alt="arrows"
-                    />
-                  </button>
-                </div>
+              {selectedYear === "GDSC 23/24" ? (
+                <TeamCard
+                  team={teamCard.team}
+                  members={teamMemberData[teamCard.team.toLowerCase()] || []}
+                />
               ) : (
-                <a
-                  className="team-leader-link"
-                  href={`/teams/${teamCard.link}`}
-                >
+                <div className="team-leader-name">
+                  {teamCard.team}
                   <Image
                     className={`team-leader-image ${teamCard.color}`}
                     src={`/tempImg/leads/${teamLeaderImages[index]}`}
@@ -284,26 +296,19 @@ export const TeamsPage: NextPage = () => {
                     height={220}
                     alt="team leader"
                   />
-                </a>
+                  <div className="team-leader-name">{teamCard.name}</div>
+                  {teamCard.linkedInUrl ? (
+                    <a
+                      className="team-leader-linkedin"
+                      href={teamCard.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  ) : null}
+                </div>
               )}
-              <div className="team-leader-name">{teamCard.team}</div>
-              {teamCard.showLearnMore === true ? (
-                <a
-                  className="team-leader-link"
-                  href={`/teams/${teamCard.link}`}
-                >
-                  {t("teams:learn_more")}
-                </a>
-              ) : teamCard.linkedInUrl ? (
-                <a
-                  className="team-leader-linkedin"
-                  href={teamCard.linkedInUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin />
-                </a>
-              ) : null}
             </div>
           ))}
         </div>
