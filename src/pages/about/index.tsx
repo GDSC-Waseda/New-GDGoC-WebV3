@@ -136,7 +136,7 @@ export const AboutPage: NextPage = () => {
         </div>
       </div>
       {/* Current Lead Section */}
-      <div className="current-lead-section">
+      {/* <div className="current-lead-section">
         <h2 className="section-title">{t("about:currentLead")}</h2>
         <div className="lead-card">
           <div className="lead-image">
@@ -176,10 +176,10 @@ export const AboutPage: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Previous Leads Section */}
-      <div className="previous-leads-section">
+      {/* <div className="previous-leads-section">
         <h2 className="section-title">{t("about:previousLeads")}</h2>
         <div className="previous-leads-container">
           {previousLeads.map((lead, index) => (
@@ -216,7 +216,7 @@ export const AboutPage: NextPage = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
