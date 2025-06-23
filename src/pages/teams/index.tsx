@@ -1,6 +1,11 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState, useMemo } from "react";
-import { HeaderCard, CategoryBar, YearBox, TeamCard } from "components/Cards/index";
+import {
+  HeaderCard,
+  CategoryBar,
+  YearBox,
+  TeamCard,
+} from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps, MemberCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -51,9 +56,9 @@ export const getStaticProps: GetStaticProps = async (
   };
 };
 
-export const TeamsPage: NextPage<{ teamMemberData: Record<string, MemberCardProps[]> }> = ({
-  teamMemberData,
-}) => {
+export const TeamsPage: NextPage<{
+  teamMemberData: Record<string, MemberCardProps[]>;
+}> = ({ teamMemberData }) => {
   const { t } = useTranslation();
 
   const card: HeaderCardProps = {
@@ -282,7 +287,8 @@ export const TeamsPage: NextPage<{ teamMemberData: Record<string, MemberCardProp
                   members={teamMemberData[teamCard.team.toLowerCase()] || []}
                 />
               ) : (
-                <div className="team-leader-name">{teamCard.team}
+                <div className="team-leader-name">
+                  {teamCard.team}
                   <Image
                     className={`team-leader-image ${teamCard.color}`}
                     src={`/tempImg/leads/${teamLeaderImages[index]}`}
