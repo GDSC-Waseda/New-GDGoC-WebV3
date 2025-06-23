@@ -31,12 +31,16 @@ export const TeamCard: React.FC<TeamCardProps> = ({ team, members }) => {
       />
       <SectionCard props={section} />
       <ImageCard props={{ ...leader, imagePosition: "left" }} />
-      <h1 className="members-title">Meet Our {team} Team</h1>
-      <div className="team-cards-container">
-        {members.map((card, index) => (
-          <MemberCard key={index} props={card} />
-        ))}
-      </div>
+      {members && members.length > 0 && (
+        <div>
+          <h1 className="members-title">Meet Our {team} Team</h1>
+          <div className="team-cards-container">
+            {members.map((card, index) => (
+              <MemberCard key={index} props={card} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
