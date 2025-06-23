@@ -1,8 +1,19 @@
 import type { NextPage } from "next";
+import React, { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
-import { HeaderCard, ImageCard, SectionCard } from "components/Cards/index";
+import {
+  CategoryBar,
+  HeaderCard,
+  ImageCard,
+  SectionCard,
+} from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { HeaderCardProps, TextCardProps, ImageCardProps, SectionCardProps } from "~/types";
+import {
+  HeaderCardProps,
+  TextCardProps,
+  ImageCardProps,
+  SectionCardProps,
+} from "~/types";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps, GetStaticPropsContext } from "next";
@@ -79,6 +90,15 @@ export const AboutPage: NextPage = () => {
     content: t("about:motomesg"),
   };
 
+  const years: string[] = Array.from(Object.keys(leads));
+  const [selectedYear, setSelectedYear] = useState("GDSC 23/24");
+
+  const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
+  Object.keys(leads).forEach((year) => {
+    console.log("year: ", year);
+    teamRefs[year] = React.createRef<HTMLDivElement>();
+  });
+
   return (
     <div className="about-page">
       <CommonMeta
@@ -88,16 +108,32 @@ export const AboutPage: NextPage = () => {
         pageImgWidth={1280}
         pageImgHeight={630}
       />
+      <HeaderCard props={card} />
+
+      <div className="team-filter">
+        <CategoryBar
+          categories={years}
+          selectedCategory={selectedYear}
+          onCategoryChange={(year) => {
+            console.log("innner year: ", year);
+            setSelectedYear(year);
+            teamRefs[year]?.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }}
+        />
+      </div>
+
       <div className="team-leaders-wrapper">
         <div className="team-leaders-container">
-          <HeaderCard props={card} />
           {Object.entries(leads).map(([year, lead], index) => (
-            <>
-              <SectionCard key={index} props={sections[year]}/>
-              <ImageCard key={index} props={lead} />
-            </>
+            <div key={index} ref={teamRefs[year]} className="team-leader">
+              <SectionCard props={sections[year]} />
+              <ImageCard props={lead} />
+            </div>
           ))}
-          </div>
+        </div>
       </div>
       {/* Current Lead Section */}
       <div className="current-lead-section">

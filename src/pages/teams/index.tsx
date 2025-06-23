@@ -237,7 +237,6 @@ export const TeamsPage: NextPage<{
         .map((member) => member.team)
     )
   );
-
   const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
   teams.forEach((team) => {
     teamRefs[team] = React.createRef<HTMLDivElement>();
