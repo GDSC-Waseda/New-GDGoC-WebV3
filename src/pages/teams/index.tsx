@@ -25,7 +25,6 @@ export const getStaticProps: GetStaticProps = async (
   }`;
 
   const members = await client.fetch(query);
-  console.log("groupedMembers: ", members)
   const groupedMembers: Record<string, MemberCardProps[]> = {};
 
   members.forEach((member: any) => {
