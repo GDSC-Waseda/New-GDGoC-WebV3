@@ -1,12 +1,17 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { HeaderCard } from "components/Cards/index";
+import { HeaderCard, ImageCard, SectionCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
-import { HeaderCardProps, TextCardProps } from "~/types";
+import { HeaderCardProps, TextCardProps, ImageCardProps, SectionCardProps } from "~/types";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import rawLeads from "../../../src/pages/about/leads.json";
+import rawSections from "../../../src/pages/about/sections.json";
+
+const sections: { [key: string]: SectionCardProps } = rawSections;
+const leads: { [year: string]: ImageCardProps } = rawLeads;
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -66,15 +71,13 @@ export const AboutPage: NextPage = () => {
 
   const card: HeaderCardProps = {
     title: t("about:header"),
-    content: t("about:mesg"),
+    content: t("about:motomesg"),
   };
 
   const whatWeDo: TextCardProps = {
     title: t("about:what"),
     content: t("about:motomesg"),
   };
-
-  const leadsThoughtsContent = t("about:leadmesg");
 
   return (
     <div className="about-page">
@@ -85,14 +88,17 @@ export const AboutPage: NextPage = () => {
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <HeaderCard props={card} />
-
-      {/* What We Do Section */}
-      <div className="textCard__section">
-        <h2 className="textCard__section__title">{whatWeDo.title}</h2>
-        <p className="textCard__section__content">{whatWeDo.content}</p>
+      <div className="team-leaders-wrapper">
+        <div className="team-leaders-container">
+          <HeaderCard props={card} />
+          {Object.entries(leads).map(([year, lead], index) => (
+            <>
+              <SectionCard key={index} props={sections[year]}/>
+              <ImageCard key={index} props={lead} />
+            </>
+          ))}
+          </div>
       </div>
-
       {/* Current Lead Section */}
       <div className="current-lead-section">
         <h2 className="section-title">{t("about:currentLead")}</h2>
