@@ -24,7 +24,7 @@
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "Rubik", "Outfit", sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 
 button.about-page__button.btn.btn-outline-dark:hover a {
@@ -65,4 +65,8 @@ a {
   width: 100px;
   height: 100px;
   animation: spin 2s linear infinite;
+}
+
+.container {
+  max-width: 2000px;
 }
