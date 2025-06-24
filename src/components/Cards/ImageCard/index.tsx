@@ -89,7 +89,7 @@ export const ImageCard: React.FC<{
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin size={28}/>
+                <FaLinkedin size={28} />
               </a>
             )}
           </div>
@@ -100,7 +100,7 @@ export const ImageCard: React.FC<{
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={28}/>
+                <FaGithub size={28} />
               </a>
             )}
           </div>
