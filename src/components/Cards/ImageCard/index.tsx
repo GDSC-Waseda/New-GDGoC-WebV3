@@ -4,13 +4,12 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ImageCardProps } from "~/types/index";
 
 export const ImageCard: React.FC<{
-  children?: React.ReactNode;
   props: ImageCardProps;
-}> = ({ children, props }) => {
+}> = ({ props }) => {
   const imageProps = (
     <Image
       className="imageCard__image"
@@ -31,7 +30,6 @@ export const ImageCard: React.FC<{
           component="div"
           align="center"
           fontWeight="normal"
-          className="imageCard__title"
         >
           {props.name}
         </Typography>
@@ -47,21 +45,73 @@ export const ImageCard: React.FC<{
               {text}
             </Typography>
           ))}
-        {children !== undefined && (
-          <div className="imageCard__others">{children}</div>
+        {props.graduationDate !== undefined && (
+          <Typography
+            gutterBottom
+            color="text.secondary"
+            align="left"
+            style={{ fontFamily: '"myFont4", sans-serif' }}
+          >
+            Graduation: {props.graduationDate}
+          </Typography>
         )}
+        {props.major !== undefined && (
+          <Typography
+            gutterBottom
+            color="text.secondary"
+            align="left"
+            style={{ fontFamily: '"myFont4", sans-serif' }}
+          >
+            Major: {props.major}
+          </Typography>
+        )}
+        {props.school !== undefined && (
+          <Typography
+            gutterBottom
+            color="text.secondary"
+            align="left"
+            style={{ fontFamily: '"myFont4", sans-serif' }}
+          >
+            School: {props.school}
+          </Typography>
+        )}
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+          gap={2}
+          mt={2}
+        >
+          <div>
+            {props.linkedInUrl !== undefined && (
+              <a
+                href={props.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+            )}
+          </div>
+          <div>
+            {props.gitHubUrl !== undefined && (
+              <a
+                href={props.gitHubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+            )}
+          </div>
+        </Box>
       </Container>
     </Box>
   );
 
   return (
-    <Box padding={3} className="image-card">
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        className={`image - card__layout--left} `}
-      >
+    <Box padding={3}>
+      <Grid container justifyContent="center" alignItems="center">
         <Grid item sm="auto">
           {imageProps}
         </Grid>

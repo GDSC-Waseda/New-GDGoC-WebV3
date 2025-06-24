@@ -7,13 +7,7 @@
 
 .imageCard {
   &__image {
-    height: auto;
-    width: 100%;
-    max-width: 350px;
+    width: 350px;
     border-radius: 20px;
-  }
-
-  &__others {
-    padding: 0px 10px;
   }
 }
