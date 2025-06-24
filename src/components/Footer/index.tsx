@@ -5,8 +5,7 @@ import Instagram from "assets/svg/instagram.svg";
 import LinkedIn from "assets/svg/linked-in.svg";
 import Mail from "assets/svg/mail.svg";
 import logo from "assets/svg/logo.svg";
-import { FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram, FaEnvelope, FaXTwitter } from "react-icons/fa6";
 
 export const Footer = (): JSX.Element => {
   return (
