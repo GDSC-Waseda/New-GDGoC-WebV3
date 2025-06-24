@@ -251,8 +251,8 @@ export const TeamsPage: NextPage<{
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <HeaderCard props={card} />
 
+      <HeaderCard props={card} />
       <div className="team-filter">
         <YearBox
           years={Object.keys(teamLeadersByYear)}
