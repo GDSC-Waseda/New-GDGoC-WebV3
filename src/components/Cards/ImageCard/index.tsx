@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 import { ImageCardProps } from "~/types/index";
 
 export const ImageCard: React.FC<{
@@ -89,7 +89,7 @@ export const ImageCard: React.FC<{
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin />
+                <FaLinkedin size={28}/>
               </a>
             )}
           </div>
@@ -100,7 +100,7 @@ export const ImageCard: React.FC<{
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub />
+                <FaGithub size={28}/>
               </a>
             )}
           </div>

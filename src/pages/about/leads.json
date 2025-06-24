@@ -4,24 +4,24 @@
     "image": "/tempImg/leads/lead.jpg",
     "linkedInUrl": "https://www.linkedin.com/in/takumi-otsuka/",
     "gitHubUrl": "https://github.com/ronin207",
-    "graduationDate": "september24",
-    "major": "mathematicalScience",
+    "graduationDate": "September 2024",
+    "major": "Mathematical Science",
     "school": "FSE"
   },
   "GDSC 22/23": {
     "name": "Advaith Sriram",
     "image": "/tempImg/leads/advaith.jpg",
     "linkedInUrl": "https://www.linkedin.com/in/advaith-sriram/",
-    "graduationDate": "september23",
-    "major": "mechanicalEngineering",
+    "graduationDate": "September 2023",
+    "major": "Mechanical Engineering",
     "school": "CSE"
   },
   "GDSC 21/22": {
     "name": "Rose Niousha",
     "image": "/tempImg/leads/rose.jpg",
     "linkedInUrl": "https://www.linkedin.com/in/rose-niousha/",
-    "graduationDate": "april23",
-    "major": "computerScience",
+    "graduationDate": "April 2023",
+    "major": "Computer Science",
     "school": "FSE"
   }
 }

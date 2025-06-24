@@ -48,59 +48,58 @@
   },
   "GDSC 22/23": {
     "Project": {
-      "name": "Takumi",
+      "name": "Takumi Otuska",
       "image": "/tempImg/leads/project_lead22.png",
       "linkedInUrl": "https://www.linkedin.com/in/takumi-otsuka/"
     },
     "Backend": {
       "name": "Alvin",
-      "image": "/tempImg/leads/backend_lead22.jpg",
-      "linkedInUrl": "https://www.linkedin.com/"
+      "image": "/tempImg/leads/backend_lead22.jpg"
     },
     "Frontend": {
-      "name": "Addo",
+      "name": "Addo B.",
       "image": "/tempImg/leads/frontend_lead22.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/addobari/"
     },
     "Education": {
-      "name": "Jeremy",
+      "name": "Jeremy Siburian",
       "image": "/tempImg/leads/education_lead22.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/jeremy-siburian/"
     },
     "Marketing": {
-      "name": "Tina",
+      "name": "Tzu Ting (Tina) Chen",
       "image": "/tempImg/leads/marketing_lead22.png",
       "linkedInUrl": "https://www.linkedin.com/in/tzuting001030/"
     },
     "Finance": {
-      "name": "Mona",
+      "name": "Mona Matsuda",
       "image": "/tempImg/leads/finance_lead22.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/monamatsuda/"
     },
     "Operations": {
-      "name": "Cedric",
+      "name": "Cedric Purwanto",
       "image": "/tempImg/leads/operations_lead22.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/cedric-purwanto-b5b62721a/"
     }
   },
   "GDSC 21/22": {
     "Project": {
-      "name": "David",
+      "name": "Xinze (David) Wang",
       "image": "/tempImg/leads/project_lead21.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/xinze-wang-89bb38101/"
     },
     "Backend": {
-      "name": "Jake",
+      "name": "Jake Underland",
       "image": "/tempImg/leads/backend_lead21.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/jake-underland-720126201/"
     },
     "Frontend": {
-      "name": "Kaede",
+      "name": "Kaede I",
       "image": "/tempImg/leads/frontend_lead21.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/kd-kaede/"
     },
     "Education": {
-      "name": "Advaith",
+      "name": "Advaith C",
       "image": "/tempImg/leads/education_lead21.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/advaith/"
     },
@@ -110,12 +109,12 @@
       "color": "red"
     },
     "Marketing": {
-      "name": "Yeonjoo",
+      "name": "Yeonjoo K.",
       "image": "/tempImg/leads/marketing_lead21.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/yeonjoo-yve-kim/"
     },
     "Finance": {
-      "name": "Emi",
+      "name": "Emi Takeuchi",
       "image": "/tempImg/leads/finance_lead21.jpg",
       "linkedInUrl": "https://www.linkedin.com/in/emi-takeuchi-18bb04203/"
     }
