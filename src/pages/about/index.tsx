@@ -57,7 +57,6 @@ export const AboutPage: NextPage = () => {
 
   const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = {};
   Object.keys(leads).forEach((year) => {
-    console.log("year: ", year);
     teamRefs[year] = React.createRef<HTMLDivElement>();
   });
 

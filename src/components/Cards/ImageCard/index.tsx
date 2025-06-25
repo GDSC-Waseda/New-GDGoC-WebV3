@@ -31,7 +31,7 @@ export const ImageCard: React.FC<{
           align="center"
           fontWeight="normal"
         >
-          {props.name}
+          {props.title}
         </Typography>
         {props.content !== undefined &&
           props.content.split("\n").map((text, key) => (
