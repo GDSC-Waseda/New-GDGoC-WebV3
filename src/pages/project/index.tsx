@@ -57,7 +57,7 @@ const ProjectPage: NextPage = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <CommonMeta
         pageTitle={headerCardProps.title}
         pageDescription={headerCardProps.content}
@@ -73,7 +73,7 @@ const ProjectPage: NextPage = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

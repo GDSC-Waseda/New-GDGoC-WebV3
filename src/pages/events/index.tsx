@@ -87,7 +87,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
   };
 
   return (
-    <>
+    <div className="container">
       <CommonMeta
         pageTitle={t("events:event_title")}
         pageDescription={t("events:event_message")}
@@ -144,7 +144,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

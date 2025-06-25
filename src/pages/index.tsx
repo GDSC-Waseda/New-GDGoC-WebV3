@@ -36,7 +36,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <CommonMeta pageTitle="Home" />
       <div className="home-page">
         <div className="home-page__top">
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

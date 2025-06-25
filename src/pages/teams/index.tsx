@@ -243,7 +243,7 @@ export const TeamsPage: NextPage<{
   });
 
   return (
-    <div className="team-page">
+    <div className="container team-page">
       <CommonMeta
         pageTitle={card.title}
         pageDescription={card.content}
@@ -251,8 +251,8 @@ export const TeamsPage: NextPage<{
         pageImgWidth={1280}
         pageImgHeight={630}
       />
-      <HeaderCard props={card} />
 
+      <HeaderCard props={card} />
       <div className="team-filter">
         <YearBox
           years={Object.keys(teamLeadersByYear)}
@@ -285,35 +285,6 @@ export const TeamsPage: NextPage<{
                 team={teamCard.team}
                 members={teamMemberData[teamCard.team.toLowerCase()] || []}
               />
-              {/* {selectedYear === "GDSC 23/24" ? (
-                <TeamCard
-                  year={selectedYear}
-                  team={teamCard.team}
-                  members={teamMemberData[teamCard.team.toLowerCase()] || []}
-                />
-              ) : (
-                <div className="team-leader-name">
-                  {teamCard.team}
-                  <Image
-                    className={`team-leader-image ${teamCard.color}`}
-                    src={`/tempImg/leads/${teamLeaderImages[index]}`}
-                    width={220}
-                    height={220}
-                    alt="team leader"
-                  />
-                  <div className="team-leader-name">{teamCard.name}</div>
-                  {teamCard.linkedInUrl ? (
-                    <a
-                      className="team-leader-linkedin"
-                      href={teamCard.linkedInUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin />
-                    </a>
-                  ) : null}
-                </div>
-              )} */}
             </div>
           ))}
         </div>

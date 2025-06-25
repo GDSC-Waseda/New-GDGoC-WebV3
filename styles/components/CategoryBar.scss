@@ -4,6 +4,17 @@
   align-items: center;
   margin: 20px;
   cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+
+  // Scroll
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Chrome/Safari
+  }
 
   .category-item {
     margin: 0 10px;

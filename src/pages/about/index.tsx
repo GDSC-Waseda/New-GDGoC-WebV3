@@ -62,7 +62,7 @@ export const AboutPage: NextPage = () => {
   });
 
   return (
-    <div className="about">
+    <div className="container about">
       <CommonMeta
         pageTitle={card.title}
         pageDescription={card.content}
