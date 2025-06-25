@@ -55,7 +55,7 @@ export interface SectionCardProps {
 }
 
 export interface ImageCardProps {
-  name: string;
+  title: string;
   content?: string;
   image: string;
   imagePosition?: "left" | "right";
