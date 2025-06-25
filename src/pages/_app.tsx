@@ -8,6 +8,7 @@ import { NavigationBar } from "components/NavigationBar";
 import Loading from "../components/Loading"; // Import the Loading component
 import "styles/globals.scss";
 import { appWithTranslation } from "next-i18next";
+import '../i18n';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);

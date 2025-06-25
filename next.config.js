@@ -2,17 +2,18 @@
 
 const { i18n } = require("./next-i18next.config");
 
-const nextConfig = {
-  reactStrictMode: true,
-};
-
 module.exports = {
-  nextConfig,
+  reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["cdn.sanity.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
   },
   i18n,
 };
