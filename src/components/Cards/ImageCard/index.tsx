@@ -112,12 +112,8 @@ export const ImageCard: React.FC<{
   return (
     <Box padding={3}>
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item sm="auto">
-          {imageProps}
-        </Grid>
-        <Grid item sm="auto">
-          {textProps}
-        </Grid>
+        <Grid>{imageProps}</Grid>
+        <Grid>{textProps}</Grid>
       </Grid>
     </Box>
   );

@@ -19,6 +19,7 @@ A Next.js website with i18n (multi-language), Material UI, Storybook, and SCSS s
    ```
 
 ## Features
+
 - Next.js 15
 - Multi-language support (i18n)
 - Material UI (MUI)
@@ -26,6 +27,7 @@ A Next.js website with i18n (multi-language), Material UI, Storybook, and SCSS s
 - Storybook for UI components
 
 ## Notes
+
 - Update your SCSS files to use `@use` instead of `@import` (see Sass docs).
 - For image and link components, follow the latest Next.js docs.
 - i18n is initialized in `src/i18n.ts` and imported in `_app.tsx`.
