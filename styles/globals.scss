@@ -9,7 +9,6 @@
 @import "./components/header.scss";
 @import "./components/footer.scss";
 @import "./components/HeaderCard.scss";
-@import "./components/SectionCard.scss";
 @import "./components/ImageCard.scss";
 @import "./components/MediaCard.scss";
 @import "./components/CarouselCard.scss";
@@ -68,5 +67,5 @@ a {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1040px;
 }
