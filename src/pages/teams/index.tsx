@@ -278,7 +278,7 @@ export const TeamsPage: NextPage<{
             <div
               key={index}
               ref={teamRefs[teamCard.team]}
-              className="team-leader"
+              className="text-center flex flex-col items-center"
             >
               <TeamCard
                 year={selectedYear}

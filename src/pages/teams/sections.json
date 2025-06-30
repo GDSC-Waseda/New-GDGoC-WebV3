@@ -1,38 +1,38 @@
 {
   "Project": {
     "title": "Project Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "The role of the Project team is to efficiently lead projects and bridge communication between technical teams. Project team members will be initiating discussions, managing workflows, and holding progress meetings."
   },
   "Backend": {
     "title": "Backend Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "The Backend team is pivotal in optimizing database interactions and advancing data science capabilities. Team members are organized into two specialized streams: Database Management and Machine Learning. The database subgroup will focus on efficient data modeling, storage, retrieval, and optimization techniques, ensuring scalable and reliable system performance. Meanwhile, the machine learning subgroup will delve into algorithm development, data analysis, and model training, retrieving insights from complex datasets."
   },
   "Frontend": {
     "title": "Frontend Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "The Frontend Team shapes how users interact with our digital products. Working closely with the Backend Team, we bring projects to life by creating visually appealing and functionally seamless interfaces. Joining our team offers an excellent opportunity to work with the latest trends and tools in front-end development while gaining valuable experience in cross-functional collaboration. Additionally, you'll have the chance to join projects already in progress, so a willingness to quickly learn existing frameworks and collaborate with established team members is essential."
   },
   "Education": {
     "title": "Education Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "The education team organizes tech-related workshops, classes, and study jams. Our goal this year is to foster collaboration with external organizations to host more significant, more exciting events! Team members will not only be actively involved in planning and organizing events, but it will also be a great chance to develop new skills and be part of a great team!"
   },
   "Agile": {
     "title": "Agile Team",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "content": "Waseda University's chapter of the Google Developer Groups on Campus"
   },
   "Outreach": {
     "title": "Outreach Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "While university provides a foundation of knowledge and skills across various subjects, the challenge often lies in translating that learning into practical applications in the professional world. The Outreach Team seeks to bridge this gap by offering students the opportunity to connect with industry professionals and gain valuable real-world experience through workshops and speaker sessions. This year, we aim to extend our speakers to a similar demographic: student speakers! Team members will be involved in networking, planning, and hosting events and will gain an invaluable edge by stepping closer to the professional world."
   },
   "Marketing": {
     "title": "Marketing Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "The Marketing team is responsible for creating social media content for GDG on various platforms. Our content ranges from valuable, easy-to-understand news regarding today's Business and Technology to promoting our workshops, events, and the circle!"
   },
   "Finance": {
     "title": "Finance Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "The Finance Team is one of GDG Waseda's core non-technical teams. It is mainly responsible for driving corporate outreach initiatives and securing sponsorships for our events. We actively identify and reach out to potential sponsors while managing the financial resources that sustain GDG Waseda. Becoming part of our team offers an invaluable opportunity to hone skills to help you construct your future career."
   },
   "Operations": {
     "title": "Operations Team",
-    "content": "Waseda University's chapter of the Google Developer Student Club"
+    "content": "Waseda University's chapter of the Google Developer Groups on Campus"
   }
 }
