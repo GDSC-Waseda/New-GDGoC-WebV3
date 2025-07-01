@@ -57,7 +57,7 @@ export interface SectionCardProps {
 export interface ImageCardProps {
   title: string;
   content?: string;
-  image: string;
+  image?: string;
   imagePosition?: "left" | "right";
   linkedInUrl?: string;
   gitHubUrl?: string;

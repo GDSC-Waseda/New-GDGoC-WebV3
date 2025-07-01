@@ -12,8 +12,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { useTranslation } from "next-i18next";
 import exteams from "./exteams.json";
-import { FaLinkedin } from "react-icons/fa";
-import Image from "next/image";
 import { client } from "../../sanity";
 
 export const getStaticProps: GetStaticProps = async (
@@ -66,139 +64,31 @@ export const TeamsPage: NextPage<{
     content: t("teams:team_mes"),
   };
 
-  const teamLeaders: Array<{
-    team: string;
-    name?: string | null;
-    image: string;
-    image2: string | null;
-    multiple: boolean;
-    link?: string;
-    color: string;
-    showLearnMore?: boolean;
-    linkedInUrl?: string;
-  }> = useMemo(
-    () => [
-      {
-        team: "Project",
-        image: "project_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/project",
-        color: "green",
-        showLearnMore: true,
-      },
-      {
-        team: "Backend",
-        image: "backend_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/backend",
-        color: "blue",
-        showLearnMore: true,
-      },
-      {
-        team: "Frontend",
-        image: "frontend_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/frontend",
-        color: "yellow",
-        showLearnMore: true,
-      },
-      {
-        team: "Education",
-        image: "education_lead1.jpg",
-        image2: "education_lead2.jpg",
-        multiple: true,
-        link: "/education",
-        color: "red",
-        showLearnMore: true,
-      },
-      {
-        team: "Agile",
-        image: "agile_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/agile",
-        color: "blue",
-        showLearnMore: true,
-      },
-      {
-        team: "Outreach",
-        image: "outreach_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/outreach",
-        color: "red",
-        showLearnMore: true,
-      },
-      {
-        team: "Marketing",
-        image: "marketing_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/marketing",
-        color: "green",
-        showLearnMore: true,
-      },
-      {
-        team: "Finance",
-        image: "finance_lead.jpg",
-        image2: null,
-        multiple: false,
-        link: "/finance",
-        color: "yellow",
-        showLearnMore: true,
-      },
-    ],
-    []
-  );
+  const [selectedYear, setSelectedYear] = useState("GDGoC 24/25");
 
-  const [teamLeaderImages, setTeamLeaderImages] = useState(
-    teamLeaders.map((leader) => leader.image)
-  );
-
-  const handleSwapClick = (index: number) => {
-    setTeamLeaderImages((prevImages) => {
-      const newImages = [...prevImages];
-      const teamLeader = teamLeaders[index];
-
-      if (teamLeader.multiple && teamLeader.image2) {
-        newImages[index] =
-          newImages[index] === teamLeader.image
-            ? teamLeader.image2
-            : teamLeader.image;
-      }
-
-      return newImages;
-    });
-  };
-
-  const [selectedYear, setSelectedYear] = useState("GDSC 23/24");
   const [selectedTeam, setSelectedTeam] = useState("Project");
 
   const teamLeadersByYear: Record<
     string,
     Array<{
       team: string;
-      name?: string | null;
+      name: string;
       image: string;
-      image2?: string | null;
-      multiple?: boolean;
-      link?: string;
-      color: string;
-      showLearnMore?: boolean;
       linkedInUrl?: string;
     }>
   > = useMemo(
     () => ({
-      "GDSC 23/24": teamLeaders,
+      "GDGoC 24/25": exteams["GDGoC 24/25"],
+      "GDSC 23/24": exteams["GDSC 23/24"],
       "GDSC 22/23": exteams["GDSC 22/23"],
       "GDSC 21/22": exteams["GDSC 21/22"],
     }),
-    [teamLeaders]
+    [exteams["GDGoC 24/25"]]
   );
 
+  const [teamLeaderImages, setTeamLeaderImages] = useState(
+    teamLeadersByYear[selectedYear]?.map((leader) => leader.image)
+  );
   useEffect(() => {
     setTeamLeaderImages(
       teamLeadersByYear[selectedYear]?.map((leader) => leader.image)
