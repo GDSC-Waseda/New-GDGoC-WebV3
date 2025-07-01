@@ -10,9 +10,9 @@ import { ImageCardProps } from "~/types/index";
 export const ImageCard: React.FC<{
   props: ImageCardProps;
 }> = ({ props }) => {
-  const imageProps = (
+  const imageProps = props.image && (
     <Image
-      className="imageCard__image"
+      className="imageCard__image object-cover"
       src={props.image}
       width={350}
       height={350}

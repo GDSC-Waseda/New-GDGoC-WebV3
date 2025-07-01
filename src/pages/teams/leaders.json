@@ -1,4 +1,34 @@
 {
+  "GDGoC 24/25": {
+    "Project": {
+      "title": "Metta Latisa",
+      "image": "/tempImg/leads/project_lead24.jpg"
+    },
+    "Backend": {
+      "title": "Jihun Park",
+      "image": "/tempImg/leads/backend_lead.jpg"
+    },
+    "Frontend": {
+      "title": "Jina Lee",
+      "image": "/tempImg/leads/frontend_lead.jpg"
+    },
+    "Education": {
+      "title": "Mayu Kaneko",
+      "image": "/tempImg/leads/education_lead1.jpg"
+    },
+    "Outreach": {
+      "title": "Dheepta Selvakumar",
+      "image": "/tempImg/leads/outreach_lead.jpg"
+    },
+    "Marketing": {
+      "title": "Nixie Sachiko Supriatna",
+      "image": "/tempImg/leads/marketing_lead.jpg"
+    },
+    "Finance": {
+      "title": "Rin Mase",
+      "image": "/tempImg/leads/finance_lead.jpg"
+    }
+  },
   "GDSC 23/24": {
     "Project": {
       "title": "Priya Mukkundi",
@@ -39,11 +69,6 @@
       "title": "Hyonjoon PARK",
       "content": "Hey there! 😊 I'm Hyonjoon, a junior at Waseda University's School of International Liberal Studies (SILS). I'm thrilled to serve as the team lead for GDSC Waseda's Finance Team this year. Our team plays a vital role in managing and optimizing project finances, ensuring the success of our tech initiatives. I'm looking forward to a fantastic year ahead and can't wait to collaborate with you and our GDSC community to achieve great things together!",
       "image": "/tempImg/leads/finance_lead.jpg"
-    },
-    "Operations": {
-      "title": "",
-      "content": "",
-      "image": ""
     }
   },
   "GDSC 22/23": {

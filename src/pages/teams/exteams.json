@@ -1,4 +1,78 @@
 {
+  "GDGoC 24/25": [
+    {
+      "team": "Project",
+      "name": "Metta Latisa",
+      "image": "project_lead24.jpg"
+    },
+    {
+      "team": "Backend",
+      "name": "Jihun Park",
+      "image": "backend_lead.jpg"
+    },
+    {
+      "team": "Frontend",
+      "name": "Jina Lee",
+      "image": "frontend_lead.jpg"
+    },
+    {
+      "team": "Education",
+      "name": "Mayu Kaneko",
+      "image": "education_lead1.jpg"
+    },
+    {
+      "team": "Outreach",
+      "name": "Dheepta Selvakumar",
+      "image": "outreach_lead.jpg"
+    },
+    {
+      "team": "Marketing",
+      "name": "Nixie Sachiko Supriatna",
+      "image": "marketing_lead.jpg"
+    },
+    {
+      "team": "Finance",
+      "name": "Rin Mase",
+      "image": "finance_lead.jpg"
+    }
+  ],
+  "GDSC 23/24": [
+    {
+      "team": "Project",
+      "name": "Priya Mukkundi",
+      "image": "project_lead.jpg"
+    },
+    {
+      "team": "Backend",
+      "name": "Gunjan Srivastava",
+      "image": "backend_lead.jpg"
+    },
+    {
+      "team": "Frontend",
+      "name": "Haruki Oyama",
+      "image": "frontend_lead.jpg"
+    },
+    {
+      "team": "Education",
+      "name": "Beatrix Sylvani",
+      "image": "education_lead1.jpg"
+    },
+    {
+      "team": "Outreach",
+      "name": "Harshita Chivukula",
+      "image": "outreach_lead.jpg"
+    },
+    {
+      "team": "Marketing",
+      "name": "Seongjoon Park",
+      "image": "marketing_lead.jpg"
+    },
+    {
+      "team": "Finance",
+      "name": "Hyonjoon PARK",
+      "image": "finance_lead.jpg"
+    }
+  ],
   "GDSC 22/23": [
     {
       "team": "Project",
