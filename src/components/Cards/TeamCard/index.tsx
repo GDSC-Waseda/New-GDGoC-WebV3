@@ -33,16 +33,18 @@ export const TeamCard: React.FC<TeamCardProps> = ({ year, team, members }) => {
       />
       <SectionCard props={section} />
       <ImageCard props={leader} />
-      {(year === "GDSC 23/24" || year === "GDGoC 24/25") && members && members.length > 0 && (
-        <div>
-          <h1 className="members-title">Meet Our {team} Team</h1>
-          <div className="team-cards-container">
-            {members.map((card, index) => (
-              <MemberCard key={index} props={card} />
-            ))}
+      {(year === "GDSC 23/24" || year === "GDGoC 24/25") &&
+        members &&
+        members.length > 0 && (
+          <div>
+            <h1 className="members-title">Meet Our {team} Team</h1>
+            <div className="team-cards-container">
+              {members.map((card, index) => (
+                <MemberCard key={index} props={card} />
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 };
