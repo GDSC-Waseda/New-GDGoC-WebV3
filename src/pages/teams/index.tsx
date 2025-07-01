@@ -13,6 +13,7 @@ import type { GetStaticProps, GetStaticPropsContext } from "next";
 import { useTranslation } from "next-i18next";
 import exteams from "./exteams.json";
 import { client } from "../../sanity";
+import members2425 from "./members2425.json";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -173,7 +174,13 @@ export const TeamsPage: NextPage<{
               <TeamCard
                 year={selectedYear}
                 team={teamCard.team}
-                members={teamMemberData[teamCard.team.toLowerCase()] || []}
+                members={
+                  selectedYear === "GDSC 23/24"
+                    ? teamMemberData[teamCard.team.toLowerCase()] || []
+                    : selectedYear === "GDGoC 24/25"
+                    ? (members2425 as any)[teamCard.team] || []
+                    : []
+                }
               />
             </div>
           ))}

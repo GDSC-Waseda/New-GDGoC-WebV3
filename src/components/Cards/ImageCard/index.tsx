@@ -10,8 +10,7 @@ import { ImageCardProps } from "~/types/index";
 export const ImageCard: React.FC<{
   props: ImageCardProps;
 }> = ({ props }) => {
-  const imageProps = (
-    props.image && (
+  const imageProps = props.image && (
     <Image
       className="imageCard__image object-cover"
       src={props.image}
@@ -19,7 +18,6 @@ export const ImageCard: React.FC<{
       height={350}
       alt="image-card"
     />
-    )
   );
 
   const textProps = (

@@ -69,7 +69,7 @@ export interface ImageCardProps {
 export interface MemberCardProps {
   team: string;
   image: string;
-  title: string;
+  title?: string;
   major?: string;
   school?: string;
   year?: string;

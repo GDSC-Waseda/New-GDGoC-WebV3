@@ -19,9 +19,9 @@ interface TeamCardProps {
 export const TeamCard: React.FC<TeamCardProps> = ({ year, team, members }) => {
   const section = sections[team];
   const leader = leaders[year][team];
+  console.log("members: ", members);
 
   if (!section || !leader) return <div>Invalid Team Name</div>;
-
   return (
     <div className="team-page">
       <CommonMeta
@@ -33,7 +33,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ year, team, members }) => {
       />
       <SectionCard props={section} />
       <ImageCard props={leader} />
-      {year === "GDSC 23/24" && members && members.length > 0 && (
+      {(year === "GDSC 23/24" || year === "GDGoC 24/25") && members && members.length > 0 && (
         <div>
           <h1 className="members-title">Meet Our {team} Team</h1>
           <div className="team-cards-container">
