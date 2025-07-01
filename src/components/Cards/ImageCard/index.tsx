@@ -10,16 +10,14 @@ import { ImageCardProps } from "~/types/index";
 export const ImageCard: React.FC<{
   props: ImageCardProps;
 }> = ({ props }) => {
-  const imageProps = (
-    props.image && (
-      <Image
-        style={{ borderRadius: '20px', objectFit: 'cover' }}
-        src={props.image}
-        width={300}
-        height={300}
-        alt="image-card"
-      />
-    )
+  const imageProps = props.image && (
+    <Image
+      style={{ borderRadius: "20px", objectFit: "cover" }}
+      src={props.image}
+      width={300}
+      height={300}
+      alt="image-card"
+    />
   );
 
   const textProps = (
