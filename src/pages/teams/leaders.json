@@ -2,31 +2,44 @@
   "GDGoC 24/25": {
     "Project": {
       "title": "Metta Latisa",
-      "image": "/tempImg/leads/project_lead24.jpg"
+      "image": "/tempImg/leads/project_lead24.jpg",
+      "school": "FSE",
+      "linkedInUrl": "https://www.linkedin.com/in/metta-latisa-3978a7216/"
     },
     "Backend": {
       "title": "Jihun Park",
-      "image": "/tempImg/leads/backend_lead.jpg"
+      "image": "/tempImg/leads/backend_lead.jpg",
+      "school": "FSE",
+      "linkedInUrl": "https://www.linkedin.com/in/jihunpark/"
     },
     "Frontend": {
       "title": "Jina Lee",
-      "image": "/tempImg/leads/frontend_lead24.jpg"
+      "image": "/tempImg/leads/frontend_lead24.jpg",
+      "school": "SILS",
+      "linkedInUrl": "https://www.linkedin.com/in/jina-lee-582a11225/"
     },
     "Education": {
       "title": "Mayu Kaneko",
-      "image": "/tempImg/leads/education_lead1.jpg"
+      "image": "/tempImg/leads/education_lead1.jpg",
+      "school": "CSE",
+      "linkedInUrl": "https://www.linkedin.com/in/mayu-kaneko-183330248/"
     },
     "Outreach": {
       "title": "Dheepta Selvakumar",
-      "image": "/tempImg/leads/outreach_lead.jpg"
+      "image": "/tempImg/leads/outreach_lead.jpg",
+      "school": "FSE",
+      "linkedInUrl": "https://www.linkedin.com/in/d-seruba666/"
     },
     "Marketing": {
-      "title": "Nixie Sachiko Supriatna",
-      "image": "/tempImg/leads/marketing_lead.jpg"
+      "title": "Nixie Supriatna",
+      "image": "/tempImg/leads/marketing_lead.jpg",
+      "school": "SILS",
+      "linkedInUrl": "https://www.linkedin.com/in/nixie-supriatna-2a11532a1/"
     },
     "Finance": {
       "title": "Rin Mase",
-      "image": "/tempImg/leads/finance_lead24.jpeg"
+      "image": "/tempImg/leads/finance_lead24.jpeg",
+      "school": "SILS"
     }
   },
   "GDSC 23/24": {
