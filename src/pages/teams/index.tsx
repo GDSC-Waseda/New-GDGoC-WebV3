@@ -123,7 +123,7 @@ export const TeamsPage: NextPage<{
 
   const teams: string[] = Array.from(
     new Set(
-      Object.values(teamLeadersByYear)
+      Object.values(exteams["GDSC 23/24"])
         .flat()
         .map((member) => member.team)
     )

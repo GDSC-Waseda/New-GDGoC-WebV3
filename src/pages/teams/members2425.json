@@ -7,8 +7,18 @@
     },
     {
       "team": "Project",
+      "title": "Bella Dy Liacco",
+      "image": "/tempImg/members2425/project/Bella Dy Liacco.jpg"
+    },
+    {
+      "team": "Project",
       "title": "Isha Visal",
       "image": "/tempImg/members2425/project/Isha Visal.jpeg"
+    },
+    {
+      "team": "Project",
+      "title": "Johnasson Yu",
+      "image": "/tempImg/members2425/project/Johnasson Yu.jpg"
     },
     {
       "team": "Project",
@@ -44,6 +54,11 @@
     },
     {
       "team": "Backend",
+      "title": "Gunjan",
+      "image": "/tempImg/members2425/backend/Gunjan.jpeg"
+    },
+    {
+      "team": "Backend",
       "title": "Hiroki Uemura",
       "image": "/tempImg/members2425/backend/Hiroki Uemura.jpg"
     },
@@ -63,8 +78,23 @@
     },
     {
       "team": "Backend",
+      "title": "Omri Levi",
+      "image": "/tempImg/members2425/backend/Omri Levin.jpg"
+    },
+    {
+      "team": "Backend",
+      "title": "Prorawin (Po)",
+      "image": "/tempImg/members2425/backend/Prorawin (Po).jpg"
+    },
+    {
+      "team": "Backend",
       "title": "Rola Mohamed",
       "image": "/tempImg/members2425/backend/Rola Mohamed.JPG"
+    },
+    {
+      "team": "Backend",
+      "title": "Tarik Perera",
+      "image": "/tempImg/members2425/backend/Tarik Perera.jpg"
     }
   ],
   "Frontend": [
@@ -85,6 +115,11 @@
     },
     {
       "team": "Frontend",
+      "title": "Nobuhiro Oto",
+      "image": "/tempImg/members2425/frontend/Nobuhiro Oto.jpeg"
+    },
+    {
+      "team": "Frontend",
       "title": "Ryota Tetsuka",
       "image": "/tempImg/members2425/frontend/Ryota Tetsuka.jpg"
     },
@@ -92,6 +127,30 @@
       "team": "Frontend",
       "title": "Yuri Shimizu",
       "image": "/tempImg/members2425/frontend/Yuri Shimizu.jpeg"
+    }
+  ],
+  "Education": [
+    {
+      "team": "Education",
+      "title": "Miina Koyama",
+      "image": "/tempImg/members2425/education/Miina Koyama.jpg"
+    },
+    {
+      "team": "Education",
+      "title": "Sanika",
+      "image": "/tempImg/members2425/education/Sanika.jpeg"
+    },
+    {
+      "team": "Education",
+      "title": "Tai",
+      "image": "/tempImg/members2425/education/Tai.png"
+    }
+  ],
+  "Outreach": [
+    {
+      "team": "Outreach",
+      "title": "Teddy Pandong",
+      "image": "/tempImg/members2425/outreach/Teddy Pandong.jpg"
     }
   ],
   "Marketing": [
@@ -129,6 +188,13 @@
       "team": "Marketing",
       "title": "Rino Takeuchi",
       "image": "/tempImg/members2425/marketing/Rino Takeuchi.jpg"
+    }
+  ],
+  "Finance": [
+    {
+      "team": "Finance",
+      "title": "Liu Yongan (Alexia)",
+      "image": "/tempImg/members2425/finance/Liu Yongan (Alexia).jpg"
     }
   ]
 }

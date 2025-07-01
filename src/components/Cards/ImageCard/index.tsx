@@ -12,10 +12,10 @@ export const ImageCard: React.FC<{
 }> = ({ props }) => {
   const imageProps = props.image && (
     <Image
-      className="imageCard__image object-cover"
+      style={{ borderRadius: "20px", objectFit: "cover" }}
       src={props.image}
-      width={350}
-      height={350}
+      width={300}
+      height={300}
       alt="image-card"
     />
   );
