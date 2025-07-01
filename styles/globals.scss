@@ -19,10 +19,20 @@
 @import "./components/YearBox.scss";
 @import "./components/ProjectCard.scss";
 
+@font-face {
+  font-family: myFont;
+  src: url("/fonts/prodsanReg.ttf");
+}
+
+@font-face {
+  font-family: myFont4;
+  src: url("/fonts/rubikReg.ttf");
+}
+
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "MyFont", sans-serif;
+  font-family: "myFont", sans-serif;
 }
 
 button.about-page__button.btn.btn-outline-dark:hover a {
