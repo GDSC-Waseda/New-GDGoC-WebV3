@@ -27,11 +27,9 @@ export const MemberCard: React.FC<{
         )}
         <div className="team-card__expanded-details">
           <p>{props.major}</p>
-          {props.school && (
-            <p>
-              {props.school}, {props.year}
-            </p>
-          )}
+          <p>
+            {props.school}, {props.year}
+          </p>
         </div>
         <div className="team-card__other">
           {children !== undefined && children}

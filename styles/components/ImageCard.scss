@@ -1,0 +1,13 @@
+@font-face {
+  font-family: myFont;
+  src: url("/fonts/prodsanReg.ttf");
+  font-family: myFont4;
+  src: url("/fonts/rubikReg.ttf");
+}
+
+.imageCard {
+  &__image {
+    width: 350px;
+    border-radius: 20px;
+  }
+}

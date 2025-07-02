@@ -130,18 +130,10 @@
 
 .events__body__past {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   justify-content: center;
   align-items: start;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .events__header__title {
