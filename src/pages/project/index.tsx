@@ -17,7 +17,10 @@ export const getStaticProps: GetStaticProps = async (
   const { locale } = context;
   return {
     props: {
-      ...(await serverSideTranslations(locale as string, ["project", "common"])),
+      ...(await serverSideTranslations(locale as string, [
+        "project",
+        "common",
+      ])),
     },
   };
 };
@@ -29,7 +32,11 @@ const ProjectPage: NextPage = () => {
   const [selectedTeam, setSelectedTeam] = useState("Team 1");
 
   const projectsForYear = useMemo(() => {
-    return (projectData as Record<string, Record<string, ProjectCardProps>>)[selectedYear] || {};
+    return (
+      (projectData as Record<string, Record<string, ProjectCardProps>>)[
+        selectedYear
+      ] || {}
+    );
   }, [selectedYear]);
 
   const allProjects = useMemo(() => {
@@ -41,7 +48,10 @@ const ProjectPage: NextPage = () => {
 
   const teams = useMemo(() => Object.keys(projectsForYear), [projectsForYear]);
 
-  const teamRefs: Record<string, React.RefObject<HTMLDivElement>> = useMemo(() => {
+  const teamRefs: Record<
+    string,
+    React.RefObject<HTMLDivElement>
+  > = useMemo(() => {
     const refs: Record<string, React.RefObject<HTMLDivElement>> = {};
     teams.forEach((team) => {
       refs[team] = React.createRef<HTMLDivElement>();
@@ -90,12 +100,12 @@ const ProjectPage: NextPage = () => {
         pageImgHeight={630}
       />
       <HeaderCard props={headerCardProps} />
-      <div className="project-filter"> 
+      <div className="project-filter">
         <YearBox
-        years={Object.keys(projectData)}
-        selectedYear={selectedYear}
-        onYearChange={handleYearChange}
-      />
+          years={Object.keys(projectData)}
+          selectedYear={selectedYear}
+          onYearChange={handleYearChange}
+        />
 
         <CategoryBar
           categories={teams}
@@ -107,8 +117,8 @@ const ProjectPage: NextPage = () => {
               block: "center",
             });
           }}
-        /></div>
-
+        />
+      </div>
 
       <div className="projectContainer">
         <div className="projectGrid">

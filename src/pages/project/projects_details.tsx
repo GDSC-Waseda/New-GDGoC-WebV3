@@ -29,9 +29,18 @@ const ProjectDetailsPage = () => {
     <div className="project-detail-page">
       <h1>{project.title}</h1>
       <p>{project.description}</p>
-      <p><strong>Team:</strong> {project.team}</p>
-      <p><strong>GitHub:</strong> <a href={project.repoUrl} target="_blank" rel="noreferrer">{project.repoUrl}</a></p>
-      <p><strong>Members:</strong> {project.members?.join(", ")}</p>
+      <p>
+        <strong>Team:</strong> {project.team}
+      </p>
+      <p>
+        <strong>GitHub:</strong>{" "}
+        <a href={project.repoUrl} target="_blank" rel="noreferrer">
+          {project.repoUrl}
+        </a>
+      </p>
+      <p>
+        <strong>Members:</strong> {project.members?.join(", ")}
+      </p>
     </div>
   );
 };

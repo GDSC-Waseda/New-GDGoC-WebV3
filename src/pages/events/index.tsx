@@ -1,8 +1,4 @@
-import {
-  GetStaticProps,
-  GetStaticPropsContext,
-  NextPage,
-} from "next";
+import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { client } from "../../sanity";
@@ -40,7 +36,7 @@ export const getStaticProps: GetStaticProps = async (
       title: post.title,
       image: post.imageUrl,
       tags: post.tags,
-      date: post.publishedAt, 
+      date: post.publishedAt,
       description: post.shortDesc,
       link: `/events/details/${post.slug.current}`,
       open: true,
@@ -112,13 +108,13 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
             ))}
           </div>
         )} */}
-         <div className="events__body__past">
-            {blogPosts.map((post, index) => (
-              <a href={post.link} key={index}>
-                <MediaCard props={post} />
-              </a>
-            ))}
-          </div>
+        <div className="events__body__past">
+          {blogPosts.map((post, index) => (
+            <a href={post.link} key={index}>
+              <MediaCard props={post} />
+            </a>
+          ))}
+        </div>
       </div>
     </>
   );

@@ -30,8 +30,9 @@
 
   &__image {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; 
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -70,7 +71,7 @@
   &__details {
     font-size: 0.95rem;
     line-height: 1.4;
-    flex: 1;      /* push collapse arrow to bottom if present */
+    flex: 1; /* push collapse arrow to bottom if present */
     overflow: hidden;
     text-overflow: ellipsis;
   }
