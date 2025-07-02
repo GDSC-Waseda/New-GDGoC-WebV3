@@ -1,116 +1,76 @@
 {
-    "GDSC 23/24": {
-        "Team 1": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 1",
-            "projectId": "1111",
-            "members": [
-                "c",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 2": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 2",
-            "projectId": "2222",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 3": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 3",
-            "projectId": "3333",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 4": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 4",
-            "projectId": "4444",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 5": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 5",
-            "projectId": "5555",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 6": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 6",
-            "projectId": "6666",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 7": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 7",
-            "projectId": "7777",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        },
-        "Team 8": {
-            "title": "WasedaLine",
-            "description": "A queue  tracking project for university",
-            "imageUrl": "/wasedaLine.jpg",
-            "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
-            "team": "Team 8",
-            "projectId": "8888",
-            "members": [
-                "a",
-                "b",
-                "c",
-                "d"
-            ]
-        }
+  "GDSC 23/24": {
+    "Team 1": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 1",
+      "projectId": "1111",
+      "members": ["c", "b", "c", "d"]
+    },
+    "Team 2": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 2",
+      "projectId": "2222",
+      "members": ["a", "b", "c", "d"]
+    },
+    "Team 3": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 3",
+      "projectId": "3333",
+      "members": ["a", "b", "c", "d"]
+    },
+    "Team 4": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 4",
+      "projectId": "4444",
+      "members": ["a", "b", "c", "d"]
+    },
+    "Team 5": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 5",
+      "projectId": "5555",
+      "members": ["a", "b", "c", "d"]
+    },
+    "Team 6": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 6",
+      "projectId": "6666",
+      "members": ["a", "b", "c", "d"]
+    },
+    "Team 7": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 7",
+      "projectId": "7777",
+      "members": ["a", "b", "c", "d"]
+    },
+    "Team 8": {
+      "title": "WasedaLine",
+      "description": "A queue  tracking project for university",
+      "imageUrl": "/wasedaLine.jpg",
+      "repoUrl": "https://github.com/s3nmith/WasedaLineWeb",
+      "team": "Team 8",
+      "projectId": "8888",
+      "members": ["a", "b", "c", "d"]
     }
+  }
 }
