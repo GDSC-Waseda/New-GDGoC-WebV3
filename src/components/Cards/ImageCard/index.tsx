@@ -10,12 +10,12 @@ import { ImageCardProps } from "~/types/index";
 export const ImageCard: React.FC<{
   props: ImageCardProps;
 }> = ({ props }) => {
-  const imageProps = props.image && (
+  const imageProps = (
     <Image
-      style={{ borderRadius: "20px", objectFit: "cover" }}
+      className="imageCard__image"
       src={props.image}
-      width={300}
-      height={300}
+      width={350}
+      height={350}
       alt="image-card"
     />
   );

@@ -1,10 +1,8 @@
 import {
-  GetStaticPaths,
   GetStaticProps,
-  NextPage,
   GetStaticPropsContext,
+  NextPage,
 } from "next";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { client } from "../../sanity";
@@ -12,7 +10,7 @@ import { HeaderCard, MediaCard } from "components/Cards/index";
 import CommonMeta from "components/CommonMeta";
 import { HeaderCardProps, MediaCardProps } from "~/types";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Image from "next/image";
+import CalendarView from "src/components/Calendar/index";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
@@ -26,30 +24,25 @@ export const getStaticProps: GetStaticProps = async (
     shortDesc,
     slug
   }`;
+
   const blogPostsResponse = await client.fetch(query);
-  const blogPosts = blogPostsResponse.map(
+
+  const blogPosts: MediaCardProps[] = blogPostsResponse.map(
     (post: {
       title: string;
       imageUrl: any;
       tags: string[];
       publishedAt: string;
       shortDesc: string;
-      slug: {
-        current: string;
-      };
+      slug: { current: string };
     }) => ({
       size: "m",
       title: post.title,
       image: post.imageUrl,
       tags: post.tags,
-      date: new Date(post.publishedAt).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
+      date: post.publishedAt, 
       description: post.shortDesc,
-      // to do fix link
-      link: "/events/details/mini-solution-challenge-2023/",
+      link: `/events/details/${post.slug.current}`,
       open: true,
       canOpen: false,
     })
@@ -67,8 +60,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
   blogPosts,
 }) => {
   const { t } = useTranslation();
-  const [blogPost, setBlogPosts] = useState<MediaCardProps[]>(blogPosts);
-
+  const [showCalendar, setShowCalendar] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState<MediaCardProps[]>([]);
 
@@ -79,7 +71,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
   };
 
   const filterPastEvents = (input: string) => {
-    return blogPost.filter(
+    return blogPosts.filter(
       (event) =>
         event.title.toLowerCase().includes(input.toLowerCase()) ||
         event.description.toLowerCase().includes(input.toLowerCase())
@@ -87,7 +79,7 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
   };
 
   return (
-    <div className="container">
+    <>
       <CommonMeta
         pageTitle={t("events:event_title")}
         pageDescription={t("events:event_message")}
@@ -101,50 +93,34 @@ const EventsPage: NextPage<{ blogPosts: MediaCardProps[] }> = ({
           content: t("events:event_message"),
         }}
       />
-      <div className="events__body">
-        <div className="events__header">
-          {/* <span className="events__header__title">
-            {t("events:event_past")}
-          </span> */}
-          <div className="events__search-bar">
-            <Image
-              src="/tempImg/events/magnefying-glass.png"
-              alt=""
-              className="events__search-icon"
-              width={20}
-              height={22}
-            />
-            <input
-              className="events__search"
-              type="text"
-              placeholder="search event"
-              value={searchInput}
-              onChange={handleSearchInputChange}
-            />
-          </div>
-        </div>
-        <div className="events__body__past">
-          {blogPost.map((post, index) => (
-            <a href={post.link} key={index}>
-              <MediaCard props={post} />
-            </a>
-          ))}
 
-          {searchResults.length === 0 && searchInput !== "" && (
-            <p>No results found.</p>
-          )}
-          {searchResults.length > 0 && (
-            <>
-              {searchResults.map((eventCard, index) => (
-                <Link href={eventCard.link} key={index}>
-                  <MediaCard props={eventCard} />
-                </Link>
-              ))}
-            </>
-          )}
-        </div>
+      {/* <div className="events__header">
+        <button onClick={() => setShowCalendar((prev) => !prev)}>
+          {showCalendar ? "Show List View" : "Show Calendar View"}
+        </button>
+      </div> */}
+
+      <div className="events__body">
+        {/* {showCalendar ? (
+          <CalendarView/>
+        ) : (
+          <div className="events__body__past">
+            {blogPosts.map((post, index) => (
+              <a href={post.link} key={index}>
+                <MediaCard props={post} />
+              </a>
+            ))}
+          </div>
+        )} */}
+         <div className="events__body__past">
+            {blogPosts.map((post, index) => (
+              <a href={post.link} key={index}>
+                <MediaCard props={post} />
+              </a>
+            ))}
+          </div>
       </div>
-    </div>
+    </>
   );
 };
 
