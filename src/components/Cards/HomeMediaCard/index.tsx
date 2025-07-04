@@ -27,9 +27,14 @@ export const HomeMediaCard: React.FC<{
           />
         </div>
       ) : (
-        <div className={`home-media-card__image-container ${props.size} none`} />
+        <div
+          className={`home-media-card__image-container ${props.size} none`}
+        />
       )}
-      <div className="home-media-card__detail-container" onClick={handleOnClick}>
+      <div
+        className="home-media-card__detail-container"
+        onClick={handleOnClick}
+      >
         {props.title !== undefined && (
           <>
             {props.canOpen && (

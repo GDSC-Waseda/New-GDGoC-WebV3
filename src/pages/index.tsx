@@ -55,15 +55,17 @@ export const getStaticProps: GetStaticProps = async (
 
   return {
     props: {
-      ...(await serverSideTranslations(locale as string, ["home", "common", "events"])),
-      blogPosts
+      ...(await serverSideTranslations(locale as string, [
+        "home",
+        "common",
+        "events",
+      ])),
+      blogPosts,
     },
   };
 };
 
-const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({
-  blogPosts,
-}) => {
+const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({ blogPosts }) => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [blogPost, setBlogPosts] = useState<MediaCardProps[]>(blogPosts);
@@ -130,20 +132,14 @@ const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({
           </div>
         </div>
         <div className="subtitle-container">
-          <div className="subtitle">
-            Waseda University
-          </div>
+          <div className="subtitle">Waseda University</div>
         </div>
       </div>
       <div className="home-section section-2">
         <div className="description-container">
-          <div className="header">
-            {t("home:about_us")}
-          </div>
+          <div className="header">{t("home:about_us")}</div>
           <div className="separator" />
-          <div className="description-text">
-            {t("home:about_us_text")}
-          </div>
+          <div className="description-text">{t("home:about_us_text")}</div>
           <Link href="/about" className="learn-more-button">
             {t("home:learn_more")}
           </Link>
@@ -151,13 +147,9 @@ const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({
       </div>
       <div className="home-section section-3">
         <div className="description-container">
-          <div className="header">
-            {t("home:teams")}
-          </div>
+          <div className="header">{t("home:teams")}</div>
           <div className="separator" />
-          <div className="description-text">
-            {t("home:teams_text")}
-          </div>
+          <div className="description-text">{t("home:teams_text")}</div>
           <Link href="/teams" className="learn-more-button">
             {t("home:learn_more")}
           </Link>
@@ -166,13 +158,9 @@ const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({
       <div className="home-section section-4">
         <div className="page-container">
           <div className="top-container">
-            <div className="header">
-              {t("home:projects")}
-            </div>
+            <div className="header">{t("home:projects")}</div>
             <div className="separator" />
-            <div className="brief-text">
-              {t("home:projects_text")}
-            </div>
+            <div className="brief-text">{t("home:projects_text")}</div>
           </div>
 
           <div className="project-cards-container">
@@ -189,13 +177,9 @@ const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({
       <div className="home-section section-5">
         <div className="page-container">
           <div className="top-container">
-            <div className="header">
-              {t("home:events")}
-            </div>
+            <div className="header">{t("home:events")}</div>
             <div className="separator" />
-            <div className="brief-text">
-              {t("home:events_text")}
-            </div>
+            <div className="brief-text">{t("home:events_text")}</div>
           </div>
 
           <div className="cards-container">
@@ -212,7 +196,7 @@ const Home: NextPage<{ blogPosts: MediaCardProps[] }> = ({
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default Home;
