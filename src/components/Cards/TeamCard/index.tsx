@@ -19,7 +19,6 @@ interface TeamCardProps {
 export const TeamCard: React.FC<TeamCardProps> = ({ year, team, members }) => {
   const section = sections[team];
   const leader = leaders[year][team];
-  console.log("members: ", members);
 
   if (!section || !leader) return <div>Invalid Team Name</div>;
   return (

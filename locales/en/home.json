@@ -1,5 +1,11 @@
 {
-  "hello": "Hello",
-  "trusted_by": "Trusted by the World's Best Companies",
-  "welcome_mes": "Innovate\nEmpower\nfor the future"
+  "about_us_text": "Welcome to GDSC Waseda — where coding meets fun! 🎉 From hackathon fests to hands-on workshops and chill study jams, we’re a community of innovators building cool stuff together.",
+  "teams_text": "Meet the teams that power GDSC Waseda! From building to teaching, coding to creating — there’s a team for you. Ready to dive in?👇",
+  "projects_text": "Take a look at the innovative projects made by our teams!",
+  "events_text": "Learn, Connect, Innovate: The Essence of GDSC Waseda's Events.",
+  "learn_more": "Learn More",
+  "about_us": "About Us",
+  "events": "Events",
+  "projects": "Projects",
+  "teams": "Teams"
 }
