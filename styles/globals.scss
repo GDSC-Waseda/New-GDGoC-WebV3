@@ -23,6 +23,16 @@
 @import "./components/HomeProjectCard.scss";
 @import "./components/HomeMediaCard.scss";
 
+@font-face {
+  font-family: myFont;
+  src: url("/fonts/prodsanReg.ttf");
+}
+
+@font-face {
+  font-family: myFont4;
+  src: url("/fonts/rubikReg.ttf");
+}
+
 body {
   padding: 0px;
   margin: 0px;
