@@ -40,9 +40,7 @@ const HomeProjectCard: React.FC<ProjectCardProps> = ({
             <strong>Contributors:</strong>
             <ul>
               {members.map((member, index) => (
-                <li key={index}>
-                  {member}
-                </li>
+                <li key={index}>{member}</li>
               ))}
             </ul>
           </div>
