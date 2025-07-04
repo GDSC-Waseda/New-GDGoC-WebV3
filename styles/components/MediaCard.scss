@@ -1,135 +1,91 @@
-/* TO-DO: Make font sizes reactive to media screen size*/
-
 .media-card {
-  position: relative;
-  margin-bottom: 10px;
+  width: 100%;
+  height: 350px;
+  margin: 20px auto;
   border-radius: 20px;
   box-shadow: 3px 5px 5px #c4c4c4;
-  height: 40vh;
-  width: 40vh;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+
+  &__title {
+    padding: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+  }
 
   &__image-container {
-    height: 50%; // 50% of the media card's height
-    width: 100%;
-    overflow: hidden; // This ensures the image doesn't exceed this container
-    position: relative; // Needed for Next.js Image component with layout="fill"
-  }
-
-  &__image-container img {
-    border-radius: 20px 20px 0px 0px;
-  }
-
-  .none {
-    background-color: #c4c4c4;
+    position: relative;
+    flex: 0 0 40%;
+    overflow: hidden;
+    border-radius: 0 0 0 20px;
+    height: 100%;
   }
 
   &__image {
-    border-radius: 20px 20px 0px 0px;
-    position: absolute; // Position the image absolutely within the container
-    top: 0;
-    left: 0;
-    width: 100%; // Fill the container
-    height: 100%; // Fill the container
-  }
-
-  &__collapse {
-    float: right;
-  }
-  &__collapse-container {
-    padding: 5px;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
   }
 
   &__detail-container {
-    margin-top: 4px;
-    padding: 5px 10px;
-    transition: width 600ms ease-out, height 600ms ease-out;
-    overflow: hidden;
-  }
-
-  &__title {
-    // @media screen and (min-width: 768px) {
-    //   font-size: 20px;
-    //   margin: 5px 0;
-    // }
-
-    padding: 15px 5px 0 2%;
-    font-weight: bold;
-    max-width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  &__other {
-    padding: 5px;
-    margin-bottom: 5px;
-  }
-
-  &__image.m {
-    max-width: 20vh;
-  }
-
-  &__image.l {
-    max-width: 25vh;
-  }
-
-  &__image.s,
-  .media-card.s {
-    max-width: 25vh;
-    min-width: 170px;
-  }
-
-  &__image.m,
-  .media-card.m {
-    max-width: 305vh;
-    min-width: 335px;
-    max-height: 180px;
-  }
-
-  &__image.l,
-  .media-card.l {
-    max-width: 35vh;
-    min-width: 250px;
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
   }
 
   &__tags {
-    font-size: 8px;
     display: inline-flex;
-    margin-bottom: 5px;
-    margin-left: 3px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
   }
 
   &__tag {
-    // @media screen and (min-width: 768px) {
-    //   font-size: 15px;
-    //   margin: 3px;
-    // }
-    padding: 2px 5px;
-    margin-right: 5px;
-    border: 0.5px solid;
-    border-radius: 50px;
-    font-weight: lighter;
-    color: gray;
+    padding: 2px 8px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-weight: 300;
+    color: #666;
   }
+
   &__date {
-    font-size: 11px;
-    // @media screen and (min-width: 768px) {
-    //   font-size: 15px;
-    //   margin-bottom: 8px;
-    // }
-    margin-left: 2%;
-    margin-bottom: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #333;
   }
+
   &__details {
-    font-size: 11px;
-    // @media screen and (min-width: 768px) {
-    //   font-size: 15px;
-    // }
-    margin-left: 2%;
-    margin-bottom: 10px;
-    max-height: 6em;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    flex: 1;      /* push collapse arrow to bottom if present */
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  &__other {
+    margin-top: 12px;
+  }
+
+  /* optional: collapse arrow */
+  &__detail-container > .MuiCollapse-root + &__other {
+    padding-top: 12px;
+  }
+}
+
+/* utility for when there's no image */
+.none {
+  background-color: #f0f0f0;
 }

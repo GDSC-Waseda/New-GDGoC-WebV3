@@ -15,7 +15,9 @@ export interface ProjectCardProps {
   description: string;
   imageUrl?: string;
   repoUrl: string;
-  members: ProjectMember[];
+  team: string;
+  projectId: string;
+  members: string[];
 }
 export interface CarouselCardProps {
   image: string;
