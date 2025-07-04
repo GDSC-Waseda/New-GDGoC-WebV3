@@ -15,6 +15,8 @@ export interface ProjectCardProps {
   description: string;
   imageUrl?: string;
   repoUrl: string;
+  team: string;
+  projectId: string;
   members: string[];
 }
 export interface CarouselCardProps {
@@ -47,6 +49,8 @@ export interface HeaderCardProps {
   headTitle?: string;
   title: string;
   content?: string;
+  button?: boolean;
+  buttonText?: string;
 }
 
 export interface SectionCardProps {
@@ -57,7 +61,7 @@ export interface SectionCardProps {
 export interface ImageCardProps {
   title: string;
   content?: string;
-  image?: string;
+  image: string;
   imagePosition?: "left" | "right";
   linkedInUrl?: string;
   gitHubUrl?: string;
@@ -69,7 +73,7 @@ export interface ImageCardProps {
 export interface MemberCardProps {
   team: string;
   image: string;
-  title?: string;
+  title: string;
   major?: string;
   school?: string;
   year?: string;

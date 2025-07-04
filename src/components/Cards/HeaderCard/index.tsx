@@ -3,6 +3,8 @@ import { HeaderCardProps } from "~/types/index";
 import Link from "next/link";
 
 export const HeaderCard: React.FC<{ props: HeaderCardProps }> = ({ props }) => {
+  const buttonText = props.buttonText || "Discover";
+
   return (
     <Card className="headerCard">
       {props.headTitle && (
@@ -19,6 +21,11 @@ export const HeaderCard: React.FC<{ props: HeaderCardProps }> = ({ props }) => {
             {text}
           </p>
         ))}
+      {props.button && (
+        <Link href="/events" passHref>
+          {buttonText}
+        </Link>
+      )}
     </Card>
   );
 };

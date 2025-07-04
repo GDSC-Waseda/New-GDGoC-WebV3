@@ -11,8 +11,9 @@
 }
 
 .team-leaders-wrapper {
-  max-width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 20px;
   overflow: hidden;
 }
 
@@ -38,7 +39,9 @@
 }
 
 .team-leader {
+  width: 100%;
   text-align: center;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;

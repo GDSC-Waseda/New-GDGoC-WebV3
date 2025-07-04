@@ -9,6 +9,8 @@
 @import "./components/header.scss";
 @import "./components/footer.scss";
 @import "./components/HeaderCard.scss";
+@import "./components/SectionCard.scss";
+@import "./components/ImageCard.scss";
 @import "./components/MediaCard.scss";
 @import "./components/CarouselCard.scss";
 @import "./components/Carousel.scss";
@@ -34,7 +36,7 @@
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "myFont", sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 
 button.about-page__button.btn.btn-outline-dark:hover a {
@@ -78,5 +80,5 @@ a {
 }
 
 .container {
-  max-width: 70%;
+  max-width: 1400px;
 }
