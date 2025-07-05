@@ -7,10 +7,10 @@
       "linkedInUrl": "https://www.linkedin.com/in/metta-latisa-3978a7216/"
     },
     "Backend": {
-      "title": "Yungi Jeong",
-      "image": "/tempImg/leads/backend_lead24.png",
-      "school": "SILS",
-      "linkedInUrl": "https://www.linkedin.com/in/yungijeong/"
+      "title": "Jihun Park",
+      "image": "/tempImg/leads/backend_lead.jpg",
+      "school": "FSE",
+      "linkedInUrl": "https://www.linkedin.com/in/jihunpark/"
     },
     "Frontend": {
       "title": "Jina Lee",
@@ -20,7 +20,7 @@
     },
     "Education": {
       "title": "Mayu Kaneko",
-      "image": "/tempImg/leads/education_lead24.jpeg",
+      "image": "/tempImg/leads/education_lead1.jpg",
       "school": "CSE",
       "linkedInUrl": "https://www.linkedin.com/in/mayu-kaneko-183330248/"
     },
@@ -32,7 +32,7 @@
     },
     "Marketing": {
       "title": "Nixie Supriatna",
-      "image": "/tempImg/leads/marketing_lead24.jpg",
+      "image": "/tempImg/leads/marketing_lead.jpg",
       "school": "SILS",
       "linkedInUrl": "https://www.linkedin.com/in/nixie-supriatna-2a11532a1/"
     },

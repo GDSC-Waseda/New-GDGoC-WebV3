@@ -83,11 +83,6 @@
     },
     {
       "team": "Backend",
-      "title": "Peng Hsuan(Mia) Lee",
-      "image": "/tempImg/members2425/backend/Peng Hsuan(Mia) Lee.JPG"
-    },
-    {
-      "team": "Backend",
       "title": "Prorawin (Po)",
       "image": "/tempImg/members2425/backend/Prorawin (Po).jpg"
     },
@@ -105,11 +100,6 @@
   "Frontend": [
     {
       "team": "Frontend",
-      "title": "Alessandro Bertucci",
-      "image": "/tempImg/members2425/frontend/Alessandro Bertucci.jpg"
-    },
-    {
-      "team": "Frontend",
       "title": "Chong Wen Xin",
       "image": "/tempImg/members2425/frontend/Chong Wen Xin.jpg"
     },
@@ -117,11 +107,6 @@
       "team": "Frontend",
       "title": "Henri Halenius",
       "image": "/tempImg/members2425/frontend/Henri Halenius.jpg"
-    },
-    {
-      "team": "Frontend",
-      "title": "Makita Islam Mim",
-      "image": "/tempImg/members2425/frontend/Makita Islam Mim.jpeg"
     },
     {
       "team": "Frontend",
@@ -137,11 +122,6 @@
       "team": "Frontend",
       "title": "Ryota Tetsuka",
       "image": "/tempImg/members2425/frontend/Ryota Tetsuka.jpg"
-    },
-    {
-      "team": "Frontend",
-      "title": "YALI (Tee, Eleale)",
-      "image": "/tempImg/members2425/frontend/YALI (Tee, Eleale).jpg"
     },
     {
       "team": "Frontend",
@@ -176,33 +156,13 @@
   "Marketing": [
     {
       "team": "Marketing",
-      "title": "Aki Inokuchi",
-      "image": "/tempImg/members2425/marketing/Aki Inokuchi.jpg"
-    },
-    {
-      "team": "Marketing",
-      "title": "Ami Osaka",
-      "image": "/tempImg/members2425/marketing/Ami Osaka.jpg"
-    },
-    {
-      "team": "Marketing",
-      "title": "Asa Hyodo",
-      "image": "/tempImg/members2425/marketing/Asa Hyodo.jpg"
-    },
-    {
-      "team": "Marketing",
-      "title": "Aya Miyoshi",
-      "image": "/tempImg/members2425/marketing/Aya Miyoshi.jpg"
+      "title": "Asa Hyodo Marketing",
+      "image": "/tempImg/members2425/marketing/Asa Hyodo Marketing.jpg"
     },
     {
       "team": "Marketing",
       "title": "Ayako Miyamoto Sutherland",
       "image": "/tempImg/members2425/marketing/Ayako MIYAMOTO SUTHERLAND.jpg"
-    },
-    {
-      "team": "Marketing",
-      "title": "Chanhee Lee",
-      "image": "/tempImg/members2425/marketing/Chanhee Lee.jpg"
     },
     {
       "team": "Marketing",
@@ -221,11 +181,6 @@
     },
     {
       "team": "Marketing",
-      "title": "Rachel Jan",
-      "image": "/tempImg/members2425/marketing/Rachel Jang.jpg"
-    },
-    {
-      "team": "Marketing",
       "title": "Reese Mah.",
       "image": "/tempImg/members2425/marketing/Reese Mah..jpg"
     },
@@ -233,38 +188,13 @@
       "team": "Marketing",
       "title": "Rino Takeuchi",
       "image": "/tempImg/members2425/marketing/Rino Takeuchi.jpg"
-    },
-    {
-      "team": "Marketing",
-      "title": "Shinyoung So",
-      "image": "/tempImg/members2425/marketing/Shinyoung So.jpeg"
     }
   ],
   "Finance": [
     {
       "team": "Finance",
-      "title": "Haruna Seto",
-      "image": "/tempImg/members2425/finance/Haruna Seto.jpeg"
-    },
-    {
-      "team": "Finance",
-      "title": "Lisa Borchelt",
-      "image": "/tempImg/members2425/finance/Lisa Borchelt.jpeg"
-    },
-    {
-      "team": "Finance",
       "title": "Liu Yongan (Alexia)",
       "image": "/tempImg/members2425/finance/Liu Yongan (Alexia).jpg"
-    },
-    {
-      "team": "Finance",
-      "title": "Ryan Yuen",
-      "image": "/tempImg/members2425/finance/Ryan Yuen.jpeg"
-    },
-    {
-      "team": "Finance",
-      "title": "Wu Yunqi",
-      "image": "/tempImg/members2425/finance/Wu Yunqi.jpg"
     }
   ]
 }
