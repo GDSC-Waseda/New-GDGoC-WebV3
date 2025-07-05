@@ -37,7 +37,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ year, team, members }) => {
         members &&
         members.length > 0 && (
           <div>
-            <h1 className="members-title">Meet Our {team} Team</h1>
+            <h1 className="members-title">Meet Our {team} Team Members</h1>
             <div className="team-cards-container">
               {members.map((card, index) => (
                 <MemberCard key={index} props={card} />
